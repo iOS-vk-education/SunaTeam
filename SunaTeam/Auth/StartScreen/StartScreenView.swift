@@ -7,28 +7,32 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct StartPageView: View {
-    let store: StoreOf<StartPageSystem>
+struct StartScreenView: View {
+    let store: StoreOf<StartScreenSystem>
     var body: some View {
         VStack {
             TitleView()
             ButtonView(
                 text: "Continue with email",
+                width: 335,
+                height: 56,
                 backgroundColor: .blue,
                 textColor: .white,
                 paddingTop: 24,
                 action: {
-                    store.send(.authorizationButtonTapped)
+                    store.send(.signInButtonTapped)
                 }
             )
             
             ButtonView(
                 text: "Create new account",
+                width: 335,
+                height: 56,
                 textColor: .black,
                 borderColor: .secondary,
                 paddingTop: 12,
                 action: {
-                    store.send(.registrationButtonTapped)
+                    store.send(.signUpButtonTapped)
                 }
             )
         }
@@ -46,9 +50,9 @@ struct TitleView: View {
 
 
 #Preview {
-    StartPageView(
-        store: Store(initialState: StartPageSystem.State()) {
-            StartPageSystem()
+    StartScreenView(
+        store: Store(initialState: StartScreenSystem.State()) {
+            StartScreenSystem()
         }
     )
 }

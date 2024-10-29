@@ -5,7 +5,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>LaunchScreen</key>
-		<string></string>
+		<string>LaunchScreen.storyboard</string>
 		<key>UILaunchScreen</key>
 		<dict/>
 	</dict>

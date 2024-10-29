@@ -1,5 +1,5 @@
 //
-//  StartPageSystem.swift
+//  StartScreenSystem.swift
 //  SunaTeam
 //
 //  Created by Sergei Biryukov on 28.10.2024.
@@ -8,27 +8,27 @@
 import ComposableArchitecture
 
 @Reducer
-struct StartPageSystem {
+struct StartScreenSystem {
     @ObservableState
     struct State {
-        var regPageIsOpen: Bool = false
-        var authPageIsOpen: Bool = false
+        var signUpScreenIsOpen: Bool = false
+        var signInScreenIsOpen: Bool = false
     }
     
     enum Action {
-        case registrationButtonTapped
-        case authorizationButtonTapped
+        case signUpButtonTapped
+        case signInButtonTapped
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .registrationButtonTapped:
-                state.regPageIsOpen = true
+            case .signUpButtonTapped:
+                state.signUpScreenIsOpen = true
                 return .none
                 
-            case .authorizationButtonTapped:
-                state.authPageIsOpen = true
+            case .signInButtonTapped:
+                state.signInScreenIsOpen = true
                 return .none
             }
         }

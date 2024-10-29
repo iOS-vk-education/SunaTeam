@@ -12,9 +12,9 @@ import ComposableArchitecture
 struct SunaTeamApp: App {
     var body: some Scene {
         WindowGroup {
-            StartPageView(
-                store: Store(initialState: StartPageSystem.State()) {
-                    StartPageSystem()
+            StartScreenView(
+                store: Store(initialState: StartScreenSystem.State()) {
+                    StartScreenSystem()
                 }
             )
         }

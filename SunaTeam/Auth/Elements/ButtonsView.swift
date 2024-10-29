@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ButtonView: View {
     var text: String
-    var width: CGFloat = 295
-    var height: CGFloat = 56
+    var width: CGFloat
+    var height: CGFloat
     var backgroundColor: Color?
     var textColor: Color
     var borderColor: Color?
