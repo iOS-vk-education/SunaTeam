@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA8B912A2CD154A000FAA9FC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8B91292CD154A000FAA9FC /* Launch Screen.storyboard */; };
+		EA9C70A42CD0424D00DC0062 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EA9C70A32CD0424D00DC0062 /* ComposableArchitecture */; };
+		EAB9864E2CCF9A3400A45C3B /* RegistrationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9864D2CCF9A2400A45C3B /* RegistrationPageView.swift */; };
+		EAB986502CD0069400A45C3B /* StartPageSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9864F2CD0068E00A45C3B /* StartPageSystem.swift */; };
+		EAB986522CD00A3600A45C3B /* RegistrationPageSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986512CD00A2C00A45C3B /* RegistrationPageSystem.swift */; };
+		EAB986542CD00A5200A45C3B /* AuthPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986532CD00A4900A45C3B /* AuthPageView.swift */; };
+		EAB986562CD00A8000A45C3B /* AuthPageSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986552CD00A7C00A45C3B /* AuthPageSystem.swift */; };
+		EAC5C4932CCECB26008A6113 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5C4922CCECB26008A6113 /* ButtonsView.swift */; };
 		EACB4F3A2CCEB71800138488 /* SunaTeamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB4F392CCEB71800138488 /* SunaTeamApp.swift */; };
-		EACB4F3C2CCEB71800138488 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB4F3B2CCEB71800138488 /* ContentView.swift */; };
+		EACB4F3C2CCEB71800138488 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB4F3B2CCEB71800138488 /* StartPageView.swift */; };
 		EACB4F3E2CCEB71A00138488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACB4F3D2CCEB71A00138488 /* Assets.xcassets */; };
 		EACB4F412CCEB71A00138488 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACB4F402CCEB71A00138488 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA8B91292CD154A000FAA9FC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		EA8B912B2CD158D300FAA9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EAB9864D2CCF9A2400A45C3B /* RegistrationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPageView.swift; sourceTree = "<group>"; };
+		EAB9864F2CD0068E00A45C3B /* StartPageSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageSystem.swift; sourceTree = "<group>"; };
+		EAB986512CD00A2C00A45C3B /* RegistrationPageSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPageSystem.swift; sourceTree = "<group>"; };
+		EAB986532CD00A4900A45C3B /* AuthPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageView.swift; sourceTree = "<group>"; };
+		EAB986552CD00A7C00A45C3B /* AuthPageSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageSystem.swift; sourceTree = "<group>"; };
+		EAC5C4922CCECB26008A6113 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		EACB4F362CCEB71800138488 /* SunaTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunaTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACB4F392CCEB71800138488 /* SunaTeamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunaTeamApp.swift; sourceTree = "<group>"; };
-		EACB4F3B2CCEB71800138488 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EACB4F3B2CCEB71800138488 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		EACB4F3D2CCEB71A00138488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EACB4F402CCEB71A00138488 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -26,12 +42,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9C70A42CD0424D00DC0062 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EAB986482CCF975900A45C3B /* RegAndAuth */ = {
+			isa = PBXGroup;
+			children = (
+				EAB9864C2CCF991B00A45C3B /* AuthPage */,
+				EAB9864B2CCF98F300A45C3B /* RegistrationPage */,
+				EAB9864A2CCF980100A45C3B /* StartPage */,
+			);
+			path = RegAndAuth;
+			sourceTree = "<group>";
+		};
+		EAB986492CCF97DD00A45C3B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EACB4F392CCEB71800138488 /* SunaTeamApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EAB9864A2CCF980100A45C3B /* StartPage */ = {
+			isa = PBXGroup;
+			children = (
+				EAB9864F2CD0068E00A45C3B /* StartPageSystem.swift */,
+				EACB4F3B2CCEB71800138488 /* StartPageView.swift */,
+				EA8B91292CD154A000FAA9FC /* Launch Screen.storyboard */,
+			);
+			path = StartPage;
+			sourceTree = "<group>";
+		};
+		EAB9864B2CCF98F300A45C3B /* RegistrationPage */ = {
+			isa = PBXGroup;
+			children = (
+				EAB986512CD00A2C00A45C3B /* RegistrationPageSystem.swift */,
+				EAB9864D2CCF9A2400A45C3B /* RegistrationPageView.swift */,
+			);
+			path = RegistrationPage;
+			sourceTree = "<group>";
+		};
+		EAB9864C2CCF991B00A45C3B /* AuthPage */ = {
+			isa = PBXGroup;
+			children = (
+				EAB986552CD00A7C00A45C3B /* AuthPageSystem.swift */,
+				EAB986532CD00A4900A45C3B /* AuthPageView.swift */,
+			);
+			path = AuthPage;
+			sourceTree = "<group>";
+		};
+		EAB986572CD00A8E00A45C3B /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				EAC5C4922CCECB26008A6113 /* ButtonsView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		EACB4F2D2CCEB71800138488 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +122,10 @@
 		EACB4F382CCEB71800138488 /* SunaTeam */ = {
 			isa = PBXGroup;
 			children = (
-				EACB4F392CCEB71800138488 /* SunaTeamApp.swift */,
-				EACB4F3B2CCEB71800138488 /* ContentView.swift */,
+				EA8B912B2CD158D300FAA9FC /* Info.plist */,
+				EAB986572CD00A8E00A45C3B /* Elements */,
+				EAB986492CCF97DD00A45C3B /* App */,
+				EAB986482CCF975900A45C3B /* RegAndAuth */,
 				EACB4F3D2CCEB71A00138488 /* Assets.xcassets */,
 				EACB4F3F2CCEB71A00138488 /* Preview Content */,
 			);
@@ -111,6 +184,9 @@
 				Base,
 			);
 			mainGroup = EACB4F2D2CCEB71800138488;
+			packageReferences = (
+				EA9C70A22CD0424D00DC0062 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = EACB4F372CCEB71800138488 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA8B912A2CD154A000FAA9FC /* Launch Screen.storyboard in Resources */,
 				EACB4F412CCEB71A00138488 /* Preview Assets.xcassets in Resources */,
 				EACB4F3E2CCEB71A00138488 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EACB4F3C2CCEB71800138488 /* ContentView.swift in Sources */,
+				EAB9864E2CCF9A3400A45C3B /* RegistrationPageView.swift in Sources */,
+				EAC5C4932CCECB26008A6113 /* ButtonsView.swift in Sources */,
+				EACB4F3C2CCEB71800138488 /* StartPageView.swift in Sources */,
+				EAB986562CD00A8000A45C3B /* AuthPageSystem.swift in Sources */,
 				EACB4F3A2CCEB71800138488 /* SunaTeamApp.swift in Sources */,
+				EAB986542CD00A5200A45C3B /* AuthPageView.swift in Sources */,
+				EAB986522CD00A3600A45C3B /* RegistrationPageSystem.swift in Sources */,
+				EAB986502CD0069400A45C3B /* StartPageSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,9 +358,10 @@
 				DEVELOPMENT_TEAM = VWHLF3P45D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SunaTeam/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,9 +388,10 @@
 				DEVELOPMENT_TEAM = VWHLF3P45D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SunaTeam/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -344,6 +429,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA9C70A22CD0424D00DC0062 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA9C70A32CD0424D00DC0062 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA9C70A22CD0424D00DC0062 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EACB4F2E2CCEB71800138488 /* Project object */;
 }

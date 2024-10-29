@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct SunaTeamApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartPageView(
+                store: Store(initialState: StartPageSystem.State()) {
+                    StartPageSystem()
+                }
+            )
         }
     }
 }
