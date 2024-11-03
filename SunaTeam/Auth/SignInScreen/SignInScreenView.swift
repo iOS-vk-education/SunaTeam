@@ -1,30 +1,34 @@
 //
-//  SignUpScreenView.swift
+//  SignInScreenView.swift
 //  SunaTeam
 //
 //  Created by Sergei Biryukov on 28.10.2024.
 //
 
-import Foundation
+import ComposableArchitecture
 import SwiftUI
 
-struct SignUpScreenView: View {
+struct SignInScreenView: View{
     @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             Spacer()
             VStack(alignment: .center) {
-                HeaderView(largeText: "Sign up now",
-                           smallText: "Please fill the details and create account")
-                TextFieldView(text: "Name", isSecureField: false)
-                    .padding(.top, 40)
+                HeaderView(largeText: "Sign in now",
+                           smallText: "Please sign in to continue our app")
                 TextFieldView(text: "Email", isSecureField: false)
+                    .padding(.top, 40)
                 TextFieldView(text: "Password", isSecureField: true)
+                HStack {
+                    Spacer()
+                    ForgetPasswordButtonView()
+                }
             }
             .padding(.horizontal, 40)
             
             ButtonView(
-                text: "Sign Up",
+                text: "Sign In",
                 width: 335,
                 height: 56,
                 backgroundColor: Color("ButtonColor2"),
@@ -36,7 +40,7 @@ struct SignUpScreenView: View {
             )
             .padding(.bottom, 40)
             
-            SignInPromptView()
+            SignUpPromptView()
                 .padding(.horizontal, 8)
             Spacer()
         }
@@ -51,28 +55,39 @@ struct SignUpScreenView: View {
     }
 }
 
-struct SignInPromptView: View {
+struct ForgetPasswordButtonView: View {
+    var body: some View {
+        Button {
+            return Void()
+        } label: {
+            Text("Forget Password?")
+                .foregroundStyle(Color("ButtonColor1"))
+                .font(.system(size: 14))
+        }
+    }
+}
+
+struct SignUpPromptView: View {
     var body: some View {
         NavigationView {
             HStack {
-                Text("Already have an account")
+                Text("Don't have an account")
                     .font(.system(size: 14))
                     .foregroundStyle(.secondary)
                 Button {
                     return Void()
                 } label: {
-                    NavigationLink(destination: SignInScreenView()) {
-                        Text("Sign in")
+                    NavigationLink(destination: SignUpScreenView()) {
+                        Text("Sign up")
                             .foregroundStyle(Color("ButtonColor1"))
                             .font(.system(size: 14))
                     }
                 }
             }
-            
         }
     }
 }
 
 #Preview {
-    SignUpScreenView()
+    SignInScreenView()
 }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  StartScreenView.swift
 //  SunaTeam
 //
 //  Created by Sergei Biryukov on 27.10.2024.
@@ -8,51 +8,34 @@ import ComposableArchitecture
 import SwiftUI
 
 struct StartScreenView: View {
-    let store: StoreOf<StartScreenSystem>
     var body: some View {
-        VStack {
-            TitleView()
-            ButtonView(
-                text: "Continue with email",
-                width: 335,
-                height: 56,
-                backgroundColor: .blue,
-                textColor: .white,
-                paddingTop: 24,
-                action: {
-                    store.send(.signInButtonTapped)
-                }
-            )
+        NavigationView {
+            HeaderView(largeText: "Sign in to continue")
+            NavigationLink(destination: SignInScreenView()) {
+                Text("Sign in to continue")
+                    .font(.headline)
+                    .frame(width: 335, height: 56)
+                    .background(Color("ButtonColor2"))
+                    .foregroundStyle(.white)
+                    .cornerRadius(15)
+                    .padding(.top, 24)
+            }
             
-            ButtonView(
-                text: "Create new account",
-                width: 335,
-                height: 56,
-                textColor: .black,
-                borderColor: .secondary,
-                paddingTop: 12,
-                action: {
-                    store.send(.signUpButtonTapped)
-                }
-            )
+            NavigationLink(destination: SignUpScreenView()) {
+                Text("Create new account")
+                    .font(.headline)
+                    .frame(width: 335, height: 56)
+                    .foregroundStyle(.black)
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.secondary, lineWidth: 1)
+                    )
+                    .padding(.top, 12)
+            }
         }
     }
 }
-
-struct TitleView: View {
-    var body: some View {
-        Text("Sign in to continue")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .fontWeight(.bold)
-            .frame(width: 295.0, height: 36.0)
-    }
-}
-
 
 #Preview {
-    StartScreenView(
-        store: Store(initialState: StartScreenSystem.State()) {
-            StartScreenSystem()
-        }
-    )
+    StartScreenView()
 }

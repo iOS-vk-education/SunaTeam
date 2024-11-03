@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		EA8B912A2CD154A000FAA9FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8B91292CD154A000FAA9FC /* LaunchScreen.storyboard */; };
 		EA8B912D2CD1816400FAA9FC /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8B912C2CD1815600FAA9FC /* TextFieldView.swift */; };
+		EA8B912F2CD1890C00FAA9FC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8B912E2CD1890800FAA9FC /* HeaderView.swift */; };
 		EA9C70A42CD0424D00DC0062 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EA9C70A32CD0424D00DC0062 /* ComposableArchitecture */; };
 		EAB9864E2CCF9A3400A45C3B /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9864D2CCF9A2400A45C3B /* SignUpScreenView.swift */; };
-		EAB986502CD0069400A45C3B /* StartScreenSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9864F2CD0068E00A45C3B /* StartScreenSystem.swift */; };
-		EAB986522CD00A3600A45C3B /* SignUpScreenSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986512CD00A2C00A45C3B /* SignUpScreenSystem.swift */; };
-		EAB986542CD00A5200A45C3B /* AuthScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986532CD00A4900A45C3B /* AuthScreenView.swift */; };
-		EAB986562CD00A8000A45C3B /* AuthScreenSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986552CD00A7C00A45C3B /* AuthScreenSystem.swift */; };
+		EAB986542CD00A5200A45C3B /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986532CD00A4900A45C3B /* SignInScreenView.swift */; };
 		EAC5C4932CCECB26008A6113 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5C4922CCECB26008A6113 /* ButtonsView.swift */; };
 		EACB4F3A2CCEB71800138488 /* SunaTeamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB4F392CCEB71800138488 /* SunaTeamApp.swift */; };
 		EACB4F3C2CCEB71800138488 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB4F3B2CCEB71800138488 /* StartScreenView.swift */; };
@@ -26,11 +24,9 @@
 		EA8B91292CD154A000FAA9FC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA8B912B2CD158D300FAA9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EA8B912C2CD1815600FAA9FC /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		EA8B912E2CD1890800FAA9FC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EAB9864D2CCF9A2400A45C3B /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
-		EAB9864F2CD0068E00A45C3B /* StartScreenSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenSystem.swift; sourceTree = "<group>"; };
-		EAB986512CD00A2C00A45C3B /* SignUpScreenSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenSystem.swift; sourceTree = "<group>"; };
-		EAB986532CD00A4900A45C3B /* AuthScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenView.swift; sourceTree = "<group>"; };
-		EAB986552CD00A7C00A45C3B /* AuthScreenSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenSystem.swift; sourceTree = "<group>"; };
+		EAB986532CD00A4900A45C3B /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
 		EAC5C4922CCECB26008A6113 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		EACB4F362CCEB71800138488 /* SunaTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunaTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACB4F392CCEB71800138488 /* SunaTeamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunaTeamApp.swift; sourceTree = "<group>"; };
@@ -73,7 +69,6 @@
 		EAB9864A2CCF980100A45C3B /* StartScreen */ = {
 			isa = PBXGroup;
 			children = (
-				EAB9864F2CD0068E00A45C3B /* StartScreenSystem.swift */,
 				EACB4F3B2CCEB71800138488 /* StartScreenView.swift */,
 				EA8B91292CD154A000FAA9FC /* LaunchScreen.storyboard */,
 			);
@@ -83,7 +78,6 @@
 		EAB9864B2CCF98F300A45C3B /* SignUpScreen */ = {
 			isa = PBXGroup;
 			children = (
-				EAB986512CD00A2C00A45C3B /* SignUpScreenSystem.swift */,
 				EAB9864D2CCF9A2400A45C3B /* SignUpScreenView.swift */,
 			);
 			path = SignUpScreen;
@@ -92,8 +86,7 @@
 		EAB9864C2CCF991B00A45C3B /* SignInScreen */ = {
 			isa = PBXGroup;
 			children = (
-				EAB986552CD00A7C00A45C3B /* AuthScreenSystem.swift */,
-				EAB986532CD00A4900A45C3B /* AuthScreenView.swift */,
+				EAB986532CD00A4900A45C3B /* SignInScreenView.swift */,
 			);
 			path = SignInScreen;
 			sourceTree = "<group>";
@@ -101,6 +94,7 @@
 		EAB986572CD00A8E00A45C3B /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				EA8B912E2CD1890800FAA9FC /* HeaderView.swift */,
 				EA8B912C2CD1815600FAA9FC /* TextFieldView.swift */,
 				EAC5C4922CCECB26008A6113 /* ButtonsView.swift */,
 			);
@@ -220,11 +214,9 @@
 				EAB9864E2CCF9A3400A45C3B /* SignUpScreenView.swift in Sources */,
 				EAC5C4932CCECB26008A6113 /* ButtonsView.swift in Sources */,
 				EACB4F3C2CCEB71800138488 /* StartScreenView.swift in Sources */,
-				EAB986562CD00A8000A45C3B /* AuthScreenSystem.swift in Sources */,
 				EACB4F3A2CCEB71800138488 /* SunaTeamApp.swift in Sources */,
-				EAB986542CD00A5200A45C3B /* AuthScreenView.swift in Sources */,
-				EAB986522CD00A3600A45C3B /* SignUpScreenSystem.swift in Sources */,
-				EAB986502CD0069400A45C3B /* StartScreenSystem.swift in Sources */,
+				EA8B912F2CD1890C00FAA9FC /* HeaderView.swift in Sources */,
+				EAB986542CD00A5200A45C3B /* SignInScreenView.swift in Sources */,
 				EA8B912D2CD1816400FAA9FC /* TextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +361,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +393,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
