@@ -1,14 +1,14 @@
 //
-//  SunaTeamApp.swift
-//  SunaTeam
+//  Suna_TravelApp.swift
+//  Suna Travel
 //
-//  Created by Sergei Biryukov on 27.10.2024.
+//  Created by salfetka on 03.11.2024.
 //
 
 import SwiftUI
 
 @main
-struct SunaTeamApp: App {
+struct Suna_TravelApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
