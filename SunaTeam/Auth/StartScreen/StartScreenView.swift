@@ -10,28 +10,29 @@ import SwiftUI
 struct StartScreenView: View {
     var body: some View {
         NavigationView {
-            HeaderView(largeText: "Sign in to continue")
-            NavigationLink(destination: SignInScreenView()) {
-                Text("Sign in to continue")
-                    .font(.headline)
-                    .frame(width: 335, height: 56)
-                    .background(Color("ButtonColor2"))
-                    .foregroundStyle(.white)
-                    .cornerRadius(15)
+            VStack {
+                HeaderView(largeText: "Sign in to continue")
+                Button {
+                    return Void()
+                } label: {
+                    NavigationLink(destination: SignInScreenView()) {
+                        Text("Sign in to continue")
+                    }
+                    .buttonStyle(YellowButtonStyle())
                     .padding(.top, 24)
-            }
-            
-            NavigationLink(destination: SignUpScreenView()) {
-                Text("Create new account")
-                    .font(.headline)
-                    .frame(width: 335, height: 56)
-                    .foregroundStyle(.black)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.secondary, lineWidth: 1)
-                    )
+                }
+                
+                Button {
+                    return Void()
+                } label: {
+                    NavigationLink(destination: SignUpScreenView()) {
+                        Text("Create new account")
+                    }
+                    .buttonStyle(ClearButtonStyle())
                     .padding(.top, 12)
+                }
             }
+            .padding(.horizontal, 40)
         }
     }
 }

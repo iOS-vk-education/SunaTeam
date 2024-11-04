@@ -32,7 +32,7 @@ struct TextFieldView: View {
             }
         }
         .padding(.horizontal, 16)
-        .frame(width: 335, height: 56)
+        .frame(maxWidth: .infinity, minHeight: 56)
         .background(Color("TextFieldColor"))
         .cornerRadius(15)
         .padding(.bottom, 12)

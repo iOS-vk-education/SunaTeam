@@ -11,49 +11,25 @@ import SwiftUI
 struct SignUpScreenView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        NavigationView {
-            Spacer()
-            VStack(alignment: .center) {
-                HeaderView(largeText: "Sign up now",
-                           smallText: "Please fill the details and create account")
-                TextFieldView(text: "Name", isSecureField: false)
-                    .padding(.top, 40)
-                TextFieldView(text: "Email", isSecureField: false)
-                TextFieldView(text: "Password", isSecureField: true)
-            }
-            .padding(.horizontal, 40)
+        VStack {
+            HeaderView(largeText: "Sign up now",
+                       smallText: "Please fill the details and create account")
+            TextFieldView(text: "Name", isSecureField: false)
+                .padding(.top, 40)
+            TextFieldView(text: "Email", isSecureField: false)
+            TextFieldView(text: "Password", isSecureField: true)
             
-            ButtonView(
-                text: "Sign Up",
-                width: 335,
-                height: 56,
-                backgroundColor: Color("ButtonColor2"),
-                textColor: .white,
-                paddingTop: 24,
-                action: {
-                    
+            Button {
+                return Void()
+            } label: {
+                NavigationLink(destination: EmptyView()) {
+                    Text("Sign Up")
                 }
-            )
+                .buttonStyle(YellowButtonStyle())
+                .padding(.top, 24)
+            }
             .padding(.bottom, 40)
             
-            SignInPromptView()
-                .padding(.horizontal, 8)
-            Spacer()
-        }
-        .navigationBarItems(leading: Button(action: {
-            // Возвращаемся к предыдущему экрану
-            self.presentationMode.wrappedValue.dismiss()
-        }) {
-            Image(systemName: "arrow.left")
-                .foregroundColor(.black)
-        })
-        .navigationBarBackButtonHidden(true)
-    }
-}
-
-struct SignInPromptView: View {
-    var body: some View {
-        NavigationView {
             HStack {
                 Text("Already have an account")
                     .font(.system(size: 14))
@@ -68,8 +44,15 @@ struct SignInPromptView: View {
                     }
                 }
             }
-            
         }
+        .padding(.horizontal, 40)
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "arrow.left")
+                .foregroundColor(.black)
+        })
+        .navigationBarBackButtonHidden(true)
     }
 }
 

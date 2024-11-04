@@ -8,31 +8,28 @@
 import Foundation
 import SwiftUI
 
-struct ButtonView: View {
-    var text: String
-    var width: CGFloat
-    var height: CGFloat
-    var backgroundColor: Color?
-    var textColor: Color
-    var borderColor: Color?
-    var paddingTop: CGFloat = 0
-    var action: () -> Void
+struct YellowButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.headline)
+            .frame(maxWidth: .infinity, minHeight: 56)
+            .background(Color("ButtonColor2"))
+            .foregroundStyle(.white)
+            .cornerRadius(15)
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+    }
+}
 
-    var body: some View {
-        Button(action: {
-            
-        }, label: {
-            Text(text)
-                .font(.headline)
-                .foregroundColor(textColor)
-                .frame(width: width, height: height)
-                .background(backgroundColor)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                        .stroke(borderColor ?? Color.clear, lineWidth: borderColor != nil ? 1 : 0)
-                )
-                .cornerRadius(15)
-                .padding(.top, paddingTop)
-        })
+struct ClearButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.headline)
+            .frame(maxWidth: .infinity, minHeight: 56)
+            .foregroundStyle(.black)
+            .background(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.secondary, lineWidth: 1)
+            )
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
 }
