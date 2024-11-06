@@ -50,7 +50,7 @@ struct SignUpScreenView: View {
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "arrow.left")
-                .foregroundColor(.black)
+                .foregroundColor(.secondary)
         })
         .navigationBarBackButtonHidden(true)
     }

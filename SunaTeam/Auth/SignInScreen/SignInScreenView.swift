@@ -41,7 +41,7 @@ struct SignInScreenView: View{
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "arrow.left")
-                .foregroundColor(.black)
+                .foregroundColor(.secondary)
         })
         .navigationBarBackButtonHidden(true)
     }

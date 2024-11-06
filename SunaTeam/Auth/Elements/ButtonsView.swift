@@ -28,7 +28,11 @@ struct ClearButtonStyle: ButtonStyle {
             .foregroundStyle(.black)
             .background(
                 RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.secondary, lineWidth: 1)
+                    .fill(Color("TextFieldColor")) // Цвет фона кнопки
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color("TextFieldColor"), lineWidth: 1) // Цвет обводки
+                    )
             )
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
     }
