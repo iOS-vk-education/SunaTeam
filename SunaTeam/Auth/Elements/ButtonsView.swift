@@ -5,7 +5,6 @@
 //  Created by Sergei Biryukov on 27.10.2024.
 //
 
-import Foundation
 import SwiftUI
 
 struct YellowButtonStyle: ButtonStyle {
