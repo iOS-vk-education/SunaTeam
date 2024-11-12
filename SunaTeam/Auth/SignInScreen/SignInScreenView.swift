@@ -5,18 +5,17 @@
 //  Created by Sergei Biryukov on 28.10.2024.
 //
 
-import ComposableArchitecture
 import SwiftUI
 
 struct SignInScreenView: View{
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack {
-            HeaderView(largeText: "Sign in now",
-                       smallText: "Please sign in to continue our app")
-            TextFieldView(text: "Email", isSecureField: false)
+            HeaderView(largeText: RS.signInBigTitle,
+                       smallText: RS.signInSmallTitle)
+            TextFieldView(text: RS.signInEmail, isSecureField: false)
                 .padding(.top, 40)
-            TextFieldView(text: "Password", isSecureField: true)
+            TextFieldView(text: RS.signInPassword, isSecureField: true)
             
             HStack {
                 Spacer()
@@ -27,7 +26,7 @@ struct SignInScreenView: View{
                 return Void()
             } label: {
                 NavigationLink(destination: EmptyView()) {
-                    Text("Sign in")
+                    Text(RS.signInButton)
                 }
                 .buttonStyle(YellowButtonStyle())
                 .padding(.top, 24)
@@ -52,7 +51,7 @@ struct ForgetPasswordButtonView: View {
         Button {
             return Void()
         } label: {
-            Text("Forget Password?")
+            Text(RS.signInForgetPassword)
                 .foregroundStyle(Color("ButtonColor1"))
                 .font(.system(size: 14))
         }
@@ -62,14 +61,14 @@ struct ForgetPasswordButtonView: View {
 struct SignUpPromptView: View {
     var body: some View {
         HStack {
-            Text("Don't have an account")
+            Text(RS.signInNoAccount)
                 .font(.system(size: 14))
                 .foregroundStyle(.secondary)
             Button {
                 return Void()
             } label: {
                 NavigationLink(destination: SignUpScreenView()) {
-                    Text("Sign up")
+                    Text(RS.signUp)
                         .foregroundStyle(Color("ButtonColor1"))
                         .font(.system(size: 14))
                 }

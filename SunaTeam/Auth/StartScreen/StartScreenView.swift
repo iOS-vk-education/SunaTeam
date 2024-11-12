@@ -4,19 +4,18 @@
 //
 //  Created by Sergei Biryukov on 27.10.2024.
 //
-import ComposableArchitecture
 import SwiftUI
 
 struct StartScreenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HeaderView(largeText: "Sign in to continue")
+                HeaderView(largeText: RS.startTitle)
                 Button {
                     return Void()
                 } label: {
                     NavigationLink(destination: SignInScreenView()) {
-                        Text("Sign in to continue")
+                        Text(RS.startSignInButton)
                     }
                     .buttonStyle(YellowButtonStyle())
                     .padding(.top, 24)
@@ -26,7 +25,7 @@ struct StartScreenView: View {
                     return Void()
                 } label: {
                     NavigationLink(destination: SignUpScreenView()) {
-                        Text("Create new account")
+                        Text(RS.startSignUpButton)
                     }
                     .buttonStyle(ClearButtonStyle())
                     .padding(.top, 12)

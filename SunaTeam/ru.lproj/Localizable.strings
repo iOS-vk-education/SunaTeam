@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  SunaTeam
+
+  Created by Sergei Biryukov on 13.11.2024.
+  
+*/
+//StartScreen
+"startTitle" = "Авторизация";
+"startSignInButton" = "Продолжить с авторизацией";
+"startSignUpButton" = "Создать новый аккаунт";
+
+//SignIn
+"signInBigTitle" = "Войти";
+"signInSmallTitle" = "Войдите что бы продолжить работу в приложении";
+"signInEmail" = "Электронный адрес";
+"signInPassword" = "Пароль";
+"signInButton" = "Авторизация";
+"signInForgetPassword" = "Забыли пароль";
+"signInNoAccount" = "Нет аккаунта?";
+"signUp" = "Регистрация";
+
+//SignUpScreen
+"signUpbigTitle" = "Регистрация";
+"signUpsmallTitle" = "Пожалуйста заполните данные для создания аккаунта";
+"signUpemail" = "Электронный адрес";
+"signUpName" = "Имя";
+"signUpPassword" = "Пароль";
+"sinUpButton" = "Регистрация";
+"signUphaveAccount" = "Уже есть аккаунт";
+"SignIn" = "Войти";

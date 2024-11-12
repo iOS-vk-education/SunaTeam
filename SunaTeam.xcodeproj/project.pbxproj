@@ -10,7 +10,8 @@
 		EA8B912A2CD154A000FAA9FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8B91292CD154A000FAA9FC /* LaunchScreen.storyboard */; };
 		EA8B912D2CD1816400FAA9FC /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8B912C2CD1815600FAA9FC /* TextFieldView.swift */; };
 		EA8B912F2CD1890C00FAA9FC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8B912E2CD1890800FAA9FC /* HeaderView.swift */; };
-		EA9C70A42CD0424D00DC0062 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EA9C70A32CD0424D00DC0062 /* ComposableArchitecture */; };
+		EAA7EEBD2CE3FFD90073BCBA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAA7EEBB2CE3FFD90073BCBA /* Localizable.strings */; };
+		EAA7EEC12CE4035A0073BCBA /* TuistStrings + SunaTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA7EEC02CE4034A0073BCBA /* TuistStrings + SunaTeam.swift */; };
 		EAB9864E2CCF9A3400A45C3B /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9864D2CCF9A2400A45C3B /* SignUpScreenView.swift */; };
 		EAB986542CD00A5200A45C3B /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB986532CD00A4900A45C3B /* SignInScreenView.swift */; };
 		EAC5C4932CCECB26008A6113 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC5C4922CCECB26008A6113 /* ButtonsView.swift */; };
@@ -25,6 +26,9 @@
 		EA8B912B2CD158D300FAA9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EA8B912C2CD1815600FAA9FC /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		EA8B912E2CD1890800FAA9FC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EAA7EEBC2CE3FFD90073BCBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EAA7EEBE2CE3FFE20073BCBA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EAA7EEC02CE4034A0073BCBA /* TuistStrings + SunaTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistStrings + SunaTeam.swift"; sourceTree = "<group>"; };
 		EAB9864D2CCF9A2400A45C3B /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
 		EAB986532CD00A4900A45C3B /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
 		EAC5C4922CCECB26008A6113 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
@@ -40,7 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA9C70A42CD0424D00DC0062 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,11 +123,13 @@
 		EACB4F382CCEB71800138488 /* SunaTeam */ = {
 			isa = PBXGroup;
 			children = (
+				EAA7EEC02CE4034A0073BCBA /* TuistStrings + SunaTeam.swift */,
 				EA8B912B2CD158D300FAA9FC /* Info.plist */,
 				EAB986492CCF97DD00A45C3B /* App */,
 				EAB986482CCF975900A45C3B /* Auth */,
 				EACB4F3D2CCEB71A00138488 /* Assets.xcassets */,
 				EACB4F3F2CCEB71A00138488 /* Preview Content */,
+				EAA7EEBB2CE3FFD90073BCBA /* Localizable.strings */,
 			);
 			path = SunaTeam;
 			sourceTree = "<group>";
@@ -179,10 +184,11 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = EACB4F2D2CCEB71800138488;
 			packageReferences = (
-				EA9C70A22CD0424D00DC0062 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				EAA7EEBF2CE403170073BCBA /* XCRemoteSwiftPackageReference "tuist" */,
 			);
 			productRefGroup = EACB4F372CCEB71800138488 /* Products */;
 			projectDirPath = "";
@@ -199,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA8B912A2CD154A000FAA9FC /* LaunchScreen.storyboard in Resources */,
+				EAA7EEBD2CE3FFD90073BCBA /* Localizable.strings in Resources */,
 				EACB4F412CCEB71A00138488 /* Preview Assets.xcassets in Resources */,
 				EACB4F3E2CCEB71A00138488 /* Assets.xcassets in Resources */,
 			);
@@ -215,6 +222,7 @@
 				EAC5C4932CCECB26008A6113 /* ButtonsView.swift in Sources */,
 				EACB4F3C2CCEB71800138488 /* StartScreenView.swift in Sources */,
 				EACB4F3A2CCEB71800138488 /* SunaTeamApp.swift in Sources */,
+				EAA7EEC12CE4035A0073BCBA /* TuistStrings + SunaTeam.swift in Sources */,
 				EA8B912F2CD1890C00FAA9FC /* HeaderView.swift in Sources */,
 				EAB986542CD00A5200A45C3B /* SignInScreenView.swift in Sources */,
 				EA8B912D2CD1816400FAA9FC /* TextFieldView.swift in Sources */,
@@ -223,12 +231,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		EAA7EEBB2CE3FFD90073BCBA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAA7EEBC2CE3FFD90073BCBA /* en */,
+				EAA7EEBE2CE3FFE20073BCBA /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		EACB4F422CCEB71A00138488 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -283,6 +304,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -292,6 +314,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -339,6 +362,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -431,23 +455,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EA9C70A22CD0424D00DC0062 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		EAA7EEBF2CE403170073BCBA /* XCRemoteSwiftPackageReference "tuist" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			repositoryURL = "https://github.com/tuist/tuist";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.15.2;
+				minimumVersion = 4.33.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		EA9C70A32CD0424D00DC0062 /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EA9C70A22CD0424D00DC0062 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EACB4F2E2CCEB71800138488 /* Project object */;
 }
