@@ -4,9 +4,8 @@
 1. [**Зиманов Михаил**](<https://github.com/nekoposer>)(<https://t.me/aleshovich>)
 2. [**Тарасюк Иван**](<https://github.com/IvanTarasiuk>)(<https://t.me/vanechka0812>)
 3. [**Чечина Лилия**](<https://github.com/Lilia-Chechina>)(<https://t.me/flowers_queen>)
-4. [**Бирюков Сергей**](<https://github.com/mylovelyserge>)(<https://t.me/i_love_you_Serge>)
-5. [**Попова Юлия(ментор)**](<https://t.me/yuzaaasl>)
-6. [**Курганова Александра(ментор)**](<https://t.me/axndkgn>)
+4. [**Попова Юлия(ментор)**](<https://t.me/yuzaaasl>)
+5. [**Курганова Александра(ментор)**](<https://t.me/axndkgn>)
 
 ## 1. Общая информация
 **Название проекта:** Трекер путешествий (рабочее название)  
@@ -112,8 +111,6 @@
    - [**Зиманов Михаил**](<https://github.com/nekoposer>)
 3. **Карточки поездок**
    - [**Чечина Лилия**](<https://github.com/Lilia-Chechina>)
-4. **Главный экран**
-   - [**Бирюков Сергей**](<https://github.com/mylovelyserge>)
 
 ## 6. Ресурсы команды
 
