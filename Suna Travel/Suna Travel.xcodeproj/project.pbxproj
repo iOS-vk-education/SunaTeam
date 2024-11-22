@@ -11,6 +11,16 @@
 		58E8955B2CD7D24E000412A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E8955A2CD7D24E000412A5 /* ContentView.swift */; };
 		58E8955D2CD7D250000412A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E8955C2CD7D250000412A5 /* Assets.xcassets */; };
 		58E895602CD7D250000412A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E8955F2CD7D250000412A5 /* Preview Assets.xcassets */; };
+		EA3F23B82CF10A5200673B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3F23A92CF10A5200673B42 /* Assets.xcassets */; };
+		EA3F23B92CF10A5200673B42 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23AA2CF10A5200673B42 /* ButtonsView.swift */; };
+		EA3F23BA2CF10A5200673B42 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23AB2CF10A5200673B42 /* HeaderView.swift */; };
+		EA3F23BB2CF10A5200673B42 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23AC2CF10A5200673B42 /* TextFieldView.swift */; };
+		EA3F23BC2CF10A5200673B42 /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23AE2CF10A5200673B42 /* SignInScreenView.swift */; };
+		EA3F23BD2CF10A5200673B42 /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23B02CF10A5200673B42 /* SignUpScreenView.swift */; };
+		EA3F23BE2CF10A5200673B42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3F23B22CF10A5200673B42 /* LaunchScreen.storyboard */; };
+		EA3F23BF2CF10A5200673B42 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23B32CF10A5200673B42 /* StartScreenView.swift */; };
+		EA3F23C02CF10A5200673B42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3F23B62CF10A5200673B42 /* Preview Assets.xcassets */; };
+		EA3F23C32CF10C7A00673B42 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EA3F23C22CF10C7A00673B42 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +29,15 @@
 		58E8955A2CD7D24E000412A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58E8955C2CD7D250000412A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58E8955F2CD7D250000412A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EA3F23A92CF10A5200673B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA3F23AA2CF10A5200673B42 /* ButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		EA3F23AB2CF10A5200673B42 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EA3F23AC2CF10A5200673B42 /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		EA3F23AE2CF10A5200673B42 /* SignInScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
+		EA3F23B02CF10A5200673B42 /* SignUpScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
+		EA3F23B22CF10A5200673B42 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA3F23B32CF10A5200673B42 /* StartScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
+		EA3F23B62CF10A5200673B42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3F23C32CF10C7A00673B42 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +71,9 @@
 		58E895572CD7D24E000412A5 /* Suna Travel */ = {
 			isa = PBXGroup;
 			children = (
+				EA3F23A92CF10A5200673B42 /* Assets.xcassets */,
+				EA3F23B52CF10A5200673B42 /* Auth */,
+				EA3F23B72CF10A5200673B42 /* Preview Content */,
 				58E895582CD7D24E000412A5 /* Suna_TravelApp.swift */,
 				58E8955A2CD7D24E000412A5 /* ContentView.swift */,
 				58E8955C2CD7D250000412A5 /* Assets.xcassets */,
@@ -63,6 +86,60 @@
 			isa = PBXGroup;
 			children = (
 				58E8955F2CD7D250000412A5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EA3F23AD2CF10A5200673B42 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				EA3F23AA2CF10A5200673B42 /* ButtonsView.swift */,
+				EA3F23AB2CF10A5200673B42 /* HeaderView.swift */,
+				EA3F23AC2CF10A5200673B42 /* TextFieldView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		EA3F23AF2CF10A5200673B42 /* SignInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EA3F23AE2CF10A5200673B42 /* SignInScreenView.swift */,
+			);
+			path = SignInScreen;
+			sourceTree = "<group>";
+		};
+		EA3F23B12CF10A5200673B42 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EA3F23B02CF10A5200673B42 /* SignUpScreenView.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		EA3F23B42CF10A5200673B42 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EA3F23B22CF10A5200673B42 /* LaunchScreen.storyboard */,
+				EA3F23B32CF10A5200673B42 /* StartScreenView.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		EA3F23B52CF10A5200673B42 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				EA3F23AD2CF10A5200673B42 /* Elements */,
+				EA3F23AF2CF10A5200673B42 /* SignInScreen */,
+				EA3F23B12CF10A5200673B42 /* SignUpScreen */,
+				EA3F23B42CF10A5200673B42 /* StartScreen */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		EA3F23B72CF10A5200673B42 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EA3F23B62CF10A5200673B42 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -83,6 +160,9 @@
 			dependencies = (
 			);
 			name = "Suna Travel";
+			packageProductDependencies = (
+				EA3F23C22CF10C7A00673B42 /* ComposableArchitecture */,
+			);
 			productName = "Suna Travel";
 			productReference = 58E895552CD7D24E000412A5 /* Suna Travel.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +191,9 @@
 				Base,
 			);
 			mainGroup = 58E8954C2CD7D24E000412A5;
+			packageReferences = (
+				EA3F23C12CF10C7A00673B42 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 58E895562CD7D24E000412A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E895602CD7D250000412A5 /* Preview Assets.xcassets in Resources */,
+				EA3F23BE2CF10A5200673B42 /* LaunchScreen.storyboard in Resources */,
+				EA3F23C02CF10A5200673B42 /* Preview Assets.xcassets in Resources */,
+				EA3F23B82CF10A5200673B42 /* Assets.xcassets in Resources */,
 				58E8955D2CD7D250000412A5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3F23B92CF10A5200673B42 /* ButtonsView.swift in Sources */,
+				EA3F23BF2CF10A5200673B42 /* StartScreenView.swift in Sources */,
+				EA3F23BB2CF10A5200673B42 /* TextFieldView.swift in Sources */,
 				58E8955B2CD7D24E000412A5 /* ContentView.swift in Sources */,
 				58E895592CD7D24E000412A5 /* Suna_TravelApp.swift in Sources */,
+				EA3F23BD2CF10A5200673B42 /* SignUpScreenView.swift in Sources */,
+				EA3F23BC2CF10A5200673B42 /* SignInScreenView.swift in Sources */,
+				EA3F23BA2CF10A5200673B42 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Suna Travel/Preview Content\"";
-				DEVELOPMENT_TEAM = 949FZ2ST6K;
+				DEVELOPMENT_TEAM = N6487LS3V6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -283,7 +375,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.zimanov.Suna-Travel";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.julia.Suna-Travel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -299,7 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Suna Travel/Preview Content\"";
-				DEVELOPMENT_TEAM = 949FZ2ST6K;
+				DEVELOPMENT_TEAM = N6487LS3V6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -313,7 +405,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.zimanov.Suna-Travel";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.julia.Suna-Travel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -343,6 +435,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA3F23C12CF10C7A00673B42 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture?tab=readme-ov-file#what-is-the-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA3F23C22CF10C7A00673B42 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA3F23C12CF10C7A00673B42 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58E8954D2CD7D24E000412A5 /* Project object */;
 }
