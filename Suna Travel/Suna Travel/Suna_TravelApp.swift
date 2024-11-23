@@ -8,10 +8,18 @@
 import SwiftUI
 
 @main
-struct Suna_TravelApp: App {
+struct SunaTravelApp: App {
+    @StateObject var profileData = ProfileData(
+        name: "Leonardo",
+        email: "leonardo@gmail.com",
+        location: "Moscow, Russia",
+        phoneNumber: "+1-222-333-44-55"
+    )
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfileView(profileData: profileData)
         }
     }
 }
+
