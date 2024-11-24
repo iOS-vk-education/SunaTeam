@@ -117,4 +117,4 @@
 1. **Таск-трекер**
    - [**trello**](<https://trello.com/b/KY57Lynp/suna-team>)
 2. **Дизайн**
-   - [**figma**](<https://www.figma.com/design/cY14cq1navkbsxjGHUHB04/Untitled?node-id=0-1&t=tuOSnYz5tOpdrxwD-1>)
+   - [**figma**](<https://www.figma.com/design/eKMyExcqCN6SA7bC7YzGfB/Suna-Travel-App?node-id=0-1&node-type=canvas&t=aSdNGv95nMuFL7Ly-0>)
