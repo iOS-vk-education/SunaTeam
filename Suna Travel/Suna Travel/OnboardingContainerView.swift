@@ -7,84 +7,85 @@
 
 import SwiftUI
 
-extension Color {
-    static let customBlue = Color(red: 0x24 / 255.0, green: 0xBA / 255.0, blue: 0xEC / 255.0)
+struct OnboardingConstants {
+    static let buttonMinHeight: CGFloat = 50
+    static let buttonHorizontalPadding: CGFloat = 20
+    static let buttonBottomPadding: CGFloat = 20
+    static let indicatorActiveWidth: CGFloat = 35
+    static let indicatorActiveHeight: CGFloat = 8
+    static let indicatorInactiveWidth: CGFloat = 8
+    static let indicatorInactiveHeight: CGFloat = 8
+    static let indicatorAnimationDuration: Double = 0.3
+    static let buttonAnimationDuration: Double = 0.5
+    static let hStackSpacing: CGFloat = 8
+    static let circleOpacity: Double = 0.3
+    static let buttonCornerRadius: CGFloat = 10
 }
 
 struct OnboardingContainerView: View {
-    @Binding var isFirstLaunch: Bool // Привязка для обновления состояния первого запуска
-    @State private var currentPage = 0 // Переменная для отслеживания текущего слайда
-    let slides = onboardingSlides      // Массив данных для слайдов
+    @Binding var isFirstLaunch: Bool
+    @State private var currentPage = 0
+    let slides = onboardingSlides
     let totalPages = onboardingSlides.count
-
+    
     var body: some View {
-            NavigationView{
+        NavigationView {
             VStack {
                 TabView(selection: $currentPage) {
                     ForEach(0..<slides.count) { index in
-                        OnboardingView(slide: slides[index]) // Отображаем каждый слайд
+                        OnboardingView(slide: slides[index])
                             .tag(index)
                     }
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Отключаем стандартный индикатор
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .ignoresSafeArea(.all)
                 
-                
-                HStack(spacing: 8) {
-                            ForEach(0..<totalPages, id: \.self) { index in
-                                if index == currentPage {
-                                    // Активный индикатор
-                                    Capsule()
-                                        .fill(Color.customBlue)
-                                        .frame(width: 35, height: 8) // Длина и высота активного индикатора
-                                        .animation(.easeInOut(duration: 0.3), value: currentPage) // Анимация
-                                } else {
-                                    // Неактивные индикаторы
-                                    Circle()
-                                        .fill(Color.customBlue.opacity(0.3))
-                                        .frame(width: 8, height: 8) // Размер неактивных индикаторов
-                                        .animation(.easeInOut(duration: 0.3), value: currentPage) // Анимация
-                                }
-                            }
-                            .padding(.bottom, 40)
+                HStack(spacing: OnboardingConstants.hStackSpacing) {
+                    ForEach(0..<totalPages, id: \.self) { index in
+                        if index == currentPage {
+                            Capsule()
+                                .fill(Color.accentBlue)
+                                .frame(width: OnboardingConstants.indicatorActiveWidth, height: OnboardingConstants.indicatorActiveHeight)
+                                .animation(.easeInOut(duration: OnboardingConstants.indicatorAnimationDuration), value: currentPage)
+                        } else {
+                            Circle()
+                                .fill(Color.accentBlue.opacity(OnboardingConstants.circleOpacity))
+                                .frame(width: OnboardingConstants.indicatorInactiveWidth, height: OnboardingConstants.indicatorInactiveHeight)
+                                .animation(.easeInOut(duration: OnboardingConstants.indicatorAnimationDuration), value: currentPage)
+                        }
                     }
+                    .padding(.bottom, OnboardingConstants.buttonBottomPadding)
+                }
                 
-  
-                
-                // Кнопка для завершения онбординга
                 Button(action: {
-                    withAnimation(.easeInOut(duration: 0.5)) { // Анимация для перехода к следующему слайду
+                    withAnimation(.easeInOut(duration: OnboardingConstants.buttonAnimationDuration)) {
                         if currentPage < slides.count - 1 {
-                            // Переход к следующему слайду
                             currentPage += 1
                         } else {
-                            //Завершение онбординга, действие для "Get Started"
-                            isFirstLaunch = false // Логика завершения онбординга
-                            //Код для перехода к основному экрану 
+                            isFirstLaunch = false
                         }
                     }
                 }) {
                     Text(currentPage == slides.count - 1 ? "Get Started" : "Next")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.customBlue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 20)
+                        .frame(minHeight: OnboardingConstants.buttonMinHeight)
+                        .background(Color.accentBlue)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(OnboardingConstants.buttonCornerRadius)
+                        .padding(.horizontal, OnboardingConstants.buttonHorizontalPadding)
+                        .padding(.bottom, OnboardingConstants.buttonBottomPadding)
                 }
             }
             .background(Color.white)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        // Действие для пропуска онбординга
                         isFirstLaunch = false
                     }) {
                         Text("Skip")
                             .font(.headline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.blue)
                     }
                 }
             }

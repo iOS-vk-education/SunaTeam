@@ -65,3 +65,6 @@ fastlane/screenshots
 *.swo
 *.tmp
 *.temp
+
+.DS_Store
+Suna Travel/.DS_Store

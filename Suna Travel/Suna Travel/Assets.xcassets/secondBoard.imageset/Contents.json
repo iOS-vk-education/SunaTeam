@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "2024-11-12 15.39.44.jpg",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "2024-11-12 15.39.44 1.jpg",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "2024-11-12 15.39.44 2.jpg",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "secondBoard.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

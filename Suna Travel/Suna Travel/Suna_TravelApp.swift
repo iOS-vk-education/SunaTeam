@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct Suna_TravelApp: App {
+    @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isFirstLaunch {
+                OnboardingContainerView(isFirstLaunch: $isFirstLaunch)
+            } else {
+                ContentView()
+            }
         }
     }
 }
