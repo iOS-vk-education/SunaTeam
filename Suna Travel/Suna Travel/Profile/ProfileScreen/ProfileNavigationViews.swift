@@ -31,7 +31,7 @@ struct SettingsView: View {
 
 struct VersionView: View {
     var body: some View {
-        Text("Version 1.4.88")
+        Text("Version 52.52")
             .font(.title)
     }
 }

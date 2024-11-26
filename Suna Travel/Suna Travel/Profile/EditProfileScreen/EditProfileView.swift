@@ -17,7 +17,7 @@ struct EditProfileView: View {
     @State private var tempEmail: String
     @State private var tempLocation: String
     @State private var tempPhoneNumber: String
-    @State private var showSuccessMessage: Bool = false
+    @State private var isShowedSuccessMessage: Bool = false
 
     init(profileData: ProfileData) {
         self.profileData = profileData
@@ -31,7 +31,6 @@ struct EditProfileView: View {
         NavigationView {
             ScrollView {
                 VStack() {
-                    //EditTitleView()
                     Image(systemName: "person.circle.fill")
                         .resizable()
                         .frame(width: avatarSize, height: avatarSize)
@@ -67,7 +66,7 @@ struct EditProfileView: View {
                 }
             }
         }
-        .alert(isPresented: $showSuccessMessage) {
+        .alert(isPresented: $isShowedSuccessMessage) {
             Alert(
                 title: Text("Success"),
                 message: Text("Changes have been saved successfully.")
@@ -79,32 +78,14 @@ struct EditProfileView: View {
         profileData.email = tempEmail
         profileData.location = tempLocation
         profileData.phoneNumber = tempPhoneNumber
-        showSuccessMessage = true
+        isShowedSuccessMessage = true
     }
 }
 
-
-
-extension EditProfileView {
-    private func hideKeyboard() {
+extension View {
+    func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
-struct ProfileInputField: View {
-    let title: String
-    @Binding var text: String
-    
 
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .font(.headline)
-                .foregroundColor(.gray)
-            TextField(title, text: $text)
-                .padding()
-                .background(Color(UIColor.systemGray6))
-                .cornerRadius(8)
-        }
-    }
-}
