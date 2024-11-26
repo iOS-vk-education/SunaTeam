@@ -11,6 +11,11 @@
 		58E8955B2CD7D24E000412A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E8955A2CD7D24E000412A5 /* ContentView.swift */; };
 		58E8955D2CD7D250000412A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E8955C2CD7D250000412A5 /* Assets.xcassets */; };
 		58E895602CD7D250000412A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E8955F2CD7D250000412A5 /* Preview Assets.xcassets */; };
+		8F1315172CF3B0450056CA0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1315162CF3B03C0056CA0A /* MainViewController.swift */; };
+		8F1315192CF3B0550056CA0A /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1315182CF3B04B0056CA0A /* CalendarHeaderView.swift */; };
+		8F13151B2CF3B0650056CA0A /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13151A2CF3B05B0056CA0A /* ScheduleCell.swift */; };
+		8F13151D2CF3B0720056CA0A /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13151C2CF3B06F0056CA0A /* ScheduleModel.swift */; };
+		8F1315202CF3CD2A0056CA0A /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13151F2CF3CD2A0056CA0A /* NavigationBar.swift */; };
 		EA3F23B82CF10A5200673B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3F23A92CF10A5200673B42 /* Assets.xcassets */; };
 		EA3F23B92CF10A5200673B42 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23AA2CF10A5200673B42 /* ButtonsView.swift */; };
 		EA3F23BA2CF10A5200673B42 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3F23AB2CF10A5200673B42 /* HeaderView.swift */; };
@@ -29,6 +34,11 @@
 		58E8955A2CD7D24E000412A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58E8955C2CD7D250000412A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58E8955F2CD7D250000412A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8F1315162CF3B03C0056CA0A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8F1315182CF3B04B0056CA0A /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		8F13151A2CF3B05B0056CA0A /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		8F13151C2CF3B06F0056CA0A /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		8F13151F2CF3CD2A0056CA0A /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		EA3F23A92CF10A5200673B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA3F23AA2CF10A5200673B42 /* ButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		EA3F23AB2CF10A5200673B42 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -71,6 +81,11 @@
 		58E895572CD7D24E000412A5 /* Suna Travel */ = {
 			isa = PBXGroup;
 			children = (
+				8F13151C2CF3B06F0056CA0A /* ScheduleModel.swift */,
+				8F13151F2CF3CD2A0056CA0A /* NavigationBar.swift */,
+				8F13151A2CF3B05B0056CA0A /* ScheduleCell.swift */,
+				8F1315182CF3B04B0056CA0A /* CalendarHeaderView.swift */,
+				8F1315162CF3B03C0056CA0A /* MainViewController.swift */,
 				EA3F23A92CF10A5200673B42 /* Assets.xcassets */,
 				EA3F23B52CF10A5200673B42 /* Auth */,
 				EA3F23B72CF10A5200673B42 /* Preview Content */,
@@ -223,13 +238,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F13151D2CF3B0720056CA0A /* ScheduleModel.swift in Sources */,
 				EA3F23B92CF10A5200673B42 /* ButtonsView.swift in Sources */,
 				EA3F23BF2CF10A5200673B42 /* StartScreenView.swift in Sources */,
 				EA3F23BB2CF10A5200673B42 /* TextFieldView.swift in Sources */,
+				8F1315202CF3CD2A0056CA0A /* NavigationBar.swift in Sources */,
+				8F1315192CF3B0550056CA0A /* CalendarHeaderView.swift in Sources */,
 				58E8955B2CD7D24E000412A5 /* ContentView.swift in Sources */,
 				58E895592CD7D24E000412A5 /* Suna_TravelApp.swift in Sources */,
 				EA3F23BD2CF10A5200673B42 /* SignUpScreenView.swift in Sources */,
+				8F1315172CF3B0450056CA0A /* MainViewController.swift in Sources */,
 				EA3F23BC2CF10A5200673B42 /* SignInScreenView.swift in Sources */,
+				8F13151B2CF3B0650056CA0A /* ScheduleCell.swift in Sources */,
 				EA3F23BA2CF10A5200673B42 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
