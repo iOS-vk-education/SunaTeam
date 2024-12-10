@@ -7,6 +7,9 @@
 *.xcodeproj/xcuserdata
 *.xcodeproj/project.xcworkspace/xcuserdata
 *.xcuserdatad
+*.xcuserdata
+*.xcodeproj/project.pbxproj
+*.pbxproj
 
 # Build
 #
@@ -67,4 +70,5 @@ fastlane/screenshots
 *.temp
 
 .DS_Store
-Suna Travel/.DS_Store
+
+SunaTravel/.DS_Store
