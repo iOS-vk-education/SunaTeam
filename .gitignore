@@ -2,14 +2,11 @@
 #
 .DS_Store
 *.xcuserstate
-*.xcworkspace
 *.xcodeproj/project.xcworkspace/xcuserdata
 *.xcodeproj/xcuserdata
 *.xcodeproj/project.xcworkspace/xcuserdata
 *.xcuserdatad
 *.xcuserdata
-*.xcodeproj/project.pbxproj
-*.pbxproj
 
 # Build
 #
