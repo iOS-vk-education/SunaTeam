@@ -11,6 +11,14 @@
 		58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5CAC22D0785E000A3C1FA /* ContentView.swift */; };
 		58F5CAC52D0785E300A3C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F5CAC42D0785E300A3C1FA /* Assets.xcassets */; };
 		58F5CAC82D0785E300A3C1FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F5CAC72D0785E300A3C1FA /* Preview Assets.xcassets */; };
+		8F7310D92D0B8F1D007A78AC /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310D82D0B8F1D007A78AC /* OnboardingContainerView.swift */; };
+		8F7310DB2D0B8F76007A78AC /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310DA2D0B8F6A007A78AC /* OnboardingSlide.swift */; };
+		8F7310DD2D0B8F8C007A78AC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */; };
+		8F7310DF2D0B8FB4007A78AC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */; };
+		8F7310E12D0B8FCC007A78AC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */; };
+		8F7310E42D0B903A007A78AC /* ColorAccentBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310E32D0B902B007A78AC /* ColorAccentBlue.swift */; };
+		8F7310E62D0B9053007A78AC /* ColorDeepOrange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310E52D0B9047007A78AC /* ColorDeepOrange.swift */; };
+		8F7310E82D0B91C8007A78AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7310E72D0B91C8007A78AC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		58F5CAC22D0785E000A3C1FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58F5CAC42D0785E300A3C1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58F5CAC72D0785E300A3C1FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8F7310D82D0B8F1D007A78AC /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		8F7310DA2D0B8F6A007A78AC /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		8F7310E32D0B902B007A78AC /* ColorAccentBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAccentBlue.swift; sourceTree = "<group>"; };
+		8F7310E52D0B9047007A78AC /* ColorDeepOrange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDeepOrange.swift; sourceTree = "<group>"; };
+		8F7310E72D0B91C8007A78AC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +67,17 @@
 		58F5CABF2D0785E000A3C1FA /* SunaTravel */ = {
 			isa = PBXGroup;
 			children = (
+				8F7310E22D0B9023007A78AC /* Extensions */,
+				8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */,
+				8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */,
+				8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */,
+				8F7310DA2D0B8F6A007A78AC /* OnboardingSlide.swift */,
 				58F5CAC02D0785E000A3C1FA /* SunaTravelApp.swift */,
 				58F5CAC22D0785E000A3C1FA /* ContentView.swift */,
 				58F5CAC42D0785E300A3C1FA /* Assets.xcassets */,
 				58F5CAC62D0785E300A3C1FA /* Preview Content */,
+				8F7310D82D0B8F1D007A78AC /* OnboardingContainerView.swift */,
+				8F7310E72D0B91C8007A78AC /* LaunchScreen.storyboard */,
 			);
 			path = SunaTravel;
 			sourceTree = "<group>";
@@ -65,6 +88,15 @@
 				58F5CAC72D0785E300A3C1FA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8F7310E22D0B9023007A78AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8F7310E52D0B9047007A78AC /* ColorDeepOrange.swift */,
+				8F7310E32D0B902B007A78AC /* ColorAccentBlue.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F7310E82D0B91C8007A78AC /* LaunchScreen.storyboard in Resources */,
 				58F5CAC82D0785E300A3C1FA /* Preview Assets.xcassets in Resources */,
 				58F5CAC52D0785E300A3C1FA /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F7310DB2D0B8F76007A78AC /* OnboardingSlide.swift in Sources */,
+				8F7310DF2D0B8FB4007A78AC /* OnboardingViewController.swift in Sources */,
 				58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */,
+				8F7310D92D0B8F1D007A78AC /* OnboardingContainerView.swift in Sources */,
+				8F7310DD2D0B8F8C007A78AC /* OnboardingView.swift in Sources */,
+				8F7310E42D0B903A007A78AC /* ColorAccentBlue.swift in Sources */,
+				8F7310E12D0B8FCC007A78AC /* OnboardingViewModel.swift in Sources */,
+				8F7310E62D0B9053007A78AC /* ColorDeepOrange.swift in Sources */,
 				58F5CAC12D0785E000A3C1FA /* SunaTravelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,15 +306,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SunaTravel/Preview Content\"";
-				DEVELOPMENT_TEAM = 949FZ2ST6K;
+				DEVELOPMENT_TEAM = 28J53UH756;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -283,7 +325,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.zimanov.SunaTravel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vk-education.tarasyuk.SunaTravel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -296,15 +338,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SunaTravel/Preview Content\"";
-				DEVELOPMENT_TEAM = 949FZ2ST6K;
+				DEVELOPMENT_TEAM = 28J53UH756;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -313,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.zimanov.SunaTravel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vk-education.tarasyuk.SunaTravel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
