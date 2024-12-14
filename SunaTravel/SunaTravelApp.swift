@@ -13,7 +13,9 @@ struct SunaTravelApp: App {
         var body: some Scene {
             WindowGroup {
                 if isFirstLaunch {
-                    OnboardingContainerView(isFirstLaunch: $isFirstLaunch)
+                    OnboardingContainerView(
+                        isFirstLaunch: $isFirstLaunch,
+                        viewModel: OnboardingViewModel())
                 } else {
                     ContentView()
                 }

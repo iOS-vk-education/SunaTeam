@@ -12,8 +12,7 @@ struct OnboardingViewConstants {
     static let imageWidth: CGFloat = UIScreen.main.bounds.width
     static let titleFontSize: CGFloat = 28
     static let subtitleFontSize: CGFloat = 20
-    static let titleHorizontalPadding: CGFloat = 20
-    static let titleTopPadding: CGFloat = 20
+    static let titleHorizontalTopPadding: CGFloat = 20
     static let subtitleHorizontalPadding: CGFloat = 20
     static let subtitleTopPadding: CGFloat = 10
     static let brushStrokeWidth: CGFloat = 80
@@ -44,8 +43,8 @@ struct OnboardingView: View {
                     .font(.system(size: OnboardingViewConstants.titleFontSize, weight: .bold, design: .rounded))
                     .foregroundColor(Color.black)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal, OnboardingViewConstants.titleHorizontalPadding)
-                    .padding(.top, OnboardingViewConstants.titleTopPadding)
+                    .padding(.horizontal, OnboardingViewConstants.titleHorizontalTopPadding)
+                    .padding(.top, OnboardingViewConstants.titleHorizontalTopPadding)
             }
             
             BrushStrokeView()
@@ -84,7 +83,7 @@ fileprivate struct BrushStrokeView: View {
     }
 }
 
-func createAttributedTitle(from title: String) -> AttributedString? {
+private func createAttributedTitle(from title: String) -> AttributedString? {
     var attributedString = AttributedString(title)
     if let lastSpaceIndex = attributedString.characters.lastIndex(of: " ") {
         let range = attributedString.characters.index(after: lastSpaceIndex)..<attributedString.endIndex

@@ -16,9 +16,12 @@
 		8F7310DD2D0B8F8C007A78AC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */; };
 		8F7310DF2D0B8FB4007A78AC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */; };
 		8F7310E12D0B8FCC007A78AC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */; };
-		8F7310E42D0B903A007A78AC /* ColorAccentBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310E32D0B902B007A78AC /* ColorAccentBlue.swift */; };
-		8F7310E62D0B9053007A78AC /* ColorDeepOrange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310E52D0B9047007A78AC /* ColorDeepOrange.swift */; };
 		8F7310E82D0B91C8007A78AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7310E72D0B91C8007A78AC /* LaunchScreen.storyboard */; };
+		8F7310EB2D0D91B5007A78AC /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310EA2D0D91A5007A78AC /* Color+Extensions.swift */; };
+		8F7310ED2D0D9FEE007A78AC /* OnboardinSlidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310EC2D0D9FE1007A78AC /* OnboardinSlidesView.swift */; };
+		8F7310EF2D0DA02F007A78AC /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310EE2D0DA022007A78AC /* PageIndicatorView.swift */; };
+		8F7310F12D0DA06D007A78AC /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310F02D0DA061007A78AC /* OnboardingButton.swift */; };
+		8F7310F32D0DA0A0007A78AC /* OnboardingToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +35,12 @@
 		8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		8F7310E32D0B902B007A78AC /* ColorAccentBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAccentBlue.swift; sourceTree = "<group>"; };
-		8F7310E52D0B9047007A78AC /* ColorDeepOrange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDeepOrange.swift; sourceTree = "<group>"; };
 		8F7310E72D0B91C8007A78AC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F7310EA2D0D91A5007A78AC /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		8F7310EC2D0D9FE1007A78AC /* OnboardinSlidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardinSlidesView.swift; sourceTree = "<group>"; };
+		8F7310EE2D0DA022007A78AC /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
+		8F7310F02D0DA061007A78AC /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,16 +73,12 @@
 		58F5CABF2D0785E000A3C1FA /* SunaTravel */ = {
 			isa = PBXGroup;
 			children = (
+				8F7310E92D0D90F9007A78AC /* Onboardings */,
 				8F7310E22D0B9023007A78AC /* Extensions */,
-				8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */,
-				8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */,
-				8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */,
-				8F7310DA2D0B8F6A007A78AC /* OnboardingSlide.swift */,
 				58F5CAC02D0785E000A3C1FA /* SunaTravelApp.swift */,
 				58F5CAC22D0785E000A3C1FA /* ContentView.swift */,
 				58F5CAC42D0785E300A3C1FA /* Assets.xcassets */,
 				58F5CAC62D0785E300A3C1FA /* Preview Content */,
-				8F7310D82D0B8F1D007A78AC /* OnboardingContainerView.swift */,
 				8F7310E72D0B91C8007A78AC /* LaunchScreen.storyboard */,
 			);
 			path = SunaTravel;
@@ -93,10 +95,25 @@
 		8F7310E22D0B9023007A78AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8F7310E52D0B9047007A78AC /* ColorDeepOrange.swift */,
-				8F7310E32D0B902B007A78AC /* ColorAccentBlue.swift */,
+				8F7310EA2D0D91A5007A78AC /* Color+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8F7310E92D0D90F9007A78AC /* Onboardings */ = {
+			isa = PBXGroup;
+			children = (
+				8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */,
+				8F7310F02D0DA061007A78AC /* OnboardingButton.swift */,
+				8F7310EE2D0DA022007A78AC /* PageIndicatorView.swift */,
+				8F7310EC2D0D9FE1007A78AC /* OnboardinSlidesView.swift */,
+				8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */,
+				8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */,
+				8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */,
+				8F7310DA2D0B8F6A007A78AC /* OnboardingSlide.swift */,
+				8F7310D82D0B8F1D007A78AC /* OnboardingContainerView.swift */,
+			);
+			path = Onboardings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,15 +187,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F7310F32D0DA0A0007A78AC /* OnboardingToolbar.swift in Sources */,
 				8F7310DB2D0B8F76007A78AC /* OnboardingSlide.swift in Sources */,
 				8F7310DF2D0B8FB4007A78AC /* OnboardingViewController.swift in Sources */,
 				58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */,
 				8F7310D92D0B8F1D007A78AC /* OnboardingContainerView.swift in Sources */,
 				8F7310DD2D0B8F8C007A78AC /* OnboardingView.swift in Sources */,
-				8F7310E42D0B903A007A78AC /* ColorAccentBlue.swift in Sources */,
+				8F7310EB2D0D91B5007A78AC /* Color+Extensions.swift in Sources */,
+				8F7310ED2D0D9FEE007A78AC /* OnboardinSlidesView.swift in Sources */,
 				8F7310E12D0B8FCC007A78AC /* OnboardingViewModel.swift in Sources */,
-				8F7310E62D0B9053007A78AC /* ColorDeepOrange.swift in Sources */,
 				58F5CAC12D0785E000A3C1FA /* SunaTravelApp.swift in Sources */,
+				8F7310F12D0DA06D007A78AC /* OnboardingButton.swift in Sources */,
+				8F7310EF2D0DA02F007A78AC /* PageIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
