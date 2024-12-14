@@ -103,17 +103,49 @@
 		8F7310E92D0D90F9007A78AC /* Onboardings */ = {
 			isa = PBXGroup;
 			children = (
+				8F7310F72D0DE18C007A78AC /* Controller */,
+				8F7310F62D0DE094007A78AC /* Views */,
+				8F7310F52D0DE08A007A78AC /* Slides */,
+				8F7310F42D0DE080007A78AC /* Models */,
+			);
+			path = Onboardings;
+			sourceTree = "<group>";
+		};
+		8F7310F42D0DE080007A78AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F7310F52D0DE08A007A78AC /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				8F7310DA2D0B8F6A007A78AC /* OnboardingSlide.swift */,
+			);
+			path = Slides;
+			sourceTree = "<group>";
+		};
+		8F7310F62D0DE094007A78AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F7310EC2D0D9FE1007A78AC /* OnboardinSlidesView.swift */,
+				8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */,
+				8F7310D82D0B8F1D007A78AC /* OnboardingContainerView.swift */,
 				8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */,
 				8F7310F02D0DA061007A78AC /* OnboardingButton.swift */,
 				8F7310EE2D0DA022007A78AC /* PageIndicatorView.swift */,
-				8F7310EC2D0D9FE1007A78AC /* OnboardinSlidesView.swift */,
-				8F7310E02D0B8FBE007A78AC /* OnboardingViewModel.swift */,
-				8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */,
-				8F7310DC2D0B8F82007A78AC /* OnboardingView.swift */,
-				8F7310DA2D0B8F6A007A78AC /* OnboardingSlide.swift */,
-				8F7310D82D0B8F1D007A78AC /* OnboardingContainerView.swift */,
 			);
-			path = Onboardings;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F7310F72D0DE18C007A78AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
