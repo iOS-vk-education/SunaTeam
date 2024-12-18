@@ -11,6 +11,7 @@
 		58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5CAC22D0785E000A3C1FA /* ContentView.swift */; };
 		58F5CAC52D0785E300A3C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F5CAC42D0785E300A3C1FA /* Assets.xcassets */; };
 		58F5CAC82D0785E300A3C1FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F5CAC72D0785E300A3C1FA /* Preview Assets.xcassets */; };
+		8F0A96DA2D13591900322C53 /* NavigationItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A96D92D13590100322C53 /* NavigationItemModel.swift */; };
 		8F7310F92D0DE4A5007A78AC /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310F82D0DE49D007A78AC /* CalendarHeaderView.swift */; };
 		8F7310FC2D0DE4C4007A78AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310FB2D0DE4B9007A78AC /* MainViewController.swift */; };
 		8F7310FE2D0DE4D9007A78AC /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310FD2D0DE4CF007A78AC /* NavigationBar.swift */; };
@@ -24,6 +25,7 @@
 		58F5CAC22D0785E000A3C1FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58F5CAC42D0785E300A3C1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58F5CAC72D0785E300A3C1FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8F0A96D92D13590100322C53 /* NavigationItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemModel.swift; sourceTree = "<group>"; };
 		8F7310F82D0DE49D007A78AC /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		8F7310FB2D0DE4B9007A78AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8F7310FD2D0DE4CF007A78AC /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		8F7311042D0DE53D007A78AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8F0A96D92D13590100322C53 /* NavigationItemModel.swift */,
 				8F7311012D0DE4EB007A78AC /* ScheduleModel.swift */,
 			);
 			path = Models;
@@ -180,6 +183,7 @@
 				8F7311022D0DE4F6007A78AC /* ScheduleModel.swift in Sources */,
 				58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */,
 				8F7310F92D0DE4A5007A78AC /* CalendarHeaderView.swift in Sources */,
+				8F0A96DA2D13591900322C53 /* NavigationItemModel.swift in Sources */,
 				58F5CAC12D0785E000A3C1FA /* SunaTravelApp.swift in Sources */,
 				8F7311002D0DE4E5007A78AC /* ScheduleCell.swift in Sources */,
 				8F7310FC2D0DE4C4007A78AC /* MainViewController.swift in Sources */,

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-fileprivate struct CalendarHeaderConstants {
-    static let daysInWeek = 7
+fileprivate struct UIConstants {
+    //static let daysInWeek = 7
     static let weekdayAdjustmentForSunday: Int = 6
     static let weekdayAdjustment: Int = 2
     static let circleSize: CGFloat = 40
@@ -17,28 +17,28 @@ fileprivate struct CalendarHeaderConstants {
 }
 
 struct CalendarHeaderView: View {
-    
-
     let currentDate = Date()
     let calendar = Calendar.current
-    
     let weekdaySymbols = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    var daysInWeek: Int {
+        weekdaySymbols.count
+    }
     
 
     var startOfWeek: Date {
         let weekday = calendar.component(.weekday, from: currentDate)
-        let daysToSubtract = (weekday == 1) ? CalendarHeaderConstants.weekdayAdjustmentForSunday : weekday - CalendarHeaderConstants.weekdayAdjustment
+        let daysToSubtract = (weekday == 1) ? UIConstants.weekdayAdjustmentForSunday : weekday - UIConstants.weekdayAdjustment
         return calendar.date(byAdding: .day, value: -daysToSubtract, to: currentDate) ?? Date()
     }
     
     var weekDates: [Date] {
-        return (0..<CalendarHeaderConstants.daysInWeek).map { calendar.date(byAdding: .day, value: $0, to: startOfWeek)! }
+        return (0..<daysInWeek).map { calendar.date(byAdding: .day, value: $0, to: startOfWeek)! }
     }
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: CalendarHeaderConstants.horizontalSpacing) {
-                ForEach(0..<CalendarHeaderConstants.daysInWeek, id: \.self) { index in
+            HStack(spacing: UIConstants.horizontalSpacing) {
+                ForEach(0..<daysInWeek, id: \.self) { index in
                     let date = weekDates[index]
                     let dayOfMonth = calendar.component(.day, from: date)
                     let weekdaySymbol = weekdaySymbols[index]
@@ -53,7 +53,7 @@ struct CalendarHeaderView: View {
                         Text("\(dayOfMonth)")
                             .font(.title3.bold())
                             .foregroundColor(isToday ? Color.orange : Color.black)
-                            .frame(width: CalendarHeaderConstants.circleSize, height: CalendarHeaderConstants.circleSize)
+                            .frame(width: UIConstants.circleSize, height: UIConstants.circleSize)
                             .background(isToday ? Color.orange.opacity(0.2) : Color.clear)
                             .clipShape(Circle())
                     }
@@ -61,7 +61,7 @@ struct CalendarHeaderView: View {
             }
         }
         .padding(.horizontal)
-        .padding(.top, CalendarHeaderConstants.topPadding)
+        .padding(.top, UIConstants.topPadding)
     }
 }
 

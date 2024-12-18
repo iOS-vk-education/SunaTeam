@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-fileprivate struct MainViewConstants {
+fileprivate struct UIConstants {
     static let VStackSpacing: CGFloat = 20
 }
 
@@ -25,7 +25,7 @@ struct MainView: View {
                     .padding(.horizontal)
                     
                     ScrollView {
-                        LazyVStack(spacing: MainViewConstants.VStackSpacing) {
+                        LazyVStack(spacing: UIConstants.VStackSpacing) {
                             ForEach(scheduleItems) { item in
                                 ScheduleCell(item: item)
                             }
@@ -39,13 +39,13 @@ struct MainView: View {
             .navigationBarTitle("Schedule", displayMode: .inline)
             .navigationBarItems(
                 leading: Button(action: {
-                    // Действие для кнопки назад
+                    // MARK: - действие для кнопки назад
                 }) {
                     Image(systemName: "arrow.backward")
                         .foregroundColor(.black)
                 },
                 trailing: Button(action: {
-                    // Переход в профиль
+                    // MARK: - действие для перехода в профиль
                 }) {
                     Image(systemName: "person.crop.circle")
                         .foregroundColor(.black)

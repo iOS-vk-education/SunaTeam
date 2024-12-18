@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-fileprivate struct NavBarConstants {
+fileprivate struct UIConstants {
     static let TabViewHeight: CGFloat = 70
     static let TabViewPadding: CGFloat = 10
 }
@@ -15,39 +15,17 @@ fileprivate struct NavBarConstants {
 struct NavigationBar: View {
     var body: some View {
         TabView {
-            Text("")
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-            
-            Text("")
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Calendar")
-                }
-            
-            Text("")
-                .tabItem {
-                    Image(systemName: "magnifyingglass.circle.fill")
-                    Text("Search")
-                }
-            
-            Text("")
-                .tabItem {
-                    Image(systemName: "message")
-                    Text("Messages")
-                }
-            
-            Text("")
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("Profile")
-                }
+            ForEach(navigationItems, id: \.title) { item in
+                Text("")
+                    .tabItem {
+                        Image(systemName: item.systemImage)
+                        Text(item.title)
+                    }
+            }
         }
         .accentColor(.blue)
-        .frame(height: NavBarConstants.TabViewHeight)
-        .padding(.bottom, NavBarConstants.TabViewPadding)
+        .frame(height: UIConstants.TabViewHeight)
+        .padding(.bottom, UIConstants.TabViewPadding)
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-fileprivate struct ScheduleCellConstants {
+fileprivate struct UIConstants {
     static let imageWidth: CGFloat = 70
     static let imageHeight: CGFloat = 70
     static let imageCornerRadius: CGFloat = 10
@@ -28,11 +28,11 @@ struct ScheduleCell: View {
             Image(item.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(width: ScheduleCellConstants.imageWidth, height: ScheduleCellConstants.imageHeight)
-                .clipShape(RoundedRectangle(cornerRadius: ScheduleCellConstants.imageCornerRadius))
+                .frame(width: UIConstants.imageWidth, height: UIConstants.imageHeight)
+                .clipShape(RoundedRectangle(cornerRadius: UIConstants.imageCornerRadius))
             
-            VStack(alignment: .leading, spacing: ScheduleCellConstants.verticalSpacing) {
-                Text(item.date)
+            VStack(alignment: .leading, spacing: UIConstants.verticalSpacing) {
+                Text(dateFormatter.string(from: item.date))
                     .font(.caption)
                     .foregroundColor(.gray)
                 Text(item.title)
@@ -43,13 +43,13 @@ struct ScheduleCell: View {
             }
             Spacer()
         }
-        .padding(ScheduleCellConstants.horizontalPadding)
+        .padding(UIConstants.horizontalPadding)
         .background(Color.white)
-        .cornerRadius(ScheduleCellConstants.backgroundCornerRadius)
-        .shadow(color: Color.black.opacity(ScheduleCellConstants.shadowColorOpacity),
-                radius: ScheduleCellConstants.shadowRadius,
-                x: ScheduleCellConstants.shadowOffsetX,
-                y: ScheduleCellConstants.shadowOffsetY)
+        .cornerRadius(UIConstants.backgroundCornerRadius)
+        .shadow(color: Color.black.opacity(UIConstants.shadowColorOpacity),
+                radius: UIConstants.shadowRadius,
+                x: UIConstants.shadowOffsetX,
+                y: UIConstants.shadowOffsetY)
     }
 }
 
