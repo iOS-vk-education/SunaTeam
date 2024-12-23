@@ -29,6 +29,12 @@
 		8FBA13D12D1A2BD1003DB8F2 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C92D1A2BD1003DB8F2 /* SearchPlaceViewController.swift */; };
 		8FBA13D22D1A2BD1003DB8F2 /* Delegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C22D1A2BD1003DB8F2 /* Delegate+DataSource.swift */; };
 		8FBA13D32D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13CB2D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift */; };
+		8FBA13E22D1A2D27003DB8F2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13D82D1A2D27003DB8F2 /* Place.swift */; };
+		8FBA13E32D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13D62D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift */; };
+		8FBA13E42D1A2D27003DB8F2 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13DD2D1A2D27003DB8F2 /* SearchPlaceViewController.swift */; };
+		8FBA13E52D1A2D27003DB8F2 /* FavoritePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13D42D1A2D27003DB8F2 /* FavoritePlacesViewController.swift */; };
+		8FBA13E62D1A2D27003DB8F2 /* FavoritePlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13DA2D1A2D27003DB8F2 /* FavoritePlaceCell.swift */; };
+		8FBA13E72D1A2D27003DB8F2 /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13DF2D1A2D27003DB8F2 /* SearchPlaceViewModel.swift */; };
 		8FF43D862D1A129E0052A0AA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D822D1A129E0052A0AA /* NavigationBar.swift */; };
 		8FF43D872D1A129E0052A0AA /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D802D1A129E0052A0AA /* CalendarHeaderView.swift */; };
 		8FF43D882D1A129E0052A0AA /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D7E2D1A129E0052A0AA /* ScheduleModel.swift */; };
@@ -61,6 +67,12 @@
 		8FBA13C62D1A2BD1003DB8F2 /* FavoritePlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaceCell.swift; sourceTree = "<group>"; };
 		8FBA13C92D1A2BD1003DB8F2 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		8FBA13CB2D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
+		8FBA13D42D1A2D27003DB8F2 /* FavoritePlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesViewController.swift; sourceTree = "<group>"; };
+		8FBA13D62D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewDelegate&DataSource.swift"; sourceTree = "<group>"; };
+		8FBA13D82D1A2D27003DB8F2 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		8FBA13DA2D1A2D27003DB8F2 /* FavoritePlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaceCell.swift; sourceTree = "<group>"; };
+		8FBA13DD2D1A2D27003DB8F2 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
+		8FBA13DF2D1A2D27003DB8F2 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
 		8FF43D7D2D1A129E0052A0AA /* NavigationItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemModel.swift; sourceTree = "<group>"; };
 		8FF43D7E2D1A129E0052A0AA /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		8FF43D802D1A129E0052A0AA /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
@@ -99,6 +111,8 @@
 		58F5CABF2D0785E000A3C1FA /* SunaTravel */ = {
 			isa = PBXGroup;
 			children = (
+				8FBA13DC2D1A2D27003DB8F2 /* FavoritePlaces */,
+				8FBA13E12D1A2D27003DB8F2 /* SearchTrip */,
 				8FBA13C82D1A2BD1003DB8F2 /* FavoritePlaces */,
 				8FBA13CD2D1A2BD1003DB8F2 /* SearchTrip */,
 				8FF43D852D1A129E0052A0AA /* MainScreen */,
@@ -246,6 +260,74 @@
 			path = SearchTrip;
 			sourceTree = "<group>";
 		};
+		8FBA13D52D1A2D27003DB8F2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13D42D1A2D27003DB8F2 /* FavoritePlacesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8FBA13D72D1A2D27003DB8F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13D62D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8FBA13D92D1A2D27003DB8F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13D82D1A2D27003DB8F2 /* Place.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8FBA13DB2D1A2D27003DB8F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13DA2D1A2D27003DB8F2 /* FavoritePlaceCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8FBA13DC2D1A2D27003DB8F2 /* FavoritePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13D52D1A2D27003DB8F2 /* Controllers */,
+				8FBA13D72D1A2D27003DB8F2 /* Extensions */,
+				8FBA13D92D1A2D27003DB8F2 /* Models */,
+				8FBA13DB2D1A2D27003DB8F2 /* Views */,
+			);
+			path = FavoritePlaces;
+			sourceTree = "<group>";
+		};
+		8FBA13DE2D1A2D27003DB8F2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13DD2D1A2D27003DB8F2 /* SearchPlaceViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8FBA13E02D1A2D27003DB8F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13DF2D1A2D27003DB8F2 /* SearchPlaceViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8FBA13E12D1A2D27003DB8F2 /* SearchTrip */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA13DE2D1A2D27003DB8F2 /* Controllers */,
+				8FBA13E02D1A2D27003DB8F2 /* Models */,
+			);
+			path = SearchTrip;
+			sourceTree = "<group>";
+		};
 		8FF43D7F2D1A129E0052A0AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +461,12 @@
 				8FBA13CE2D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift in Sources */,
 				8FBA13CF2D1A2BD1003DB8F2 /* PlacesModel.swift in Sources */,
 				8FBA13D02D1A2BD1003DB8F2 /* FavoritePlaceCell.swift in Sources */,
+				8FBA13E22D1A2D27003DB8F2 /* Place.swift in Sources */,
+				8FBA13E32D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift in Sources */,
+				8FBA13E42D1A2D27003DB8F2 /* SearchPlaceViewController.swift in Sources */,
+				8FBA13E52D1A2D27003DB8F2 /* FavoritePlacesViewController.swift in Sources */,
+				8FBA13E62D1A2D27003DB8F2 /* FavoritePlaceCell.swift in Sources */,
+				8FBA13E72D1A2D27003DB8F2 /* SearchPlaceViewModel.swift in Sources */,
 				8FBA13D12D1A2BD1003DB8F2 /* SearchPlaceViewController.swift in Sources */,
 				8FBA13D22D1A2BD1003DB8F2 /* Delegate+DataSource.swift in Sources */,
 				8FBA13D32D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift in Sources */,
