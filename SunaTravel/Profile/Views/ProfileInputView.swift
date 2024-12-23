@@ -5,7 +5,6 @@
 //  Created by salfetka on 26.11.2024.
 //
 
-import Foundation
 import SwiftUI
 
 struct ProfileInputField: View {
@@ -19,7 +18,7 @@ struct ProfileInputField: View {
                 .foregroundColor(.gray)
             TextField(title, text: $text)
                 .padding()
-                .background(Color(UIColor.systemGray6))
+                .background(Color(.systemGray6))
                 .cornerRadius(8)
         }
     }

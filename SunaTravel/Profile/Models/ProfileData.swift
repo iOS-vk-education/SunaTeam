@@ -12,7 +12,7 @@ struct ProfileData {
     var email: String
     var location: String
     var phoneNumber: String
-    var rewardPoints: String
-    var travelTips: String
-    var bucketList: String
+    var rewardPointsCount: Int
+    var travelTipsCount: Int
+    var bucketListCount: Int
 }

@@ -55,7 +55,7 @@ struct EditProfileView: View {
                 }
             }
         }
-        .alert(isPresented: $viewModel.isShowedSuccessMessage) {
+        .alert(isPresented: $viewModel.isSuccessMessageShowed) {
             Alert(
                 title: Text("Success"),
                 message: Text("Changes have been saved successfully.")

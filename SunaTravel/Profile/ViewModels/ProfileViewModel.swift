@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-import Combine
 
 class ProfileViewModel: ObservableObject {
     @Published var profile: ProfileData
-    @Published var isShowedSuccessMessage: Bool = false
+    @Published var isSuccessMessageShowed: Bool = false
     
     init(profile: ProfileData) {
         self.profile = profile
@@ -21,7 +20,7 @@ class ProfileViewModel: ObservableObject {
         profile.email = email
         profile.location = location
         profile.phoneNumber = phoneNumber
-        isShowedSuccessMessage = true
+        isSuccessMessageShowed = true
     }
 }
 
