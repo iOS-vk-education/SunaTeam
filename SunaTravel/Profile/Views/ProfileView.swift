@@ -27,11 +27,11 @@ struct ProfileView: View {
                     .padding(.bottom)
                 
                 HStack {
-                    ProfileInfoItem(count: viewModel.profile.rewardPoints, title: "Reward Points")
+                    ProfileInfoItem(count: viewModel.profile.rewardPointsCount, title: "Reward Points")
                     Spacer()
-                    ProfileInfoItem(count: viewModel.profile.travelTips, title: "Travel Tips")
+                    ProfileInfoItem(count: viewModel.profile.travelTipsCount, title: "Travel Tips")
                     Spacer()
-                    ProfileInfoItem(count: viewModel.profile.bucketList, title: "Bucket List")
+                    ProfileInfoItem(count: viewModel.profile.bucketListCount, title: "Bucket List")
                 }
                 .padding()
                 
@@ -52,12 +52,12 @@ struct ProfileView: View {
 }
 
 struct ProfileInfoItem: View {
-    let count: String
+    let count: Int
     let title: String
     
     var body: some View {
         VStack {
-            Text(count)
+            Text("\(count)")
                 .font(.title2)
             Text(title)
                 .font(.footnote)
@@ -74,9 +74,9 @@ struct ProfileView_Previews: PreviewProvider {
             email: "leonardo@gmail.com",
             location: "Moscow, Russia",
             phoneNumber: "+1-222-333-44-55",
-            rewardPoints: "360",
-            travelTips: "238",
-            bucketList: "473"
+            rewardPointsCount: 360,
+            travelTipsCount: 238,
+            bucketListCount: 473
         ))
 
         ProfileView(viewModel: profileViewModel)
