@@ -10,6 +10,22 @@ import Foundation
 import UIKit
 import SwiftUI
 
+struct HomeViewConstants {
+    static let profileButtonTextSize: CGFloat = 20
+    static let profileButtonCornerRadius: CGFloat = 6
+    static let notificationButtonCornerRadius: CGFloat = 11
+    static let titleLabelTextSize: CGFloat = 34
+    static let destinationLabelTextSize: CGFloat = 18
+    static let viewAllLabelTextSize: CGFloat = 16
+    static let headerStackSpacing: CGFloat = 10
+    static let titleStackSpacing: CGFloat = 5
+    static let mainStackSpacing: CGFloat = 15
+    static let mainStackTopAnchor: CGFloat = 10
+    static let mainStackLeadingAnchor: CGFloat = 20
+    static let mainStackTrailingAnchor: CGFloat = -20
+    static let buttonGrayOpacity: CGFloat = 0.3
+}
+
 class HomeViewController: UIViewController {
 
     private let viewModel = HomeViewModel()
@@ -21,9 +37,9 @@ class HomeViewController: UIViewController {
         button.setTitle("Leonardo", for: .normal)
         button.setImage(UIImage(systemName: "person.circle.fill"), for: .normal)
         button.tintColor = .black
-        button.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        button.layer.cornerRadius = 6
+        button.backgroundColor = UIColor.lightGray.withAlphaComponent(HomeViewConstants.buttonGrayOpacity)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: HomeViewConstants.profileButtonTextSize)
+        button.layer.cornerRadius = HomeViewConstants.profileButtonCornerRadius
         button.layer.masksToBounds = true
         return button
     }()
@@ -33,8 +49,8 @@ class HomeViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "bell.badge"), for: .normal)
         button.tintColor = .black
-        button.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
-        button.layer.cornerRadius = 11
+        button.backgroundColor = UIColor.lightGray.withAlphaComponent(HomeViewConstants.buttonGrayOpacity)
+        button.layer.cornerRadius = HomeViewConstants.notificationButtonCornerRadius
         button.layer.masksToBounds = true
         return button
     }()
@@ -43,7 +59,7 @@ class HomeViewController: UIViewController {
         let label = UILabel()
         label.text = "Explore the\nBeautiful world!"
         label.numberOfLines = 2
-        label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: HomeViewConstants.titleLabelTextSize, weight: .bold)
         let attributedString = NSMutableAttributedString(string: label.text!)
         attributedString.addAttribute(.foregroundColor, value: UIColor.orange, range: NSRange(location: 22, length: 6))
         label.attributedText = attributedString
@@ -53,7 +69,7 @@ class HomeViewController: UIViewController {
     private let bestDestinationLabel: UILabel = {
         let label = UILabel()
         label.text = "Best Destination"
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: HomeViewConstants.destinationLabelTextSize, weight: .semibold)
         return label
     }()
     
@@ -61,7 +77,7 @@ class HomeViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("View all", for: .normal)
         button.setTitleColor(.orange, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: HomeViewConstants.viewAllLabelTextSize, weight: .semibold)
         return button
     }()
     
@@ -90,27 +106,25 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         
-        // Add components to view
         let headerStack = UIStackView(arrangedSubviews: [profileButton, UIView(), notificationButton])
         headerStack.axis = .horizontal
         headerStack.alignment = .center
-        headerStack.spacing = 10
+        headerStack.spacing = HomeViewConstants.headerStackSpacing
         
         let titleStack = UIStackView(arrangedSubviews: [bestDestinationLabel, UIView(), viewAllButton])
         titleStack.axis = .horizontal
-        titleStack.spacing = 5
+        titleStack.spacing = HomeViewConstants.titleStackSpacing
 
-        // Layout
         let mainStack = UIStackView(arrangedSubviews: [headerStack, titleLabel, titleStack, collectionView])
         mainStack.axis = .vertical
-        mainStack.spacing = 15
+        mainStack.spacing = HomeViewConstants.mainStackSpacing
         
         view.addSubview(mainStack)
         mainStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            mainStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            mainStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: HomeViewConstants.mainStackTopAnchor),
+            mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: HomeViewConstants.mainStackLeadingAnchor),
+            mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: HomeViewConstants.mainStackTrailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: UIConstants.collectionViewItemHeight)
         ])
     }
@@ -131,21 +145,19 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-
 struct HomeViewControllerPreview: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> HomeViewController {
         return HomeViewController()
     }
 
     func updateUIViewController(_ uiViewController: HomeViewController, context: Context) {
-        // Обновите состояние контроллера, если требуется
     }
 }
 
 struct HomeViewController_Previews: PreviewProvider {
     static var previews: some View {
         HomeViewControllerPreview()
-            .edgesIgnoringSafeArea(.all) // Убирает отступы в превью
-            .previewDevice("iPhone 13") // Укажите устройство для предварительного просмотра
+            .edgesIgnoringSafeArea(.all)
+            .previewDevice("iPhone 13")
     }
 }
