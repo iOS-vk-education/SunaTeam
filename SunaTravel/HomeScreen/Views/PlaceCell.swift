@@ -15,9 +15,10 @@ struct UIConstants {
     static let titleFontLargeSize: CGFloat = 22
     static let subtitleIconConstant: CGFloat = 24
     static let leadingPadding: CGFloat = 10
-    static var imageHeight: CGFloat { return UIScreen.main.bounds.width * 1.1 } // Более высокий размер изображения
-    static var collectionViewItemHeight: CGFloat { return UIScreen.main.bounds.width * 1.3} // Увеличенная высота карточки
-    static var collectionViewItemWidth: CGFloat { return UIScreen.main.bounds.width * 0.87 } // Более широкий размер карточки
+    static var imageHeight: CGFloat { return UIScreen.main.bounds.width * 1.1 }
+    static var collectionViewItemHeight: CGFloat { return UIScreen.main.bounds.width * 1.3}
+    static var collectionViewItemWidth: CGFloat { return UIScreen.main.bounds.width * 0.87 }
+    static let stackViewSpacing: CGFloat = 4
 }
 
 
@@ -62,7 +63,7 @@ class FavoritePlaceCell: UICollectionViewCell {
     lazy var subtitleStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [locationIcon, subtitleLabel])
         stackView.axis = .horizontal
-        stackView.spacing = 4
+        stackView.spacing = UIConstants.stackViewSpacing
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
