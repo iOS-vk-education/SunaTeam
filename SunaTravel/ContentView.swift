@@ -1,16 +1,18 @@
-//
-//  ContentView.swift
-//  SunaTravel
-//
-//  Created by salfetka on 09.12.2024.
-//
-
 import SwiftUI
+
+struct CreateTripView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> CreateTripViewController {
+        return CreateTripViewController() // Создаём ваш UIKit экран
+    }
+    
+    func updateUIViewController(_ uiViewController: CreateTripViewController, context: Context) {
+        // Обновления, если нужно
+    }
+}
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        CreateTripView() // Показываем UIKit экран вместо ContentView
     }
 }
 
@@ -19,3 +21,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
