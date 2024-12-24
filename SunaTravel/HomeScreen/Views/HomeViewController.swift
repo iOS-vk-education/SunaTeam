@@ -10,23 +10,24 @@ import Foundation
 import UIKit
 import SwiftUI
 
-struct HomeViewConstants {
-    static let profileButtonTextSize: CGFloat = 20
-    static let profileButtonCornerRadius: CGFloat = 6
-    static let notificationButtonCornerRadius: CGFloat = 11
-    static let titleLabelTextSize: CGFloat = 34
-    static let destinationLabelTextSize: CGFloat = 18
-    static let viewAllLabelTextSize: CGFloat = 16
-    static let headerStackSpacing: CGFloat = 10
-    static let titleStackSpacing: CGFloat = 5
-    static let mainStackSpacing: CGFloat = 15
-    static let mainStackTopAnchor: CGFloat = 10
-    static let mainStackLeadingAnchor: CGFloat = 20
-    static let mainStackTrailingAnchor: CGFloat = -20
-    static let buttonGrayOpacity: CGFloat = 0.3
-}
-
 class HomeViewController: UIViewController {
+    
+    fileprivate struct HomeViewConstants {
+        static let profileButtonTextSize: CGFloat = 20
+        static let profileButtonCornerRadius: CGFloat = 6
+        static let notificationButtonCornerRadius: CGFloat = 11
+        static let titleLabelTextSize: CGFloat = 34
+        static let destinationLabelTextSize: CGFloat = 18
+        static let viewAllLabelTextSize: CGFloat = 16
+        static let headerStackSpacing: CGFloat = 10
+        static let titleStackSpacing: CGFloat = 5
+        static let mainStackSpacing: CGFloat = 15
+        static let mainStackTopAnchor: CGFloat = 10
+        static let mainStackLeadingAnchor: CGFloat = 20
+        static let mainStackTrailingAnchor: CGFloat = -20
+        static let buttonGrayOpacity: CGFloat = 0.3
+        static let navBarHeight: CGFloat = 80
+    }
 
     private let viewModel = HomeViewModel()
 
@@ -37,19 +38,16 @@ class HomeViewController: UIViewController {
         button.setTitle("Leonardo", for: .normal)
         button.setImage(UIImage(systemName: "person.circle.fill"), for: .normal)
         button.tintColor = .black
-        button.backgroundColor = UIColor.lightGray.withAlphaComponent(HomeViewConstants.buttonGrayOpacity)
         button.titleLabel?.font = UIFont.systemFont(ofSize: HomeViewConstants.profileButtonTextSize)
         button.layer.cornerRadius = HomeViewConstants.profileButtonCornerRadius
         button.layer.masksToBounds = true
         return button
     }()
 
-    
     private let notificationButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "bell.badge"), for: .normal)
         button.tintColor = .black
-        button.backgroundColor = UIColor.lightGray.withAlphaComponent(HomeViewConstants.buttonGrayOpacity)
         button.layer.cornerRadius = HomeViewConstants.notificationButtonCornerRadius
         button.layer.masksToBounds = true
         return button
@@ -84,15 +82,14 @@ class HomeViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: UIConstants.collectionViewItemWidth, height: UIConstants.collectionViewItemHeight)
-        layout.minimumLineSpacing = UIConstants.collectionViewItemSpacing
+        layout.itemSize = CGSize(width: PlaceCellConstants.collectionViewItemWidth, height: PlaceCellConstants.collectionViewItemHeight)
+        layout.minimumLineSpacing = PlaceCellConstants.collectionViewItemSpacing
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.register(FavoritePlaceCell.self, forCellWithReuseIdentifier: "DestinationCell")
         cv.dataSource = self
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
-
 
     // MARK: - LifeCycle
     
@@ -125,8 +122,23 @@ class HomeViewController: UIViewController {
             mainStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: HomeViewConstants.mainStackTopAnchor),
             mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: HomeViewConstants.mainStackLeadingAnchor),
             mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: HomeViewConstants.mainStackTrailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: UIConstants.collectionViewItemHeight)
+            collectionView.heightAnchor.constraint(equalToConstant: PlaceCellConstants.collectionViewItemHeight)
         ])
+        
+        let navigationBar = NavigationBar()
+        let hostingController = UIHostingController(rootView: navigationBar)
+        addChild(hostingController)
+        view.addSubview(hostingController.view)
+        hostingController.didMove(toParent: self)
+
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            hostingController.view.heightAnchor.constraint(equalToConstant: HomeViewConstants.navBarHeight)
+        ])
+    
     }
 }
 
