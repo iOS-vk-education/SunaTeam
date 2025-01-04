@@ -24,9 +24,6 @@ class OnboardingViewModel: ObservableObject {
             backgroundColor: Color.white
         )
     ]
-//    init(OnboardingSlides: [OnboardingSlide]) {
-//        self.onboardingSlides = OnboardingSlides
-//    }
     
     var buttonText: String {
         currentPage == onboardingSlides.count - 1 ? "Get Started" : "Next"
