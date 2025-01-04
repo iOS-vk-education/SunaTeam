@@ -1,0 +1,21 @@
+name: SunaTravel
+options:
+  deploymentTarget:
+    iOS: '15.0'
+targets:
+  SunaTravel:
+    type: application
+    platform: iOS
+    sources:
+      - FavoritePlaces
+      - SearchTrip
+      - MainScreen
+      - Auth
+      - Onboardings
+      - Extensions
+      - path: .
+        includes:
+          - "*.swift"
+    resources:
+      - ./Assets.xcassets
+      - ./LaunchScreen.storyboard

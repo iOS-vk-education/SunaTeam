@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		000DC5D56B438DE5AA20169F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B9D5C46DEDCF04791AA654 /* OnboardingViewController.swift */; };
+		103C114220E56C7BD0B7AD12 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD89062EFB116C89636B14 /* Color+Extensions.swift */; };
+		158CC5E1B34C65F1EAB14BDD /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965121416CB2AF07D6E48B69 /* ScheduleCell.swift */; };
+		178C68793047E82B33DDD0E4 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D59A144B576B69E0E455A24 /* ScheduleModel.swift */; };
+		35F945C9D8C871B0D252107B /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BBCFBF5BC60A6ED611933 /* OnboardingButton.swift */; };
+		3B222EB9A25333D00D4E3B06 /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705994932917AC8A0EDEED5 /* SignUpScreenView.swift */; };
+		3B8F62C27F4419432D267706 /* OnboardinSlidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B26631ADD9D7921B5651158 /* OnboardinSlidesView.swift */; };
+		458C22FE584DB23CFA1E6CB0 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543521D7D79520A0D02DDD60 /* OnboardingContainerView.swift */; };
+		47FB2D03043EC747C5B378C1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E205F132F696F4AFD3C930 /* OnboardingView.swift */; };
+		6D14DFA18E45DAC142C75AEE /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846AF59982E8181589F197B /* OnboardingViewModel.swift */; };
+		7A9CE36C5C0CE929876890EB /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617236B9B6A2B3ECCC1A40D4 /* SearchPlaceViewModel.swift */; };
+		82E74BCADD34CBD6E2812FBE /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916DB7F424EF65D42911ED2 /* OnboardingSlide.swift */; };
+		8F374362361203BB0394468F /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F673A15716CDA5016C2E60C8 /* CalendarHeaderView.swift */; };
+		909539A98A5F45BC798CB38C /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5AC06365260AC53C1D624F /* SignInScreenView.swift */; };
+		94CBD74536D941D454DC05B7 /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A876DC126679A49BA9E3F3D /* PageIndicatorView.swift */; };
+		94F5E8C324AD95744B04512A /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7C3B87E807BF51D53CDF2 /* SearchPlaceViewController.swift */; };
+		95CB5C2FA5861E9565EDBEF6 /* SunaTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FE7EA83D14096024AD87E6 /* SunaTravelApp.swift */; };
+		9763EE33015758B7E4640CE5 /* CollectionViewDelegate&DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC225614D301BE555FBDD1 /* CollectionViewDelegate&DataSource.swift */; };
+		A3EA1ECC543AD71D88F1BF6F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCCE13A6CCF11E86ACC75D /* NavigationBar.swift */; };
+		B2F775D2670EB2AF9EFC9974 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB40B4091DBD15896FBFED8 /* MainViewController.swift */; };
+		B326BD1FDA4923293586DDC4 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11706BCD4741F181EE348E0 /* TextFieldView.swift */; };
+		C0769D7FFF7D61F16EFD1C67 /* OnboardingToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31D2F93A3C85E130298167 /* OnboardingToolbar.swift */; };
+		CF3BE9DD5017147DE15EFCB4 /* NavigationItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002750DDCF211CAF4E1BE8CF /* NavigationItemModel.swift */; };
+		D1CEB05BD82952870E2DC68B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC0A6F0760281CAF7BDA78 /* ContentView.swift */; };
+		EB9955124D45A7A70BC83A66 /* FavoritePlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311F14C47660BEC563B4A06 /* FavoritePlaceCell.swift */; };
+		EBD2510B566E41E6C5948A5C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD2EFC9A72493C01E18785 /* HeaderView.swift */; };
+		F596C4124BAB424989A75A59 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5BCDACDCBC961A4850D81C /* Place.swift */; };
+		F7940DC9DA534AA745B508C0 /* FavoritePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29BBAA89191271BEC21A93 /* FavoritePlacesViewController.swift */; };
+		FE1E14198ED3CF6FC1F32398 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DDE2A24D4134A2DA4FDD07 /* ButtonsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		002750DDCF211CAF4E1BE8CF /* NavigationItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemModel.swift; sourceTree = "<group>"; };
+		11DC0A6F0760281CAF7BDA78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B26631ADD9D7921B5651158 /* OnboardinSlidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardinSlidesView.swift; sourceTree = "<group>"; };
+		2CE7C3B87E807BF51D53CDF2 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
+		3EB40B4091DBD15896FBFED8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4AEC225614D301BE555FBDD1 /* CollectionViewDelegate&DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewDelegate&DataSource.swift"; sourceTree = "<group>"; };
+		543521D7D79520A0D02DDD60 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		5916DB7F424EF65D42911ED2 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		5A876DC126679A49BA9E3F3D /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
+		6063F4D9CAF5809F56062F37 /* SunaTravel.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SunaTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		617236B9B6A2B3ECCC1A40D4 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
+		6A6BBCFBF5BC60A6ED611933 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		70DDE2A24D4134A2DA4FDD07 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		82DD89062EFB116C89636B14 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		8D59A144B576B69E0E455A24 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		965121416CB2AF07D6E48B69 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		97FE7EA83D14096024AD87E6 /* SunaTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunaTravelApp.swift; sourceTree = "<group>"; };
+		9B31D2F93A3C85E130298167 /* OnboardingToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToolbar.swift; sourceTree = "<group>"; };
+		9D5AC06365260AC53C1D624F /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
+		A11706BCD4741F181EE348E0 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		A6E205F132F696F4AFD3C930 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		AB5BCDACDCBC961A4850D81C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		ACCCCE13A6CCF11E86ACC75D /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		B311F14C47660BEC563B4A06 /* FavoritePlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaceCell.swift; sourceTree = "<group>"; };
+		C846AF59982E8181589F197B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		D3AD2EFC9A72493C01E18785 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F673A15716CDA5016C2E60C8 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		F705994932917AC8A0EDEED5 /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
+		F7B9D5C46DEDCF04791AA654 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		FA29BBAA89191271BEC21A93 /* FavoritePlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		016378CAF53BD3E92DED7F13 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA29BBAA89191271BEC21A93 /* FavoritePlacesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1BEDA2D7916DC82FE25AD2C3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				DA73ABA884CE93C27F93B70D /* Elements */,
+				8EA45237CB45856D08164D36 /* SignInScreen */,
+				516A97E00B41206EA52F0CA1 /* SignUpScreen */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1DB2EA00D80375CA7EAC95B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				617236B9B6A2B3ECCC1A40D4 /* SearchPlaceViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		417DD1250EE15C8A378AE1F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6A6BBCFBF5BC60A6ED611933 /* OnboardingButton.swift */,
+				543521D7D79520A0D02DDD60 /* OnboardingContainerView.swift */,
+				9B31D2F93A3C85E130298167 /* OnboardingToolbar.swift */,
+				A6E205F132F696F4AFD3C930 /* OnboardingView.swift */,
+				1B26631ADD9D7921B5651158 /* OnboardinSlidesView.swift */,
+				5A876DC126679A49BA9E3F3D /* PageIndicatorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		42B8C11CA252BF922104B6ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB5BCDACDCBC961A4850D81C /* Place.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4546756B2C6C4D7A0814E51E /* Onboardings */ = {
+			isa = PBXGroup;
+			children = (
+				6616F093BFAD1B61F58CCEF9 /* Controller */,
+				6C1C125EBBC7996D7D159C37 /* Models */,
+				4857AADF0DF4A440ACF71E29 /* Slides */,
+				417DD1250EE15C8A378AE1F8 /* Views */,
+			);
+			path = Onboardings;
+			sourceTree = "<group>";
+		};
+		4857AADF0DF4A440ACF71E29 /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				5916DB7F424EF65D42911ED2 /* OnboardingSlide.swift */,
+			);
+			path = Slides;
+			sourceTree = "<group>";
+		};
+		516A97E00B41206EA52F0CA1 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F705994932917AC8A0EDEED5 /* SignUpScreenView.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		5205C13CA2CB9F89A6ED0E9A /* FavoritePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				016378CAF53BD3E92DED7F13 /* Controllers */,
+				7DC31304DA71795476173B27 /* Extensions */,
+				42B8C11CA252BF922104B6ED /* Models */,
+				FDA84230F8254FFD23E989F0 /* Views */,
+			);
+			path = FavoritePlaces;
+			sourceTree = "<group>";
+		};
+		643C84B1D30C011825E34881 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F673A15716CDA5016C2E60C8 /* CalendarHeaderView.swift */,
+				3EB40B4091DBD15896FBFED8 /* MainViewController.swift */,
+				ACCCCE13A6CCF11E86ACC75D /* NavigationBar.swift */,
+				965121416CB2AF07D6E48B69 /* ScheduleCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6616F093BFAD1B61F58CCEF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7B9D5C46DEDCF04791AA654 /* OnboardingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6660EC454F8467B09519FC62 = {
+			isa = PBXGroup;
+			children = (
+				1BEDA2D7916DC82FE25AD2C3 /* Auth */,
+				8FA5444E3718954A9D75AFF0 /* Extensions */,
+				5205C13CA2CB9F89A6ED0E9A /* FavoritePlaces */,
+				C3E30BE373AB12461C4A32A0 /* MainScreen */,
+				4546756B2C6C4D7A0814E51E /* Onboardings */,
+				EC16019C199FDC14D11511A9 /* SearchTrip */,
+				D02B9531E4BED6679AE8DCB5 /* SunaTravel */,
+				CD4D1BFEB9870B2EBE4D4D22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C1C125EBBC7996D7D159C37 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C846AF59982E8181589F197B /* OnboardingViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7DC31304DA71795476173B27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4AEC225614D301BE555FBDD1 /* CollectionViewDelegate&DataSource.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8EA45237CB45856D08164D36 /* SignInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9D5AC06365260AC53C1D624F /* SignInScreenView.swift */,
+			);
+			path = SignInScreen;
+			sourceTree = "<group>";
+		};
+		8FA5444E3718954A9D75AFF0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82DD89062EFB116C89636B14 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3C813FAB4891E8BDBAC94DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CE7C3B87E807BF51D53CDF2 /* SearchPlaceViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C017269DFC1552614DC56460 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				002750DDCF211CAF4E1BE8CF /* NavigationItemModel.swift */,
+				8D59A144B576B69E0E455A24 /* ScheduleModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3E30BE373AB12461C4A32A0 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C017269DFC1552614DC56460 /* Models */,
+				643C84B1D30C011825E34881 /* Views */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		CD4D1BFEB9870B2EBE4D4D22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6063F4D9CAF5809F56062F37 /* SunaTravel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D02B9531E4BED6679AE8DCB5 /* SunaTravel */ = {
+			isa = PBXGroup;
+			children = (
+				11DC0A6F0760281CAF7BDA78 /* ContentView.swift */,
+				97FE7EA83D14096024AD87E6 /* SunaTravelApp.swift */,
+			);
+			name = SunaTravel;
+			path = .;
+			sourceTree = "<group>";
+		};
+		DA73ABA884CE93C27F93B70D /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				70DDE2A24D4134A2DA4FDD07 /* ButtonsView.swift */,
+				D3AD2EFC9A72493C01E18785 /* HeaderView.swift */,
+				A11706BCD4741F181EE348E0 /* TextFieldView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		EC16019C199FDC14D11511A9 /* SearchTrip */ = {
+			isa = PBXGroup;
+			children = (
+				A3C813FAB4891E8BDBAC94DD /* Controllers */,
+				1DB2EA00D80375CA7EAC95B4 /* Models */,
+			);
+			path = SearchTrip;
+			sourceTree = "<group>";
+		};
+		FDA84230F8254FFD23E989F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B311F14C47660BEC563B4A06 /* FavoritePlaceCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8FFF6BF7A396993995CA867 /* SunaTravel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D76A8A5EAB69A0B33A710434 /* Build configuration list for PBXNativeTarget "SunaTravel" */;
+			buildPhases = (
+				31B17BE9217E42067F7C7373 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunaTravel;
+			productName = SunaTravel;
+			productReference = 6063F4D9CAF5809F56062F37 /* SunaTravel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCA2CE3A65CAF86302AE8D98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 74410B19E4DD70EA0ABA9081 /* Build configuration list for PBXProject "SunaTravel" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6660EC454F8467B09519FC62;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8FFF6BF7A396993995CA867 /* SunaTravel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31B17BE9217E42067F7C7373 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE1E14198ED3CF6FC1F32398 /* ButtonsView.swift in Sources */,
+				8F374362361203BB0394468F /* CalendarHeaderView.swift in Sources */,
+				9763EE33015758B7E4640CE5 /* CollectionViewDelegate&DataSource.swift in Sources */,
+				103C114220E56C7BD0B7AD12 /* Color+Extensions.swift in Sources */,
+				D1CEB05BD82952870E2DC68B /* ContentView.swift in Sources */,
+				EB9955124D45A7A70BC83A66 /* FavoritePlaceCell.swift in Sources */,
+				F7940DC9DA534AA745B508C0 /* FavoritePlacesViewController.swift in Sources */,
+				EBD2510B566E41E6C5948A5C /* HeaderView.swift in Sources */,
+				B2F775D2670EB2AF9EFC9974 /* MainViewController.swift in Sources */,
+				A3EA1ECC543AD71D88F1BF6F /* NavigationBar.swift in Sources */,
+				CF3BE9DD5017147DE15EFCB4 /* NavigationItemModel.swift in Sources */,
+				3B8F62C27F4419432D267706 /* OnboardinSlidesView.swift in Sources */,
+				35F945C9D8C871B0D252107B /* OnboardingButton.swift in Sources */,
+				458C22FE584DB23CFA1E6CB0 /* OnboardingContainerView.swift in Sources */,
+				82E74BCADD34CBD6E2812FBE /* OnboardingSlide.swift in Sources */,
+				C0769D7FFF7D61F16EFD1C67 /* OnboardingToolbar.swift in Sources */,
+				47FB2D03043EC747C5B378C1 /* OnboardingView.swift in Sources */,
+				000DC5D56B438DE5AA20169F /* OnboardingViewController.swift in Sources */,
+				6D14DFA18E45DAC142C75AEE /* OnboardingViewModel.swift in Sources */,
+				94CBD74536D941D454DC05B7 /* PageIndicatorView.swift in Sources */,
+				F596C4124BAB424989A75A59 /* Place.swift in Sources */,
+				158CC5E1B34C65F1EAB14BDD /* ScheduleCell.swift in Sources */,
+				178C68793047E82B33DDD0E4 /* ScheduleModel.swift in Sources */,
+				94F5E8C324AD95744B04512A /* SearchPlaceViewController.swift in Sources */,
+				7A9CE36C5C0CE929876890EB /* SearchPlaceViewModel.swift in Sources */,
+				909539A98A5F45BC798CB38C /* SignInScreenView.swift in Sources */,
+				3B222EB9A25333D00D4E3B06 /* SignUpScreenView.swift in Sources */,
+				95CB5C2FA5861E9565EDBEF6 /* SunaTravelApp.swift in Sources */,
+				B326BD1FDA4923293586DDC4 /* TextFieldView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0292A951BB1047AD3B32A431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2A0F763A2758D9FB27A97B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E9D3AFC0DBA0F6BD91E796DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F7CDE4482F757AF65B333B70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74410B19E4DD70EA0ABA9081 /* Build configuration list for PBXProject "SunaTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D3AFC0DBA0F6BD91E796DD /* Debug */,
+				C2A0F763A2758D9FB27A97B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D76A8A5EAB69A0B33A710434 /* Build configuration list for PBXNativeTarget "SunaTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0292A951BB1047AD3B32A431 /* Debug */,
+				F7CDE4482F757AF65B333B70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCA2CE3A65CAF86302AE8D98 /* Project object */;
+}
