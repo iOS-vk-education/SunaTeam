@@ -10,52 +10,44 @@ import SwiftUI
 
 struct SignUpScreenView: View {
     @Environment(\.presentationMode) var presentationMode
-    var body: some View {
-        VStack {
-            HeaderView(largeText: "Sign up now",
-                       smallText: "Please fill the details and create account")
-            TextFieldView(text: "Name", isSecureField: false)
-                .padding(.top, 40)
-            TextFieldView(text: "Email", isSecureField: false)
-            TextFieldView(text: "Password", isSecureField: true)
-            
-            Button {
-                return Void()
-            } label: {
-                NavigationLink(destination: EmptyView()) {
-                    Text("Sign Up")
-                }
-                .buttonStyle(YellowButtonStyle())
-                .padding(.top, 24)
-            }
-            .padding(.bottom, 40)
-            
-            HStack {
-                Text("Already have an account")
-                    .font(.system(size: 14))
-                    .foregroundStyle(.secondary)
-                Button {
-                    return Void()
-                } label: {
-                    NavigationLink(destination: SignInScreenView()) {
-                        Text("Sign in")
-                            .foregroundStyle(Color.blue)
-                            .font(.system(size: 14))
-                    }
-                }
-            }
-        }
-        .padding(.horizontal, 40)
-        .navigationBarItems(leading: Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-        }) {
-            Image(systemName: "arrow.left")
-                .foregroundColor(.secondary)
-        })
-        .navigationBarBackButtonHidden(true)
-    }
-}
+    @State private var isNavigatingToHome = false
+    @State private var shouldHideBackButton = false
 
-#Preview {
-    SignUpScreenView()
+    var body: some View {
+        NavigationView {
+            VStack {
+                HeaderView(largeText: "Sign up now",
+                           smallText: "Please fill the details and create an account")
+                
+                TextFieldView(text: "Name", isSecureField: false)
+                    .padding(.top, 40)
+                TextFieldView(text: "Email", isSecureField: false)
+                TextFieldView(text: "Password", isSecureField: true)
+                
+                NavigationLink(destination: HomeScreenView(), isActive: $isNavigatingToHome) {
+                    Button("Sign Up") {
+                        isNavigatingToHome = true
+                        shouldHideBackButton = true
+                    }
+                    .buttonStyle(YellowButtonStyle())
+                    .padding(.top, 24)
+                }
+                .padding(.bottom, 40)
+                
+                HStack {
+                    Text("Already have an account")
+                        .font(.system(size: 14))
+                        .foregroundStyle(.secondary)
+                    
+                    Button("Sign in") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    .foregroundStyle(Color.blue)
+                    .font(.system(size: 14))
+                }
+            }
+            .padding(.horizontal, 40)
+            .navigationBarBackButtonHidden(shouldHideBackButton) 
+        }
+    }
 }

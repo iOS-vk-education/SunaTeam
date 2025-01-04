@@ -28,27 +28,31 @@ struct OnboardingContainerView: View {
     @ObservedObject var viewModel: OnboardingViewModel
     
     var body: some View {
-            NavigationView {
-                VStack {
-                    OnboardingSlidesView(slides: viewModel.onboardingSlides, currentPage: $viewModel.currentPage)
-                        .ignoresSafeArea(.all)
-                    
-                    PageIndicatorView(totalPages: viewModel.onboardingSlides.count, currentPage: viewModel.currentPage)
-                    
-                    OnboardingButton(text: viewModel.buttonText) {
-                        withAnimation(.easeInOut(duration: OnboardingConstants.buttonAnimationDuration)) {
+        NavigationView {
+            VStack {
+                OnboardingSlidesView(slides: viewModel.onboardingSlides, currentPage: $viewModel.currentPage)
+                    .ignoresSafeArea(.all)
+                
+                PageIndicatorView(totalPages: viewModel.onboardingSlides.count, currentPage: viewModel.currentPage)
+                
+                OnboardingButton(text: viewModel.buttonText) {
+                    withAnimation(.easeInOut(duration: OnboardingConstants.buttonAnimationDuration)) {
+                        if viewModel.currentPage < viewModel.onboardingSlides.count - 1 {
                             viewModel.nextPage()
+                        } else {
+                            isFirstLaunch = false
                         }
                     }
-                    .padding(.horizontal, OnboardingConstants.buttonHorizontalPadding)
-                    .padding(.bottom, OnboardingConstants.buttonBottomPadding)
                 }
-                .background(Color.white)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        OnboardingToolbar(isFirstLaunch: $isFirstLaunch)
-                    }
+                .padding(.horizontal, OnboardingConstants.buttonHorizontalPadding)
+                .padding(.bottom, OnboardingConstants.buttonBottomPadding)
+            }
+            .background(Color.white)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    OnboardingToolbar(isFirstLaunch: $isFirstLaunch)
                 }
             }
         }
+    }
 }

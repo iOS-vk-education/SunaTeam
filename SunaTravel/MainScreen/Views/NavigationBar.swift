@@ -16,11 +16,13 @@ struct NavigationBar: View {
     var body: some View {
         TabView {
             ForEach(navigationItems, id: \.title) { item in
-                Text("")
-                    .tabItem {
-                        Image(systemName: item.systemImage)
-                        Text(item.title)
-                    }
+                NavigationLink(destination: item.destinationView) {
+                    Text("")
+                }
+                .tabItem {
+                    Image(systemName: item.systemImage)
+                    Text(item.title)
+                }
             }
         }
         .accentColor(.blue)
