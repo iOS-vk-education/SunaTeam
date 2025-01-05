@@ -38,15 +38,11 @@ struct MainView: View {
             }
             .navigationBarTitle("Schedule", displayMode: .inline)
             .navigationBarItems(
-                leading: Button(action: {
-                    // MARK: - действие для кнопки назад
-                }) {
+                leading: NavigationLink(destination: HomeScreenView()) {
                     Image(systemName: "arrow.backward")
                         .foregroundColor(.black)
                 },
-                trailing: Button(action: {
-                    // MARK: - действие для перехода в профиль
-                }) {
+                trailing: NavigationLink(destination: ProfileView(viewModel: profileViewModel)) {
                     Image(systemName: "person.crop.circle")
                         .foregroundColor(.black)
                 }

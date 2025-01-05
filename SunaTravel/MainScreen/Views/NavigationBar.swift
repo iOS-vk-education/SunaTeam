@@ -14,22 +14,25 @@ fileprivate struct UIConstants {
 
 struct NavigationBar: View {
     var body: some View {
-        TabView {
-            ForEach(navigationItems, id: \.title) { item in
-                NavigationLink(destination: item.destinationView) {
-                    Text("")
-                }
-                .tabItem {
-                    Image(systemName: item.systemImage)
-                    Text(item.title)
+        NavigationView {
+            TabView {
+                ForEach(navigationItems, id: \.title) { item in
+                    NavigationLink(destination: item.destinationView) {
+                        Text("Go to " + item.title)
+                    }
+                    .tabItem {
+                        Image(systemName: item.systemImage)
+                        Text(item.title)
+                    }
                 }
             }
+            .accentColor(.blue)
+            .frame(height: UIConstants.TabViewHeight)
+            .padding(.bottom, UIConstants.TabViewPadding)
         }
-        .accentColor(.blue)
-        .frame(height: UIConstants.TabViewHeight)
-        .padding(.bottom, UIConstants.TabViewPadding)
     }
 }
+
 
 struct BottomNavigationBar_Previews: PreviewProvider {
     static var previews: some View {

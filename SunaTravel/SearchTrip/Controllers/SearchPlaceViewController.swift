@@ -130,6 +130,21 @@ class SearchPlacesViewController: UIViewController, UICollectionViewDelegate, UI
     }
 }
 
+struct SearchScreenView: View {
+    var body: some View {
+        SearchViewControllerWrapper()
+    }
+}
+
+struct SearchViewControllerWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> SearchPlacesViewController {
+        return SearchPlacesViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: SearchPlacesViewController, context: Context) {
+    }
+}
+
 struct SearchPlacesViewControllerRepresentable: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> UINavigationController {

@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: HomeViewConstants.profileButtonTextSize)
         button.layer.cornerRadius = HomeViewConstants.profileButtonCornerRadius
         button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -78,6 +79,11 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: HomeViewConstants.viewAllLabelTextSize, weight: .semibold)
         return button
     }()
+    
+    @objc private func profileButtonTapped() {
+        let profileVC = UIHostingController(rootView: ProfileView(viewModel: profileViewModel))
+            navigationController?.pushViewController(profileVC, animated: true)
+        }
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
