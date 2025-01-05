@@ -14,6 +14,8 @@
 		58461BBF2D11AAA000B3614B /* ProfileNavigationLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58461BBE2D11AAA000B3614B /* ProfileNavigationLinks.swift */; };
 		58461BC12D11AAB700B3614B /* ProfileInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58461BC02D11AAB700B3614B /* ProfileInputView.swift */; };
 		58461BC32D11AAD700B3614B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58461BC22D11AAD700B3614B /* ProfileViewModel.swift */; };
+		5899FBFB2D2ADE02005562A2 /* CollectionViewDelegate&DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899FBFA2D2ADE01005562A2 /* CollectionViewDelegate&DataSource.swift */; };
+		5899FBFD2D2ADE13005562A2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899FBFC2D2ADE13005562A2 /* Place.swift */; };
 		58F5CAC12D0785E000A3C1FA /* SunaTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5CAC02D0785E000A3C1FA /* SunaTravelApp.swift */; };
 		58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5CAC22D0785E000A3C1FA /* ContentView.swift */; };
 		58F5CAC52D0785E300A3C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F5CAC42D0785E300A3C1FA /* Assets.xcassets */; };
@@ -36,10 +38,8 @@
 		8F7310F32D0DA0A0007A78AC /* OnboardingToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */; };
 		8F7311252D0FA44C007A78AC /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8F7311242D0FA442007A78AC /* swiftlint.yml */; };
 		8FBA13CE2D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C02D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift */; };
-		8FBA13CF2D1A2BD1003DB8F2 /* PlacesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C42D1A2BD1003DB8F2 /* PlacesModel.swift */; };
 		8FBA13D02D1A2BD1003DB8F2 /* FavoritePlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C62D1A2BD1003DB8F2 /* FavoritePlaceCell.swift */; };
 		8FBA13D12D1A2BD1003DB8F2 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C92D1A2BD1003DB8F2 /* SearchPlaceViewController.swift */; };
-		8FBA13D22D1A2BD1003DB8F2 /* Delegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C22D1A2BD1003DB8F2 /* Delegate+DataSource.swift */; };
 		8FBA13D32D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13CB2D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift */; };
 		8FF43D862D1A129E0052A0AA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D822D1A129E0052A0AA /* NavigationBar.swift */; };
 		8FF43D872D1A129E0052A0AA /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D802D1A129E0052A0AA /* CalendarHeaderView.swift */; };
@@ -57,6 +57,8 @@
 		58461BBE2D11AAA000B3614B /* ProfileNavigationLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationLinks.swift; sourceTree = "<group>"; };
 		58461BC02D11AAB700B3614B /* ProfileInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInputView.swift; sourceTree = "<group>"; };
 		58461BC22D11AAD700B3614B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5899FBFA2D2ADE01005562A2 /* CollectionViewDelegate&DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionViewDelegate&DataSource.swift"; sourceTree = "<group>"; };
+		5899FBFC2D2ADE13005562A2 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		58F5CABD2D0785E000A3C1FA /* SunaTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunaTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F5CAC02D0785E000A3C1FA /* SunaTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunaTravelApp.swift; sourceTree = "<group>"; };
 		58F5CAC22D0785E000A3C1FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,8 +82,6 @@
 		8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToolbar.swift; sourceTree = "<group>"; };
 		8F7311242D0FA442007A78AC /* swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 		8FBA13C02D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesViewController.swift; sourceTree = "<group>"; };
-		8FBA13C22D1A2BD1003DB8F2 /* Delegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delegate+DataSource.swift"; sourceTree = "<group>"; };
-		8FBA13C42D1A2BD1003DB8F2 /* PlacesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesModel.swift; sourceTree = "<group>"; };
 		8FBA13C62D1A2BD1003DB8F2 /* FavoritePlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaceCell.swift; sourceTree = "<group>"; };
 		8FBA13C92D1A2BD1003DB8F2 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		8FBA13CB2D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		8FBA13C32D1A2BD1003DB8F2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8FBA13C22D1A2BD1003DB8F2 /* Delegate+DataSource.swift */,
+				5899FBFA2D2ADE01005562A2 /* CollectionViewDelegate&DataSource.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 		8FBA13C52D1A2BD1003DB8F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8FBA13C42D1A2BD1003DB8F2 /* PlacesModel.swift */,
+				5899FBFC2D2ADE13005562A2 /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -471,7 +471,9 @@
 				58461BBB2D11AA6800B3614B /* EditProfileView.swift in Sources */,
 				58461BC32D11AAD700B3614B /* ProfileViewModel.swift in Sources */,
 				58461BC12D11AAB700B3614B /* ProfileInputView.swift in Sources */,
+				5899FBFD2D2ADE13005562A2 /* Place.swift in Sources */,
 				8F7310F32D0DA0A0007A78AC /* OnboardingToolbar.swift in Sources */,
+				5899FBFB2D2ADE02005562A2 /* CollectionViewDelegate&DataSource.swift in Sources */,
 				8F7310DB2D0B8F76007A78AC /* OnboardingSlide.swift in Sources */,
 				58461BBF2D11AAA000B3614B /* ProfileNavigationLinks.swift in Sources */,
 				8F7310DF2D0B8FB4007A78AC /* OnboardingViewController.swift in Sources */,
@@ -485,10 +487,8 @@
 				8F7310EB2D0D91B5007A78AC /* Color+Extensions.swift in Sources */,
 				8F7310ED2D0D9FEE007A78AC /* OnboardinSlidesView.swift in Sources */,
 				8FBA13CE2D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift in Sources */,
-				8FBA13CF2D1A2BD1003DB8F2 /* PlacesModel.swift in Sources */,
 				8FBA13D02D1A2BD1003DB8F2 /* FavoritePlaceCell.swift in Sources */,
 				8FBA13D12D1A2BD1003DB8F2 /* SearchPlaceViewController.swift in Sources */,
-				8FBA13D22D1A2BD1003DB8F2 /* Delegate+DataSource.swift in Sources */,
 				8FBA13D32D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift in Sources */,
 				58461BB72D11AA2E00B3614B /* ProfileData.swift in Sources */,
 				8F7310E12D0B8FCC007A78AC /* OnboardingViewModel.swift in Sources */,
