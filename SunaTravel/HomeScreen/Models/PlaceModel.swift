@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Place {
+struct PlaceModel {
     let title: String
     let subtitle: String
     let imageName: String

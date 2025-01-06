@@ -22,7 +22,7 @@ struct PlaceCellConstants {
 }
 
 
-class FavoritePlaceCell: UICollectionViewCell {
+class HomePlaceCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -113,40 +113,40 @@ class FavoritePlaceCell: UICollectionViewCell {
         ])
     }
     
-    func configure(with place: Place) {
+    func configure(with place: PlaceModel) {
         titleLabel.text = place.title
         subtitleLabel.text = place.subtitle
         imageView.image = UIImage(named: place.imageName)
     }
 }
 
-protocol PlaceProvider {
-    func getModel() -> Place
+protocol PlaceModelProvider {
+    func getModel() -> PlaceModel
 }
 
-struct FavoritePlaceCellRepresentable: UIViewRepresentable {
-    var placeProvider: PlaceProvider
+struct HomePlaceCellRepresentable: UIViewRepresentable {
+    var placeProvider: PlaceModelProvider
 
-    func makeUIView(context: Context) -> FavoritePlaceCell {
-        let cell = FavoritePlaceCell()
+    func makeUIView(context: Context) -> HomePlaceCell {
+        let cell = HomePlaceCell()
         cell.configure(with: placeProvider.getModel())
         return cell
     }
 
-    func updateUIView(_ uiView: FavoritePlaceCell, context: Context) {
+    func updateUIView(_ uiView: HomePlaceCell, context: Context) {
         uiView.configure(with: placeProvider.getModel())
     }
 }
 
-struct ExamplePlaceProvider: PlaceProvider {
-    func getModel() -> Place {
-        return Place(title: "Casa Las Tirtugas", subtitle: "Av Damero, Mexico", imageName: "FirstPlace")
+struct ExamplePlaceModelProvider: PlaceModelProvider {
+    func getModel() -> PlaceModel {
+        return PlaceModel(title: "Casa Las Tirtugas", subtitle: "Av Damero, Mexico", imageName: "FirstPlace")
     }
 }
 
-struct FavoritePlaceCell_Previews: PreviewProvider {
+struct HomePlaceCell_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritePlaceCellRepresentable(placeProvider: ExamplePlaceProvider())
+        HomePlaceCellRepresentable(placeProvider: ExamplePlaceModelProvider())
             .frame(width: PlaceCellConstants.collectionViewItemWidth, height: PlaceCellConstants.collectionViewItemHeight)
             .previewLayout(.sizeThatFits)
             .padding()

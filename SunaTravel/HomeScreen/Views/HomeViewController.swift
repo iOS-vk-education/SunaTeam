@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
         layout.itemSize = CGSize(width: PlaceCellConstants.collectionViewItemWidth, height: PlaceCellConstants.collectionViewItemHeight)
         layout.minimumLineSpacing = PlaceCellConstants.collectionViewItemSpacing
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.register(FavoritePlaceCell.self, forCellWithReuseIdentifier: "DestinationCell")
+        cv.register(HomePlaceCell.self, forCellWithReuseIdentifier: "DestinationCell")
         cv.dataSource = self
         cv.showsHorizontalScrollIndicator = false
         return cv
@@ -148,7 +148,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DestinationCell", for: indexPath) as? FavoritePlaceCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DestinationCell", for: indexPath) as? HomePlaceCell else {
             return UICollectionViewCell()
         }
         let place = viewModel.places[indexPath.row]

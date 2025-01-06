@@ -9,8 +9,8 @@ import Foundation
 
 class HomeViewModel {
     
-    let places: [Place] = [
-        Place(title: "Niladri Reservoir", subtitle: "Tekergat, Sunamgnj", imageName: "FirstPlace"),
-        Place(title: "Darma Valley", subtitle: "Darma, India", imageName: "SecondPlace")
+    let places: [PlaceModel] = [
+        PlaceModel(title: "Niladri Reservoir", subtitle: "Tekergat, Sunamgnj", imageName: "FirstPlace"),
+        PlaceModel(title: "Darma Valley", subtitle: "Darma, India", imageName: "SecondPlace")
     ]
 }
