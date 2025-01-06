@@ -10,15 +10,15 @@ import SwiftUI
 
 struct BookmarksView: View {
     var body: some View {
-        Text("Bookmarks Screen")
-            .font(.title)
+        FavoritePlacesViewControllerWrapper()
+            .navigationBarTitle("Favorite Places", displayMode: .inline)
     }
 }
 
 struct PreviousTripsView: View {
     var body: some View {
-        Text("Previous Trips Screen")
-            .font(.title)
+        SearchViewControllerWrapper()
+            .navigationBarTitle("Search Places", displayMode: .inline)
     }
 }
 

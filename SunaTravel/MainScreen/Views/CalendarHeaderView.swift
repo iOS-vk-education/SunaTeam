@@ -8,7 +8,6 @@
 import SwiftUI
 
 fileprivate struct UIConstants {
-    //static let daysInWeek = 7
     static let weekdayAdjustmentForSunday: Int = 6
     static let weekdayAdjustment: Int = 2
     static let circleSize: CGFloat = 40

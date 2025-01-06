@@ -41,7 +41,6 @@ class HomeViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: HomeViewConstants.profileButtonTextSize)
         button.layer.cornerRadius = HomeViewConstants.profileButtonCornerRadius
         button.layer.masksToBounds = true
-        button.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -85,6 +84,12 @@ class HomeViewController: UIViewController {
             navigationController?.pushViewController(profileVC, animated: true)
         }
     
+    @objc private func viewAllButtonTapped() {
+        let favoritePlacesVC = FavoritePlacesViewController()
+        navigationController?.pushViewController(favoritePlacesVC, animated: true)
+    }
+
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -101,6 +106,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
+        viewAllButton.addTarget(self, action: #selector(viewAllButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,21 +142,6 @@ class HomeViewController: UIViewController {
             mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: HomeViewConstants.mainStackTrailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: PlaceCellConstants.collectionViewItemHeight)
         ])
-        
-        let navigationBar = NavigationBar()
-        let hostingController = UIHostingController(rootView: navigationBar)
-        addChild(hostingController)
-        view.addSubview(hostingController.view)
-        hostingController.didMove(toParent: self)
-        
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            hostingController.view.heightAnchor.constraint(equalToConstant: HomeViewConstants.navBarHeight)
-        ])
-        
     }
 }
 

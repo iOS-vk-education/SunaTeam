@@ -26,7 +26,7 @@ struct SignInScreenView: View{
                 Button {
                     return Void()
                 } label: {
-                    NavigationLink(destination: HomeScreenView(), isActive: $isSignedIn) {
+                    NavigationLink(destination: AppRootView(), isActive: $isSignedIn) {
                         Text("Sign in")
                     }
                     .buttonStyle(YellowButtonStyle())

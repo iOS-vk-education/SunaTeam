@@ -24,7 +24,7 @@ let dateFormatter: DateFormatter = {
 }()
 
 let scheduleItems = [
-    ScheduleItem(date: dateFormatter.date(from: "26 January 2022") ?? Date(), title: "Niladri Reservoir", location: "Tekergat, Sunamgnj", imageName: "FirstTrip"),
-    ScheduleItem(date: dateFormatter.date(from: "26 January 2022") ?? Date(), title: "High Rech Park", location: "Zeero Point, Sylhet", imageName: "SecondTrip"),
-    ScheduleItem(date: dateFormatter.date(from: "26 January 2022") ?? Date(), title: "Darma Reservoir", location: "Darma, Kuningan", imageName: "ThirdTrip")
+    ScheduleItem(date: dateFormatter.date(from: "26 January 2022") ?? Date(), title: "Niladri Reservoir", location: "Tekergat, Sunamgnj", imageName: "FirstPlace"),
+    ScheduleItem(date: dateFormatter.date(from: "26 January 2022") ?? Date(), title: "High Rech Park", location: "Zeero Point, Sylhet", imageName: "SecondPlace"),
+    ScheduleItem(date: dateFormatter.date(from: "26 January 2022") ?? Date(), title: "Darma Reservoir", location: "Darma, Kuningan", imageName: "ThirdPlace")
 ]

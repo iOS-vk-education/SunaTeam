@@ -62,6 +62,12 @@ class FavoritePlacesViewController: UIViewController {
         setupCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    
     private func setupNavigationBar() {
         navigationItem.title = "Favorite Places"
         
@@ -95,6 +101,14 @@ class FavoritePlacesViewController: UIViewController {
     }
 }
 
+struct FavoritePlacesViewControllerWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> FavoritePlacesViewController {
+        return FavoritePlacesViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: FavoritePlacesViewController, context: Context) {
+    }
+}
 
 // SwiftUI Preview
 struct FavoritePlacesViewControllerRepresentable: UIViewControllerRepresentable {

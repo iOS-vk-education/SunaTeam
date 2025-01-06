@@ -24,7 +24,7 @@ struct SignUpScreenView: View {
                 TextFieldView(text: "Email", isSecureField: false)
                 TextFieldView(text: "Password", isSecureField: true)
                 
-                NavigationLink(destination: HomeScreenView(), isActive: $isNavigatingToHome) {
+                NavigationLink(destination: AppRootView(), isActive: $isNavigatingToHome) {
                     Button("Sign Up") {
                         isNavigatingToHome = true
                         shouldHideBackButton = true

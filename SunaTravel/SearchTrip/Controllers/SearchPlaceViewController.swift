@@ -14,7 +14,7 @@ fileprivate struct UIConstants {
     static let collectionViewItemHeight: CGFloat = 180
     static let viewSidePadding: CGFloat = 16
     static let viewItemWidthPartition: CGFloat = 40
-    static let searchBarTopPadding: CGFloat = 100
+    //static let searchBarTopPadding: CGFloat = 100
 }
 
 class SearchPlacesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
@@ -96,7 +96,7 @@ class SearchPlacesViewController: UIViewController, UICollectionViewDelegate, UI
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: UIConstants.searchBarTopPadding),
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UIConstants.viewSidePadding),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -UIConstants.viewSidePadding),
             
@@ -162,7 +162,6 @@ struct SearchPlacesViewController_Previews: PreviewProvider {
             SearchPlacesViewControllerRepresentable()
                 .previewDevice("iPhone 13")
                 .preferredColorScheme(.light)
-                .edgesIgnoringSafeArea(.all)
         }
     }
 }
