@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58D6D1E72D1747900035932D /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D1E62D1747900035932D /* PlaceModel.swift */; };
+		58D6D1E92D1747EC0035932D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D1E82D1747EC0035932D /* HomeViewModel.swift */; };
+		58D6D1EB2D1748C80035932D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D1EA2D1748C80035932D /* HomeViewController.swift */; };
+		58D6D1ED2D17498F0035932D /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6D1EC2D17498F0035932D /* PlaceCell.swift */; };
 		58F5CAC12D0785E000A3C1FA /* SunaTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5CAC02D0785E000A3C1FA /* SunaTravelApp.swift */; };
 		58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F5CAC22D0785E000A3C1FA /* ContentView.swift */; };
 		58F5CAC52D0785E300A3C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F5CAC42D0785E300A3C1FA /* Assets.xcassets */; };
@@ -28,12 +32,6 @@
 		8F7310F12D0DA06D007A78AC /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310F02D0DA061007A78AC /* OnboardingButton.swift */; };
 		8F7310F32D0DA0A0007A78AC /* OnboardingToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */; };
 		8F7311252D0FA44C007A78AC /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8F7311242D0FA442007A78AC /* swiftlint.yml */; };
-		8FBA13CE2D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C02D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift */; };
-		8FBA13CF2D1A2BD1003DB8F2 /* PlacesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C42D1A2BD1003DB8F2 /* PlacesModel.swift */; };
-		8FBA13D02D1A2BD1003DB8F2 /* FavoritePlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C62D1A2BD1003DB8F2 /* FavoritePlaceCell.swift */; };
-		8FBA13D12D1A2BD1003DB8F2 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C92D1A2BD1003DB8F2 /* SearchPlaceViewController.swift */; };
-		8FBA13D22D1A2BD1003DB8F2 /* Delegate+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13C22D1A2BD1003DB8F2 /* Delegate+DataSource.swift */; };
-		8FBA13D32D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13CB2D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift */; };
 		8FBA13E22D1A2D27003DB8F2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13D82D1A2D27003DB8F2 /* Place.swift */; };
 		8FBA13E32D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13D62D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift */; };
 		8FBA13E42D1A2D27003DB8F2 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA13DD2D1A2D27003DB8F2 /* SearchPlaceViewController.swift */; };
@@ -49,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58D6D1E62D1747900035932D /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		58D6D1E82D1747EC0035932D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		58D6D1EA2D1748C80035932D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		58D6D1EC2D17498F0035932D /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		58F5CABD2D0785E000A3C1FA /* SunaTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunaTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F5CAC02D0785E000A3C1FA /* SunaTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunaTravelApp.swift; sourceTree = "<group>"; };
 		58F5CAC22D0785E000A3C1FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,12 +73,6 @@
 		8F7310F02D0DA061007A78AC /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		8F7310F22D0DA08C007A78AC /* OnboardingToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingToolbar.swift; sourceTree = "<group>"; };
 		8F7311242D0FA442007A78AC /* swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
-		8FBA13C02D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesViewController.swift; sourceTree = "<group>"; };
-		8FBA13C22D1A2BD1003DB8F2 /* Delegate+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delegate+DataSource.swift"; sourceTree = "<group>"; };
-		8FBA13C42D1A2BD1003DB8F2 /* PlacesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesModel.swift; sourceTree = "<group>"; };
-		8FBA13C62D1A2BD1003DB8F2 /* FavoritePlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlaceCell.swift; sourceTree = "<group>"; };
-		8FBA13C92D1A2BD1003DB8F2 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
-		8FBA13CB2D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
 		8FBA13D42D1A2D27003DB8F2 /* FavoritePlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlacesViewController.swift; sourceTree = "<group>"; };
 		8FBA13D62D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewDelegate&DataSource.swift"; sourceTree = "<group>"; };
 		8FBA13D82D1A2D27003DB8F2 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
@@ -102,6 +98,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58D6D1E22D1746C80035932D /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				58D6D1E32D17471B0035932D /* Models */,
+				58D6D1E42D1747260035932D /* Views */,
+				58D6D1E52D17472E0035932D /* ViewModels */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		58D6D1E32D17471B0035932D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58D6D1E62D1747900035932D /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		58D6D1E42D1747260035932D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58D6D1EA2D1748C80035932D /* HomeViewController.swift */,
+				58D6D1EC2D17498F0035932D /* PlaceCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		58D6D1E52D17472E0035932D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				58D6D1E82D1747EC0035932D /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		58F5CAB42D0785E000A3C1FA = {
 			isa = PBXGroup;
 			children = (
@@ -123,9 +154,8 @@
 			children = (
 				8FBA13DC2D1A2D27003DB8F2 /* FavoritePlaces */,
 				8FBA13E12D1A2D27003DB8F2 /* SearchTrip */,
-				8FBA13C82D1A2BD1003DB8F2 /* FavoritePlaces */,
-				8FBA13CD2D1A2BD1003DB8F2 /* SearchTrip */,
 				8FF43D852D1A129E0052A0AA /* MainScreen */,
+				58D6D1E22D1746C80035932D /* HomeScreen */,
 				8F7311242D0FA442007A78AC /* swiftlint.yml */,
 				8F0A96DD2D135FD300322C53 /* Auth */,
 				8F7310E92D0D90F9007A78AC /* Onboardings */,
@@ -237,74 +267,6 @@
 				8F7310DE2D0B8FA5007A78AC /* OnboardingViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		8FBA13C12D1A2BD1003DB8F2 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13C02D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		8FBA13C32D1A2BD1003DB8F2 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13C22D1A2BD1003DB8F2 /* Delegate+DataSource.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		8FBA13C52D1A2BD1003DB8F2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13C42D1A2BD1003DB8F2 /* PlacesModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		8FBA13C72D1A2BD1003DB8F2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13C62D1A2BD1003DB8F2 /* FavoritePlaceCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8FBA13C82D1A2BD1003DB8F2 /* FavoritePlaces */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13C12D1A2BD1003DB8F2 /* Controllers */,
-				8FBA13C32D1A2BD1003DB8F2 /* Extensions */,
-				8FBA13C52D1A2BD1003DB8F2 /* Models */,
-				8FBA13C72D1A2BD1003DB8F2 /* Views */,
-			);
-			path = FavoritePlaces;
-			sourceTree = "<group>";
-		};
-		8FBA13CA2D1A2BD1003DB8F2 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13C92D1A2BD1003DB8F2 /* SearchPlaceViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		8FBA13CC2D1A2BD1003DB8F2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13CB2D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		8FBA13CD2D1A2BD1003DB8F2 /* SearchTrip */ = {
-			isa = PBXGroup;
-			children = (
-				8FBA13CA2D1A2BD1003DB8F2 /* Controllers */,
-				8FBA13CC2D1A2BD1003DB8F2 /* Models */,
-			);
-			path = SearchTrip;
 			sourceTree = "<group>";
 		};
 		8FBA13D52D1A2D27003DB8F2 /* Controllers */ = {
@@ -501,6 +463,7 @@
 				8F7310DB2D0B8F76007A78AC /* OnboardingSlide.swift in Sources */,
 				8F7310DF2D0B8FB4007A78AC /* OnboardingViewController.swift in Sources */,
 				8F0A96EC2D1360AE00322C53 /* SignUpScreenView.swift in Sources */,
+				58D6D1E72D1747900035932D /* PlaceModel.swift in Sources */,
 				58F5CAC32D0785E000A3C1FA /* ContentView.swift in Sources */,
 				8F0A96EA2D13607D00322C53 /* SignInScreenView.swift in Sources */,
 				8F7310D92D0B8F1D007A78AC /* OnboardingContainerView.swift in Sources */,
@@ -508,21 +471,19 @@
 				8F0A96E22D13602500322C53 /* ButtonsView.swift in Sources */,
 				8F7310EB2D0D91B5007A78AC /* Color+Extensions.swift in Sources */,
 				8F7310ED2D0D9FEE007A78AC /* OnboardinSlidesView.swift in Sources */,
-				8FBA13CE2D1A2BD1003DB8F2 /* FavoritePlacesViewController.swift in Sources */,
-				8FBA13CF2D1A2BD1003DB8F2 /* PlacesModel.swift in Sources */,
-				8FBA13D02D1A2BD1003DB8F2 /* FavoritePlaceCell.swift in Sources */,
 				8FBA13E22D1A2D27003DB8F2 /* Place.swift in Sources */,
 				8FBA13E32D1A2D27003DB8F2 /* CollectionViewDelegate&DataSource.swift in Sources */,
 				8FBA13E42D1A2D27003DB8F2 /* SearchPlaceViewController.swift in Sources */,
 				8FBA13E52D1A2D27003DB8F2 /* FavoritePlacesViewController.swift in Sources */,
 				8FBA13E62D1A2D27003DB8F2 /* FavoritePlaceCell.swift in Sources */,
 				8FBA13E72D1A2D27003DB8F2 /* SearchPlaceViewModel.swift in Sources */,
-				8FBA13D12D1A2BD1003DB8F2 /* SearchPlaceViewController.swift in Sources */,
-				8FBA13D22D1A2BD1003DB8F2 /* Delegate+DataSource.swift in Sources */,
-				8FBA13D32D1A2BD1003DB8F2 /* SearchPlaceViewModel.swift in Sources */,
 				8F7310E12D0B8FCC007A78AC /* OnboardingViewModel.swift in Sources */,
 				58F5CAC12D0785E000A3C1FA /* SunaTravelApp.swift in Sources */,
 				8F0A96E82D13604000322C53 /* TextFieldView.swift in Sources */,
+				58D6D1E92D1747EC0035932D /* HomeViewModel.swift in Sources */,
+				8F7310E12D0B8FCC007A78AC /* OnboardingViewModel.swift in Sources */,
+				58F5CAC12D0785E000A3C1FA /* SunaTravelApp.swift in Sources */,
+				58D6D1EB2D1748C80035932D /* HomeViewController.swift in Sources */,
 				8F7310F12D0DA06D007A78AC /* OnboardingButton.swift in Sources */,
 				8F7310EF2D0DA02F007A78AC /* PageIndicatorView.swift in Sources */,
 				8FF43D862D1A129E0052A0AA /* NavigationBar.swift in Sources */,
@@ -532,6 +493,7 @@
 				8FF43D8A2D1A129E0052A0AA /* NavigationItemModel.swift in Sources */,
 				8FF43D8B2D1A129E0052A0AA /* ScheduleCell.swift in Sources */,
 				8F0A96E42D13603000322C53 /* HeaderView.swift in Sources */,
+				58D6D1ED2D17498F0035932D /* PlaceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
