@@ -211,7 +211,8 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
     private static func createRoundedTextView(placeholder: String) -> UITextView {
         let textView = UITextView()
         textView.placeholder = placeholder // Используем свойство placeholder из расширения
-        textView.textColor = UIColor(hex: "7D848D")
+        textView.textColor = UIColor(named: "BackTextPlaceholder")
+//        textView.textColor = UIColor(hex: "7D848D")
         textView.backgroundColor = UIColor(hex: "CED2D9")
         textView.layer.cornerRadius = 15
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -221,16 +222,6 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
     
 }
 
-// MARK: - UIColor Helper
-extension UIColor {
-    convenience init(hex: String) {
-        let hexNumber = Int(hex, radix: 16) ?? 0
-        self.init(red: CGFloat((hexNumber >> 16) & 0xFF) / 255.0,
-                  green: CGFloat((hexNumber >> 8) & 0xFF) / 255.0,
-                  blue: CGFloat(hexNumber & 0xFF) / 255.0,
-                  alpha: 1.0)
-    }
-}
 
 // The code works on devices with iOS 14 and higher
 extension CreateTripViewController: PHPickerViewControllerDelegate {
@@ -241,7 +232,11 @@ extension CreateTripViewController: PHPickerViewControllerDelegate {
 
         let firstItem = results.first
         firstItem?.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
-            guard let self = self, let image = object as? UIImage, error == nil else { return }
+//            guard let self = self, let image = object as? UIImage, error == nil else { return }
+            guard let self = self, let image = object as? UIImage, error == nil else {
+                 assertionFailure()
+                 return
+            }
 
             DispatchQueue.main.async {
                 self.backgroundImageView.image = image // set the first file as background
@@ -282,14 +277,6 @@ extension UITextView: UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = placeholder
             textView.textColor = UIColor.lightGray // Цвет текста для плейсхолдера
-        }
-    }
-    
-    // Метод для инициализации с плейсхолдером
-    func setupPlaceholder() {
-        if self.text.isEmpty {
-            self.text = placeholder
-            self.textColor = UIColor.lightGray // Цвет текста для плейсхолдера
         }
     }
 }
