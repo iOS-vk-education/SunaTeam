@@ -8,11 +8,11 @@ import UIKit
 import SwiftUI
 
 fileprivate struct UIConstants {
-    static let collectionTopPadding: CGFloat = 30
-    static let collectionViewLineSpacing: CGFloat = 50
+    static let collectionTopPadding: CGFloat = 15
+    static let collectionViewLineSpacing: CGFloat = 15
     static let collectionViewItemSpacing: CGFloat = 6
     static let viewSidePadding: CGFloat = 16
-    static let viewItemWidthPartition: CGFloat = 40
+    static let viewItemWidthPartition: CGFloat = 30
 
     static var collectionViewItemHeight: CGFloat {
         let screenHeight = UIScreen.main.bounds.height

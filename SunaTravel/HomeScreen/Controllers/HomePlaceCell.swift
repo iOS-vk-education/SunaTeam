@@ -1,28 +1,10 @@
 //
-//  PlaceCell.swift
+//  HomePlaceCell.swift
 //  SunaTravel
 //
-//  Created by Иван Тарасюк on 24.12.2024.
-import UIKit
-import SwiftUI
+//  Created by Иван Тарасюк on 08.01.2025.
+//
 
-struct PlaceCellConstants {
-    static let imageCornerRadius: CGFloat = 20
-    static let titleFontSize: CGFloat = 18
-    static let subtitleFontSize: CGFloat = 16
-    static let titleTopPadding: CGFloat = 12
-    static let subtitleTopPadding: CGFloat = 6
-    static let collectionViewItemSpacing: CGFloat = 16
-    static let viewSidePadding: CGFloat = 20
-    static let titleTopMargin: CGFloat = 10
-    static let titleFontLargeSize: CGFloat = 22
-    static let subtitleIconConstant: CGFloat = 24
-    static let leadingPadding: CGFloat = 10
-    static var imageHeight: CGFloat { return UIScreen.main.bounds.width * 1.1 }
-    static var collectionViewItemHeight: CGFloat { return UIScreen.main.bounds.width * 1.3}
-    static var collectionViewItemWidth: CGFloat { return UIScreen.main.bounds.width * 0.75 }
-    static let stackViewSpacing: CGFloat = 4
-}
 
 class HomePlaceCell: UICollectionViewCell {
     let imageView: UIImageView = {
@@ -115,7 +97,7 @@ class HomePlaceCell: UICollectionViewCell {
         ])
     }
     
-    func configure(with place: Place) {
+    func configure(with place: PlaceModel) {
         titleLabel.text = place.title
         subtitleLabel.text = place.subtitle
         imageView.image = UIImage(named: place.imageName)
@@ -123,7 +105,7 @@ class HomePlaceCell: UICollectionViewCell {
 }
 
 protocol PlaceModelProvider {
-    func getModel() -> Place
+    func getModel() -> PlaceModel
 }
 
 struct HomePlaceCellRepresentable: UIViewRepresentable {
@@ -141,8 +123,8 @@ struct HomePlaceCellRepresentable: UIViewRepresentable {
 }
 
 struct ExamplePlaceModelProvider: PlaceModelProvider {
-    func getModel() -> Place {
-        return Place(title: "Casa Las Tirtugas", subtitle: "Av Damero, Mexico", imageName: "FirstPlace")
+    func getModel() -> PlaceModel {
+        return PlaceModel(title: "Casa Las Tirtugas", subtitle: "Av Damero, Mexico", imageName: "FirstPlace")
     }
 }
 

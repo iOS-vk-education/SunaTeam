@@ -18,7 +18,6 @@ class NavigationBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Создайте контроллеры для каждого экрана
         let homeView = UIHostingController(rootView: HomeScreenView())
         homeView.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
 
@@ -34,7 +33,6 @@ class NavigationBar: UITabBarController {
         let profileView = UIHostingController(rootView: ProfileView(viewModel: profileViewModel))
         profileView.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"), tag: 4)
 
-        // Добавьте все контроллеры в TabBarController
         viewControllers = [homeView, calendarView, searchView, mapView, profileView]
     }
 }

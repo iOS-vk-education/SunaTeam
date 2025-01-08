@@ -9,8 +9,11 @@ import Foundation
 
 import UIKit
 import SwiftUI
+import Combine
 
 class HomeViewController: UIViewController {
+    @ObservedObject var profileViewModel: ProfileViewModel
+    private var cancellables = Set<AnyCancellable>()
     
     fileprivate struct HomeViewConstants {
         static let profileButtonTextSize: CGFloat = 20
@@ -35,31 +38,47 @@ class HomeViewController: UIViewController {
     
     private let profileButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Leonardo", for: .normal)
         button.setImage(UIImage(systemName: "person.circle.fill"), for: .normal)
-        button.tintColor = .black
+        button.tintColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .white : .black
+        }
+        button.setTitleColor(UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .white : .black
+        }, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: HomeViewConstants.profileButtonTextSize)
         button.layer.cornerRadius = HomeViewConstants.profileButtonCornerRadius
         button.layer.masksToBounds = true
         return button
     }()
     
-    private let notificationButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "bell.badge"), for: .normal)
-        button.tintColor = .black
-        button.layer.cornerRadius = HomeViewConstants.notificationButtonCornerRadius
-        button.layer.masksToBounds = true
-        return button
-    }()
+    init(profileViewModel: ProfileViewModel) {
+        self.profileViewModel = profileViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: – Уведомления на будущее
+    //    private let notificationButton: UIButton = {
+    //        let button = UIButton(type: .system)
+    //        button.setImage(UIImage(systemName: "bell.badge"), for: .normal)
+    //        button.tintColor = UIColor { traitCollection in
+    //                return traitCollection.userInterfaceStyle == .dark ? .white : .black
+    //        }
+    //        button.layer.cornerRadius = HomeViewConstants.notificationButtonCornerRadius
+    //        button.layer.masksToBounds = true
+    //        return button
+    //    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Explore the\nBeautiful world!"
+        label.text = "Remember the\n bright moments"
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: HomeViewConstants.titleLabelTextSize, weight: .bold)
         let attributedString = NSMutableAttributedString(string: label.text!)
-        attributedString.addAttribute(.foregroundColor, value: UIColor.orange, range: NSRange(location: 22, length: 6))
+        attributedString.addAttribute(.foregroundColor, value: UIColor.orange, range: NSRange(location: 21, length: 7))
         label.attributedText = attributedString
         return label
     }()
@@ -81,14 +100,13 @@ class HomeViewController: UIViewController {
     
     @objc private func profileButtonTapped() {
         let profileVC = UIHostingController(rootView: ProfileView(viewModel: profileViewModel))
-            navigationController?.pushViewController(profileVC, animated: true)
-        }
+        navigationController?.pushViewController(profileVC, animated: true)
+    }
     
     @objc private func viewAllButtonTapped() {
         let favoritePlacesVC = FavoritePlacesViewController()
         navigationController?.pushViewController(favoritePlacesVC, animated: true)
     }
-
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -96,11 +114,12 @@ class HomeViewController: UIViewController {
         layout.itemSize = CGSize(width: PlaceCellConstants.collectionViewItemWidth, height: PlaceCellConstants.collectionViewItemHeight)
         layout.minimumLineSpacing = PlaceCellConstants.collectionViewItemSpacing
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.register(FavoritePlaceCell.self, forCellWithReuseIdentifier: "DestinationCell")
+        cv.register(HomePlaceCell.self, forCellWithReuseIdentifier: "DestinationCell")
         cv.dataSource = self
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -108,20 +127,32 @@ class HomeViewController: UIViewController {
         setupUI()
         profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         viewAllButton.addTarget(self, action: #selector(viewAllButtonTapped), for: .touchUpInside)
+        
+        // Обновить кнопку после того как данные профиля получены
+        updateProfileButton()
+        
+        // Подписка на изменения профиля
+        profileViewModel.$profile
+            .sink { [weak self] _ in
+                self?.updateProfileButton()
+            }
+            .store(in: &cancellables)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    private func updateProfileButton() {
+        // Обновление текста кнопки с именем пользователя
+        profileButton.setTitle(profileViewModel.profile.name, for: .normal)
     }
     
     // MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = .white
-        
-        let headerStack = UIStackView(arrangedSubviews: [profileButton, UIView(), notificationButton])
+        let headerStack = UIStackView(arrangedSubviews: [profileButton, UIView()])
         headerStack.axis = .horizontal
         headerStack.alignment = .center
         headerStack.spacing = HomeViewConstants.headerStackSpacing
@@ -145,13 +176,14 @@ class HomeViewController: UIViewController {
     }
 }
 
+
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.places.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DestinationCell", for: indexPath) as? FavoritePlaceCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DestinationCell", for: indexPath) as? HomePlaceCell else {
             return UICollectionViewCell()
         }
         let place = viewModel.places[indexPath.row]
@@ -168,7 +200,7 @@ struct HomeScreenView: View {
 
 struct HomeViewControllerWrapper: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> HomeViewController {
-        return HomeViewController()
+        return HomeViewController(profileViewModel: profileViewModel)
     }
     
     func updateUIViewController(_ uiViewController: HomeViewController, context: Context) {

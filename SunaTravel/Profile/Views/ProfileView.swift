@@ -26,14 +26,15 @@ struct ProfileView: View {
                     .foregroundColor(.gray)
                     .padding(.bottom)
                 
-                HStack {
-                    ProfileInfoItem(count: viewModel.profile.rewardPointsCount, title: "Reward Points")
-                    Spacer()
-                    ProfileInfoItem(count: viewModel.profile.travelTipsCount, title: "Travel Tips")
-                    Spacer()
-                    ProfileInfoItem(count: viewModel.profile.bucketListCount, title: "Bucket List")
-                }
-                .padding()
+                //MARK: – Статистика – на будущее
+                //                HStack {
+                //                    ProfileInfoItem(count: viewModel.profile.rewardPointsCount, title: "Reward Points")
+                //                    Spacer()
+                //                    ProfileInfoItem(count: viewModel.profile.travelTipsCount, title: "Travel Tips")
+                //                    Spacer()
+                //                    ProfileInfoItem(count: viewModel.profile.bucketListCount, title: "Bucket List")
+                //                }
+                //                .padding()
                 
                 ProfileNavigationLinks()
                 Spacer()
