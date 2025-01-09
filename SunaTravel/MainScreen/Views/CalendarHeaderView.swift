@@ -51,7 +51,7 @@ struct CalendarHeaderView: View {
                         
                         Text("\(dayOfMonth)")
                             .font(.title3.bold())
-                            .foregroundColor(isToday ? Color.orange : Color.black)
+                            .foregroundColor(isToday ? Color.orange : Color.secondary)
                             .frame(width: UIConstants.circleSize, height: UIConstants.circleSize)
                             .background(isToday ? Color.orange.opacity(0.2) : Color.clear)
                             .clipShape(Circle())

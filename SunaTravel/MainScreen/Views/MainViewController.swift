@@ -12,9 +12,18 @@ fileprivate struct UIConstants {
 }
 
 struct MainView: View {
+    @State private var selectedDate: Date = Date()
+    
     var body: some View {
         VStack {
-            CalendarHeaderView()
+            DatePicker(
+                "Select Date",
+                selection: $selectedDate,
+                displayedComponents: [.date]
+            )
+            .datePickerStyle(DefaultDatePickerStyle())
+            .padding()
+            
             VStack(alignment: .leading) {
                 HStack {
                     Text("My Schedule")
@@ -25,7 +34,7 @@ struct MainView: View {
                 
                 ScrollView {
                     LazyVStack(spacing: UIConstants.VStackSpacing) {
-                        ForEach(scheduleItems) { item in
+                        ForEach(scheduleItems.filter { isSameDay($0.date, selectedDate) }) { item in
                             ScheduleCell(item: item)
                         }
                     }
@@ -34,10 +43,13 @@ struct MainView: View {
             }
             .padding(.top)
         }
-        //.background(Color(.systemGray6))
+    }
+    
+    private func isSameDay(_ date1: Date, _ date2: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(date1, inSameDayAs: date2)
     }
 }
-
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()

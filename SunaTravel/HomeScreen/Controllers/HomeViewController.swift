@@ -99,7 +99,7 @@ class HomeViewController: UIViewController {
     }()
     
     @objc private func profileButtonTapped() {
-        let profileVC = UIHostingController(rootView: ProfileView(viewModel: profileViewModel))
+        let profileVC = UIHostingController(rootView: ProfileView(viewModel: profileViewModel, showEditButton: false))
         navigationController?.pushViewController(profileVC, animated: true)
     }
     

@@ -39,7 +39,7 @@ struct ProfileLink<Destination: View>: View {
                 .frame(width: ProfileLinkConsts.listButtonImageSize, height: ProfileLinkConsts.listButtonImageSize)
             Text(title)
                 .padding(.vertical, ProfileLinkConsts.titleVerticalPadding)
-                .background(Color.white)
+                .background(.background)
                 .cornerRadius(ProfileLinkConsts.titleCornerRadius)
                 .multilineTextAlignment(.leading)
 

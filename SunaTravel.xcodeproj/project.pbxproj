@@ -45,7 +45,6 @@
 		8FBA14232D1AF91A003DB8F2 /* ProfileNavigationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA14222D1AF90A003DB8F2 /* ProfileNavigationViews.swift */; };
 		8FBA14252D1AF926003DB8F2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA14242D1AF91D003DB8F2 /* ProfileView.swift */; };
 		8FF43D862D1A129E0052A0AA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D822D1A129E0052A0AA /* NavigationBar.swift */; };
-		8FF43D872D1A129E0052A0AA /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D802D1A129E0052A0AA /* CalendarHeaderView.swift */; };
 		8FF43D882D1A129E0052A0AA /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D7E2D1A129E0052A0AA /* ScheduleModel.swift */; };
 		8FF43D892D1A129E0052A0AA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D812D1A129E0052A0AA /* MainViewController.swift */; };
 		8FF43D8A2D1A129E0052A0AA /* NavigationItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF43D7D2D1A129E0052A0AA /* NavigationItemModel.swift */; };
@@ -93,7 +92,6 @@
 		8FBA14242D1AF91D003DB8F2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8FF43D7D2D1A129E0052A0AA /* NavigationItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemModel.swift; sourceTree = "<group>"; };
 		8FF43D7E2D1A129E0052A0AA /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
-		8FF43D802D1A129E0052A0AA /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		8FF43D812D1A129E0052A0AA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8FF43D822D1A129E0052A0AA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		8FF43D832D1A129E0052A0AA /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
@@ -391,7 +389,6 @@
 		8FF43D842D1A129E0052A0AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8FF43D802D1A129E0052A0AA /* CalendarHeaderView.swift */,
 				8FF43D812D1A129E0052A0AA /* MainViewController.swift */,
 				8FF43D822D1A129E0052A0AA /* NavigationBar.swift */,
 				8FF43D832D1A129E0052A0AA /* ScheduleCell.swift */,
@@ -532,7 +529,6 @@
 				8F7310F12D0DA06D007A78AC /* OnboardingButton.swift in Sources */,
 				8F7310EF2D0DA02F007A78AC /* PageIndicatorView.swift in Sources */,
 				8FF43D862D1A129E0052A0AA /* NavigationBar.swift in Sources */,
-				8FF43D872D1A129E0052A0AA /* CalendarHeaderView.swift in Sources */,
 				8FF43D882D1A129E0052A0AA /* ScheduleModel.swift in Sources */,
 				8FF43D892D1A129E0052A0AA /* MainViewController.swift in Sources */,
 				8FF43D8A2D1A129E0052A0AA /* NavigationItemModel.swift in Sources */,
@@ -678,8 +674,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,8 +706,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

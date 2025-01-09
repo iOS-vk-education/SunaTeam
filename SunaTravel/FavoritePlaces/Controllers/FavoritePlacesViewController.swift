@@ -56,7 +56,7 @@ class FavoritePlacesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupNavigationBar()
         setupViews()
         setupCollectionView()
@@ -70,14 +70,7 @@ class FavoritePlacesViewController: UIViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Favorite Places"
-        
-        let backButton = UIBarButtonItem(
-            title: "<",
-            style: .plain,
-            target: self,
-            action: #selector(backButtonTapped)
-        )
-        navigationItem.leftBarButtonItem = backButton
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(backButtonTapped))
     }
     
     @objc private func backButtonTapped() {
