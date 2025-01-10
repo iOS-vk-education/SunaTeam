@@ -38,7 +38,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         let label = UILabel()
         label.text = "Create a trip"
         label.textColor = .white
-        label.font = UIFont(name: "SE Pro Text", size: 80)
+        label.font = UIFont(name: "SFUIDisplay-Regular", size: 80)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.removeConstraints(label.constraints)
         label.textAlignment = .center
@@ -70,7 +70,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         let textView = UITextView()
         textView.text = "Write description"
         textView.textColor = .lightGray
-        textView.backgroundColor = UIColor(hex: "CED2D9")
+        textView.backgroundColor = UIColor(hex: "F7F7F9")
         textView.layer.cornerRadius = 15
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = UIFont.systemFont(ofSize: 17)
@@ -82,8 +82,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         button.setTitle("+", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)  // bold type
         button.layer.cornerRadius = 20
-        button.backgroundColor = UIColor(hex: "CED2D9")
-        /*button.backgroundColor = UIColor(hex: "F7F7F9")*/  // another color from Figma
+        button.backgroundColor = UIColor(hex: "F7F7F9")
         button.addTarget(self, action: #selector(didTapAddFile), for: .touchUpInside)
         // user clicks on the button and releases(leave) their finger without moving it beyound (вне) the button
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -219,7 +218,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
     private static func createRoundedTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
         textField.placeholder = placeholder
-        textField.backgroundColor = UIColor(hex: "CED2D9")
+        textField.backgroundColor = UIColor(hex: "F7F7F9")
         textField.layer.cornerRadius = 15
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
