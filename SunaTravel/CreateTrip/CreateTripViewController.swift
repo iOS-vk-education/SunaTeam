@@ -65,14 +65,25 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
 
     private let tripNameTextField = CreateTripViewController.createRoundedTextField(placeholder: "Write a trip name")
     private let locationTextField = CreateTripViewController.createRoundedTextField(placeholder: "Write location")
-    private let descriptionTextView = CreateTripViewController.createRoundedTextView(placeholder: "Write description")
+//    private let descriptionTextView = CreateTripViewController.createRoundedTextView(placeholder: "Write description")
+    private let descriptionTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "Write description"
+        textView.textColor = .lightGray
+        textView.backgroundColor = UIColor(hex: "CED2D9")
+        textView.layer.cornerRadius = 15
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.font = UIFont.systemFont(ofSize: 17)
+        return textView
+    }()
 
     private let addFileButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("+", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)  // жирный шрифт
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)  // bold type
         button.layer.cornerRadius = 20
         button.backgroundColor = UIColor(hex: "CED2D9")
+        /*button.backgroundColor = UIColor(hex: "F7F7F9")*/  // another color from Figma
         button.addTarget(self, action: #selector(didTapAddFile), for: .touchUpInside)
         // user clicks on the button and releases(leave) their finger without moving it beyound (вне) the button
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -97,6 +108,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
         setupView()
         setupLayout()
+        setupDescriptionTextView()  // for the modified UITextView
     }
 
     // MARK: - Setup Methods
@@ -184,6 +196,11 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         ])
     }
     
+    // новое
+    private func setupDescriptionTextView() {
+            descriptionTextView.delegate = self
+    }
+    
     @objc private func didTapBack() {
         dismiss(animated: true, completion: nil)
     }
@@ -207,22 +224,26 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }
-    
-    private static func createRoundedTextView(placeholder: String) -> UITextView {
-        let textView = UITextView()
-        textView.placeholder = placeholder // Используем свойство placeholder из расширения
-        textView.textColor = UIColor(named: "BackTextPlaceholder")
-//        textView.textColor = UIColor(hex: "7D848D")
-        textView.backgroundColor = UIColor(hex: "CED2D9")
-        textView.layer.cornerRadius = 15
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.systemFont(ofSize: 17) // size of letters
-        return textView
-    }
-    
 }
 
+// MARK: - UITextViewDelegate
+extension CreateTripViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView == descriptionTextView && textView.textColor == .lightGray {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
 
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView == descriptionTextView && textView.text.isEmpty {
+            textView.text = "Write description"
+            textView.textColor = .lightGray
+        }
+    }
+}
+
+// MARK: - PHPickerViewControllerDelegate
 // The code works on devices with iOS 14 and higher
 extension CreateTripViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
@@ -244,40 +265,3 @@ extension CreateTripViewController: PHPickerViewControllerDelegate {
         }
     }
 }
-
-extension UITextView: UITextViewDelegate {
-    private struct AssociatedKeys {
-        static var placeholderKey = "placeholderKey"
-    }
-    
-    // Обработчик для текста-плейсхолдера
-    var placeholder: String? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.placeholderKey) as? String
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.placeholderKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            // Устанавливаем плейсхолдер, если нет текста
-            if self.text.isEmpty {
-                self.text = newValue
-                self.textColor = UIColor.lightGray // Цвет текста для плейсхолдера
-            }
-        }
-    }
-    
-    // Переопределим метод, чтобы скрывать плейсхолдер при вводе
-    public func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == placeholder {
-            textView.text = ""
-            textView.textColor = UIColor.black // Цвет текста, когда пользователь начинает вводить
-        }
-    }
-    
-    public func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = placeholder
-            textView.textColor = UIColor.lightGray // Цвет текста для плейсхолдера
-        }
-    }
-}
-
