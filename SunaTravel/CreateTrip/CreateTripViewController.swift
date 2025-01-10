@@ -1,9 +1,3 @@
-//
-//  CreateTripViewController.swift
-//  SunaTravel
-//
-//  Created by Lilia Chechina on 24.12.2024.
-//
 import UIKit
 import PhotosUI  // for multiply photo selection
 
@@ -65,7 +59,16 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
 
     private let tripNameTextField = CreateTripViewController.createRoundedTextField(placeholder: "Write a trip name")
     private let locationTextField = CreateTripViewController.createRoundedTextField(placeholder: "Write location")
-//    private let descriptionTextView = CreateTripViewController.createRoundedTextView(placeholder: "Write description")
+
+    private let aboutDestinationLabel: UILabel = {
+        let label = UILabel()
+        label.text = "About Destination"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     private let descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.text = "Write description"
@@ -84,7 +87,6 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         button.layer.cornerRadius = 20
         button.backgroundColor = UIColor(hex: "F7F7F9")
         button.addTarget(self, action: #selector(didTapAddFile), for: .touchUpInside)
-        // user clicks on the button and releases(leave) their finger without moving it beyound (вне) the button
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -100,6 +102,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         return button
     }()
 
+    private var containerHeightConstraint: NSLayoutConstraint!
     private var selectedFile: UIImage?
 
     // MARK: - Lifecycle
@@ -108,6 +111,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         setupView()
         setupLayout()
         setupDescriptionTextView()  // for the modified UITextView
+        addCollapseButtonGesture() // Add gesture for collapse button
     }
 
     // MARK: - Setup Methods
@@ -117,11 +121,12 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         view.addSubview(backButton)
         view.addSubview(titleLabel)
         view.addSubview(containerView)
+        view.addSubview(addFileButton)
         
         containerView.addSubview(collapseButton)
         containerView.addSubview(tripNameTextField)
         containerView.addSubview(locationTextField)
-        containerView.addSubview(addFileButton)
+        containerView.addSubview(aboutDestinationLabel)
         containerView.addSubview(descriptionTextView)
         containerView.addSubview(saveButton)
     }
@@ -144,16 +149,23 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
             titleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor), // Центр по вертикали относительно кнопки "Назад"
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),       // Центр по горизонтали относительно экрана
             titleLabel.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: 0.8), // width up to (до) 80% ширины экрана
-//            titleLabel.heightAnchor.constraint(equalToConstant: 80), // fixed height of tittle
             
-
+            // Add File Button
+            addFileButton.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -10),
+            addFileButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            addFileButton.widthAnchor.constraint(equalToConstant: 40),
+            addFileButton.heightAnchor.constraint(equalToConstant: 40),
 
             // Container View
             containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 461),
-            
+        ])
+
+        containerHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: 430)
+        containerHeightConstraint.isActive = true
+
+        NSLayoutConstraint.activate([
             // Collapse Button
             collapseButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
             collapseButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
@@ -172,38 +184,37 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
             locationTextField.widthAnchor.constraint(equalToConstant: 360),
             locationTextField.heightAnchor.constraint(equalToConstant: 38),
 
-            // Add File Button
-            addFileButton.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 7),
-            addFileButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            addFileButton.widthAnchor.constraint(equalToConstant: 40),
-            addFileButton.heightAnchor.constraint(equalToConstant: 40),
+            // About Destination Label
+            aboutDestinationLabel.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 12),
+            aboutDestinationLabel.leadingAnchor.constraint(equalTo: locationTextField.leadingAnchor),
 
             // Description TextView
-            descriptionTextView.topAnchor.constraint(equalTo: addFileButton.bottomAnchor, constant: 35),
-            // рассточние от н, чем больше, тем ближе к н
+            descriptionTextView.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 8),
             descriptionTextView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             descriptionTextView.widthAnchor.constraint(equalToConstant: 360),
-            // ширина 3 кнопки
             descriptionTextView.heightAnchor.constraint(equalToConstant: 140),
 
-
             // Save Button
-            saveButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 10),  // как близко к н
+            saveButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 20),
             saveButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             saveButton.widthAnchor.constraint(equalToConstant: 360),
             saveButton.heightAnchor.constraint(equalToConstant: 65)
         ])
     }
-    
-    // новое
+
     private func setupDescriptionTextView() {
-            descriptionTextView.delegate = self
+        descriptionTextView.delegate = self
     }
-    
+
+    private func addCollapseButtonGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCollapseButton))
+        collapseButton.addGestureRecognizer(tapGesture)
+    }
+
     @objc private func didTapBack() {
         dismiss(animated: true, completion: nil)
     }
-    
+
     @objc private func didTapAddFile() {
         var config = PHPickerConfiguration()
         config.selectionLimit = 0 // 0 means unlimited choice
@@ -213,7 +224,15 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
-    
+
+    @objc private func didTapCollapseButton() {
+        let isCollapsed = containerHeightConstraint.constant == 430
+        containerHeightConstraint.constant = isCollapsed ? 200 : 430
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
     // Helper: Create text fields and views
     private static func createRoundedTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
@@ -252,7 +271,6 @@ extension CreateTripViewController: PHPickerViewControllerDelegate {
 
         let firstItem = results.first
         firstItem?.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
-//            guard let self = self, let image = object as? UIImage, error == nil else { return }
             guard let self = self, let image = object as? UIImage, error == nil else {
                  assertionFailure()
                  return
