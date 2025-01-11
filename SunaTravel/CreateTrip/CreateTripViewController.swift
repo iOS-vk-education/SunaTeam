@@ -218,7 +218,7 @@
 
 
 
-//
+// тут карусель не затемняется
 //import UIKit
 //
 //class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -562,7 +562,7 @@
 //}
 
 
-
+// Тут вся карусель затемняется, а так быть не должно и есть норм описание
 import UIKit
 
 class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
