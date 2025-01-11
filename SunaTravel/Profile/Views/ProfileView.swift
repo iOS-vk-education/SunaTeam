@@ -26,11 +26,20 @@ struct ProfileView: View {
                 }
             }
             Spacer()
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .padding(.top)
-                .foregroundColor(.primary)
+            if let avatar = viewModel.profile.avatar {
+                Image(uiImage: avatar)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
+                    .padding(.top)
+            } else {
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .padding(.top)
+            }
             
             Text(viewModel.profile.name)
                 .font(.title2)

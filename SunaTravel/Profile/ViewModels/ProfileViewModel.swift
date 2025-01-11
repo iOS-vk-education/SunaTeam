@@ -15,11 +15,12 @@ class ProfileViewModel: ObservableObject {
         self.profile = profile
     }
     
-    func saveChanges(name: String, email: String, location: String, phoneNumber: String) {
+    func saveChanges(name: String, email: String, location: String, phoneNumber: String, avatar: UIImage?) {
         profile.name = name
         profile.email = email
         profile.location = location
         profile.phoneNumber = phoneNumber
+        profile.avatar = avatar
         isSuccessMessageShowed = true
     }
 }

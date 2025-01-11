@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
     
     private let bestDestinationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Best Destination"
+        label.text = "Your Destinations"
         label.font = UIFont.systemFont(ofSize: HomeViewConstants.destinationLabelTextSize, weight: .semibold)
         return label
     }()
@@ -128,10 +128,8 @@ class HomeViewController: UIViewController {
         profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
         viewAllButton.addTarget(self, action: #selector(viewAllButtonTapped), for: .touchUpInside)
         
-        // Обновить кнопку после того как данные профиля получены
         updateProfileButton()
         
-        // Подписка на изменения профиля
         profileViewModel.$profile
             .sink { [weak self] _ in
                 self?.updateProfileButton()
@@ -145,14 +143,26 @@ class HomeViewController: UIViewController {
     }
     
     private func updateProfileButton() {
-        // Обновление текста кнопки с именем пользователя
-        profileButton.setTitle(profileViewModel.profile.name, for: .normal)
+        DispatchQueue.main.async {
+            self.profileButton.setTitle(self.profileViewModel.profile.name, for: .normal)
+
+            if let avatar = self.profileViewModel.profile.avatar {
+                print("Avatar size: \(avatar.size)")
+                let size = CGSize(width: 15, height: 15)
+                let scaledAvatar = avatar.resize(to: size)
+                self.profileButton.setImage(scaledAvatar, for: .normal)
+            } else {
+                self.profileButton.setImage(UIImage(systemName: "person.circle.fill"), for: .normal)
+            }
+        }
     }
+    
     
     // MARK: - Setup UI
     
     private func setupUI() {
         let headerStack = UIStackView(arrangedSubviews: [profileButton, UIView()])
+        profileButton.imageView?.contentMode = .scaleAspectFit
         headerStack.axis = .horizontal
         headerStack.alignment = .center
         headerStack.spacing = HomeViewConstants.headerStackSpacing
@@ -189,6 +199,16 @@ extension HomeViewController: UICollectionViewDataSource {
         let place = viewModel.places[indexPath.row]
         cell.configure(with: place)
         return cell
+    }
+}
+
+extension UIImage {
+    func resize(to size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, self.scale)
+        self.draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage
     }
 }
 

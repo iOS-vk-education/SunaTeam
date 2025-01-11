@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct ProfileData {
     var name: String
     var email: String
     var location: String
     var phoneNumber: String
+    var avatar: UIImage?
     var rewardPointsCount: Int
     var travelTipsCount: Int
     var bucketListCount: Int

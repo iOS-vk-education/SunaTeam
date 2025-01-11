@@ -15,6 +15,10 @@ struct EditProfileView: View {
     @State private var tempLocation: String
     @State private var tempPhoneNumber: String
     
+    @State private var selectedImage: UIImage? = nil
+    @State private var isImagePickerPresented: Bool = false
+    @State var profileImage: UIImage?
+    
     init(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
         _tempName = State(initialValue: viewModel.profile.name)
@@ -22,20 +26,32 @@ struct EditProfileView: View {
         _tempLocation = State(initialValue: viewModel.profile.location)
         _tempPhoneNumber = State(initialValue: viewModel.profile.phoneNumber)
     }
-
+    
     var body: some View {
         ScrollView {
             VStack {
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .padding(.top)
+                if let selectedImage = selectedImage {
+                    Image(uiImage: selectedImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .padding(.top)
+                } else {
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .padding(.top)
+                }
                 
-                Button(action: {}) {
+                Button(action: {
+                    
+                    isImagePickerPresented.toggle()
+                }) {
                     Text("Change Profile Picture")
                         .foregroundColor(.orange)
                 }
-
+                
                 VStack(alignment: .leading, spacing: 15) {
                     ProfileInputField(title: "Name", text: $tempName)
                     ProfileInputField(title: "Email", text: $tempEmail)
@@ -43,7 +59,7 @@ struct EditProfileView: View {
                     ProfileInputField(title: "Mobile Number", text: $tempPhoneNumber)
                 }
                 .padding()
-
+                
                 Spacer()
             }
         }
@@ -61,6 +77,9 @@ struct EditProfileView: View {
                 message: Text("Changes have been saved successfully.")
             )
         }
+        .sheet(isPresented: $isImagePickerPresented) {
+            ImagePicker(isImagePickerPresented: $isImagePickerPresented, selectedImage: $selectedImage)
+        }
     }
     
     private func saveChanges() {
@@ -68,7 +87,47 @@ struct EditProfileView: View {
             name: tempName,
             email: tempEmail,
             location: tempLocation,
-            phoneNumber: tempPhoneNumber
+            phoneNumber: tempPhoneNumber,
+            avatar: selectedImage
         )
     }
+}
+
+struct ImagePicker: UIViewControllerRepresentable {
+    @Binding var isImagePickerPresented: Bool
+    @Binding var selectedImage: UIImage?
+    
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        @Binding var isImagePickerPresented: Bool
+        @Binding var selectedImage: UIImage?
+        
+        init(isImagePickerPresented: Binding<Bool>, selectedImage: Binding<UIImage?>) {
+            _isImagePickerPresented = isImagePickerPresented
+            _selectedImage = selectedImage
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            isImagePickerPresented = false
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.originalImage] as? UIImage {
+                selectedImage = image
+            }
+            isImagePickerPresented = false
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(isImagePickerPresented: $isImagePickerPresented, selectedImage: $selectedImage)
+    }
+    
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
+        picker.allowsEditing = true
+        return picker
+    }
+    
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
