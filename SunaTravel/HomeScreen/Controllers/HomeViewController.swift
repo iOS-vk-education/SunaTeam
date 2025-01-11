@@ -38,7 +38,8 @@ class HomeViewController: UIViewController {
     
     private let profileButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "person.circle.fill"), for: .normal)
+        let defaultAvatar = UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(defaultAvatar, for: .normal)
         button.tintColor = UIColor { traitCollection in
             return traitCollection.userInterfaceStyle == .dark ? .white : .black
         }
@@ -145,12 +146,12 @@ class HomeViewController: UIViewController {
     private func updateProfileButton() {
         DispatchQueue.main.async {
             self.profileButton.setTitle(self.profileViewModel.profile.name, for: .normal)
-
+            
             if let avatar = self.profileViewModel.profile.avatar {
                 print("Avatar size: \(avatar.size)")
                 let size = CGSize(width: 15, height: 15)
                 let scaledAvatar = avatar.resize(to: size)
-                self.profileButton.setImage(scaledAvatar, for: .normal)
+                self.profileButton.setImage(scaledAvatar?.withRenderingMode(.alwaysOriginal), for: .normal)
             } else {
                 self.profileButton.setImage(UIImage(systemName: "person.circle.fill"), for: .normal)
             }

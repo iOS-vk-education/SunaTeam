@@ -25,6 +25,9 @@ struct EditProfileView: View {
         _tempEmail = State(initialValue: viewModel.profile.email)
         _tempLocation = State(initialValue: viewModel.profile.location)
         _tempPhoneNumber = State(initialValue: viewModel.profile.phoneNumber)
+        if let avatar = viewModel.profile.avatar {
+            _selectedImage = State(initialValue: avatar)
+        }
     }
     
     var body: some View {
