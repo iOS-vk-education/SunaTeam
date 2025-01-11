@@ -70,11 +70,15 @@ class FavoritePlacesViewController: UIViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Favorite Places"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(backButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func addButtonTapped() {
+        // TODO: – Переход в экран добавления поездки
     }
     
     private func setupViews() {

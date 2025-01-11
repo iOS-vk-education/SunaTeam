@@ -21,6 +21,8 @@ struct ProfileView: View {
                             .foregroundColor(.primary)
                     }
                     .padding()
+                } else {
+                    
                 }
             }
             Spacer()
@@ -54,6 +56,7 @@ struct ProfileView: View {
         }
         .padding()
         .navigationBarTitle("Profile", displayMode: .inline)
+        .navigationBarHidden(showEditButton)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: EditProfileView(viewModel: viewModel)) {

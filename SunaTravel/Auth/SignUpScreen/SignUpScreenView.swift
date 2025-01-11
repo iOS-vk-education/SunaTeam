@@ -26,6 +26,7 @@ struct SignUpScreenView: View {
                 
                 NavigationLink(destination: AppRootView(), isActive: $isNavigatingToHome) {
                     Button("Sign Up") {
+                        presentationMode.wrappedValue.dismiss()
                         isNavigatingToHome = true
                         shouldHideBackButton = true
                     }
