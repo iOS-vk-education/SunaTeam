@@ -18,12 +18,11 @@ class NavigationBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Устанавливаем цвет фона таббара в зависимости от темы
         tabBar.isTranslucent = false
         tabBar.barTintColor = UIColor { traitCollection in
             return traitCollection.userInterfaceStyle == .dark ? .black : .white
         }
-        tabBar.tintColor = .systemBlue // Цвет иконок и выделенного элемента
+        tabBar.tintColor = .systemBlue
         
         let homeView = UIHostingController(rootView: HomeScreenView())
         homeView.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
@@ -34,7 +33,7 @@ class NavigationBar: UITabBarController {
         let searchView = UIHostingController(rootView: SearchScreenView())
         searchView.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass.circle.fill"), tag: 2)
         
-        let mapView = EmptyViewController()
+        let mapView = UIHostingController(rootView: MapViewControllerPreview().edgesIgnoringSafeArea(.all))
         mapView.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map"), tag: 3)
         
         let profileView = UIHostingController(rootView: ProfileView(viewModel: profileViewModel, showEditButton: true))

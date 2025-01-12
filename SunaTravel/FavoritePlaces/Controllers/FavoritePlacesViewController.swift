@@ -13,7 +13,7 @@ fileprivate struct UIConstants {
     static let collectionViewItemSpacing: CGFloat = 6
     static let viewSidePadding: CGFloat = 16
     static let viewItemWidthPartition: CGFloat = 30
-
+    
     static var collectionViewItemHeight: CGFloat {
         let screenHeight = UIScreen.main.bounds.height
         return screenHeight * 0.25
@@ -51,6 +51,8 @@ class FavoritePlacesViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(FavoritePlaceCell.self, forCellWithReuseIdentifier: "FavoritePlaceCell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
         return collectionView
     }()
     
@@ -66,20 +68,15 @@ class FavoritePlacesViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
     
     private func setupNavigationBar() {
         navigationItem.title = "Favorite Places"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc private func addButtonTapped() {
-        // TODO: – Переход в экран добавления поездки
-    }
     
     private func setupViews() {
         view.addSubview(collectionView)

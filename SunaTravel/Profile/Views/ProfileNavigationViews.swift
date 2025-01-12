@@ -12,6 +12,14 @@ struct BookmarksView: View {
     var body: some View {
         FavoritePlacesViewControllerWrapper()
             .navigationBarTitle("Favorite Places", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    // Кнопка "+" для перехода
+                    NavigationLink(destination: CreateTripViewControllerWrapper()) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
     }
 }
 

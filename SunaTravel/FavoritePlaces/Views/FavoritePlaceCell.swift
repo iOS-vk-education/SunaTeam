@@ -25,6 +25,8 @@ fileprivate struct UIConstants {
 }
 
 class FavoritePlaceCell: UICollectionViewCell {
+    var didSelectPlace: (() -> Void)?
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -74,6 +76,8 @@ class FavoritePlaceCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCell))
+        self.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder: NSCoder) {
@@ -120,6 +124,10 @@ class FavoritePlaceCell: UICollectionViewCell {
         subtitleLabel.text = place.subtitle
         imageView.image = UIImage(named: place.imageName)
     }
+    
+    @objc private func didTapCell() {
+        didSelectPlace?()
+    }
 }
 
 protocol PlaceProvider {
@@ -128,13 +136,17 @@ protocol PlaceProvider {
 
 struct FavoritePlaceCellRepresentable: UIViewRepresentable {
     var placeProvider: PlaceProvider
-
+    var onCellSelected: (() -> Void)?
+    
     func makeUIView(context: Context) -> FavoritePlaceCell {
         let cell = FavoritePlaceCell()
         cell.configure(with: placeProvider.getModel())
+        cell.didSelectPlace = {
+            self.onCellSelected?()
+        }
         return cell
     }
-
+    
     func updateUIView(_ uiView: FavoritePlaceCell, context: Context) {
         uiView.configure(with: placeProvider.getModel())
     }

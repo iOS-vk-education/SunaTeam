@@ -14,10 +14,9 @@ fileprivate struct UIConstants {
     static let collectionViewItemHeight: CGFloat = 180
     static let viewSidePadding: CGFloat = 16
     static let viewItemWidthPartition: CGFloat = 40
-    //static let searchBarTopPadding: CGFloat = 100
 }
 
-class SearchPlacesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class SearchPlacesViewController: UIViewController, UICollectionViewDelegate, UISearchBarDelegate, UICollectionViewDataSource {
     
     var viewModel = SearchPlacesViewModel()
     
