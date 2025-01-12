@@ -8,12 +8,12 @@ import UIKit
 import SwiftUI
 
 fileprivate struct UIConstants {
-    static let collectionTopPadding: CGFloat = 30
-    static let collectionViewLineSpacing: CGFloat = 50
+    static let collectionTopPadding: CGFloat = 15
+    static let collectionViewLineSpacing: CGFloat = 15
     static let collectionViewItemSpacing: CGFloat = 6
     static let viewSidePadding: CGFloat = 16
-    static let viewItemWidthPartition: CGFloat = 40
-
+    static let viewItemWidthPartition: CGFloat = 30
+    
     static var collectionViewItemHeight: CGFloat {
         let screenHeight = UIScreen.main.bounds.height
         return screenHeight * 0.25
@@ -51,32 +51,32 @@ class FavoritePlacesViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(FavoritePlaceCell.self, forCellWithReuseIdentifier: "FavoritePlaceCell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupNavigationBar()
         setupViews()
         setupCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func setupNavigationBar() {
         navigationItem.title = "Favorite Places"
-        
-        let backButton = UIBarButtonItem(
-            title: "<",
-            style: .plain,
-            target: self,
-            action: #selector(backButtonTapped)
-        )
-        navigationItem.leftBarButtonItem = backButton
     }
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
+    
     
     private func setupViews() {
         view.addSubview(collectionView)
@@ -95,6 +95,14 @@ class FavoritePlacesViewController: UIViewController {
     }
 }
 
+struct FavoritePlacesViewControllerWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> FavoritePlacesViewController {
+        return FavoritePlacesViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: FavoritePlacesViewController, context: Context) {
+    }
+}
 
 // SwiftUI Preview
 struct FavoritePlacesViewControllerRepresentable: UIViewControllerRepresentable {

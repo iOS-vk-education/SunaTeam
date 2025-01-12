@@ -8,7 +8,6 @@
 import SwiftUI
 
 fileprivate struct UIConstants {
-    //static let daysInWeek = 7
     static let weekdayAdjustmentForSunday: Int = 6
     static let weekdayAdjustment: Int = 2
     static let circleSize: CGFloat = 40
@@ -52,7 +51,7 @@ struct CalendarHeaderView: View {
                         
                         Text("\(dayOfMonth)")
                             .font(.title3.bold())
-                            .foregroundColor(isToday ? Color.orange : Color.black)
+                            .foregroundColor(isToday ? Color.orange : Color.secondary)
                             .frame(width: UIConstants.circleSize, height: UIConstants.circleSize)
                             .background(isToday ? Color.orange.opacity(0.2) : Color.clear)
                             .clipShape(Circle())

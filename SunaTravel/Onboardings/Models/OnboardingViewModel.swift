@@ -14,7 +14,7 @@ class OnboardingViewModel: ObservableObject {
         OnboardingSlide(
             imageName: "firstBoard",
             title: "Life is short and the world is wide",
-            subtitle: "At Suna Travel, we customize reliable and trustworthy educational tours to destinations all over the world",
+            subtitle: "At Suna Travel you can save the brightest moments of your travels and they will never be lost",
             backgroundColor: Color.white
         ),
         OnboardingSlide(
@@ -24,9 +24,6 @@ class OnboardingViewModel: ObservableObject {
             backgroundColor: Color.white
         )
     ]
-//    init(OnboardingSlides: [OnboardingSlide]) {
-//        self.onboardingSlides = OnboardingSlides
-//    }
     
     var buttonText: String {
         currentPage == onboardingSlides.count - 1 ? "Get Started" : "Next"

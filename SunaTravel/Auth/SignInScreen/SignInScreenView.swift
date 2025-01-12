@@ -8,65 +8,59 @@ import SwiftUI
 
 struct SignInScreenView: View{
     @Environment(\.presentationMode) var presentationMode
+    @State private var isSignedIn = false
     var body: some View {
-        VStack {
-            HeaderView(largeText: "Sign in now",
-                       smallText: "Please sign in to continue our app")
-            TextFieldView(text: "Email", isSecureField: false)
-                .padding(.top, 40)
-            TextFieldView(text: "Password", isSecureField: true)
-            
-            HStack {
-                Spacer()
-                ForgetPasswordButtonView()
-            }
-            
-            Button {
-                return Void()
-            } label: {
-                NavigationLink(destination: EmptyView()) {
-                    Text("Sign in")
+        NavigationView{
+            VStack {
+                HeaderView(largeText: "Sign in now",
+                           smallText: "Please sign in to continue our app")
+                TextFieldView(text: "Email", isSecureField: false)
+                    .padding(.top, 40)
+                TextFieldView(text: "Password", isSecureField: true)
+                
+                HStack {
+                    Spacer()
+                    ForgetPasswordButtonView()
                 }
-                .buttonStyle(YellowButtonStyle())
-                .padding(.top, 24)
+                
+                Button {
+                    return Void()
+                } label: {
+                    NavigationLink(destination: AppRootView(), isActive: $isSignedIn) {
+                        Text("Sign in")
+                    }
+                    .buttonStyle(YellowButtonStyle())
+                    .padding(.top, 24)
+                }
+                .padding(.bottom, 40)
+                
+                SignUpPromptView()
             }
-            .padding(.bottom, 40)
-            
-            SignUpPromptView()
-        }
-        .padding(.horizontal, 40)
-        .navigationBarItems(leading: Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-        }) {
-            Image(systemName: "arrow.left")
-                .foregroundColor(.secondary)
-        })
-        .navigationBarBackButtonHidden(true)
-    }
-}
-
-struct ForgetPasswordButtonView: View {
-    var body: some View {
-        Button {
-            return Void()
-        } label: {
-            Text("Forget Password?")
-                .foregroundStyle(Color.blue)
-                .font(.system(size: 14))
+            .padding(.horizontal, 40)
         }
     }
-}
-
-struct SignUpPromptView: View {
-    var body: some View {
-        HStack {
-            Text("Don't have an account")
-                .font(.system(size: 14))
-                .foregroundStyle(.secondary)
+    
+    struct ForgetPasswordButtonView: View {
+        var body: some View {
             Button {
                 return Void()
             } label: {
-                NavigationLink(destination: SignUpScreenView()) {
+                Text("Forget Password?")
+                    .foregroundStyle(Color.blue)
+                    .font(.system(size: 14))
+            }
+        }
+    }
+    
+    struct SignUpPromptView: View {
+        @State private var isNavigating = false
+        var body: some View {
+            HStack {
+                Text("Don't have an account")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.secondary)
+                NavigationLink(destination: SignUpScreenView(),
+                               isActive: $isNavigating) {
                     Text("Sign up")
                         .foregroundStyle(Color.blue)
                         .font(.system(size: 14))
@@ -74,8 +68,4 @@ struct SignUpPromptView: View {
             }
         }
     }
-}
-
-#Preview {
-    SignInScreenView()
 }

@@ -44,7 +44,7 @@ struct ScheduleCell: View {
             Spacer()
         }
         .padding(UIConstants.horizontalPadding)
-        .background(Color.white)
+        .background(.background)
         .cornerRadius(UIConstants.backgroundCornerRadius)
         .shadow(color: Color.black.opacity(UIConstants.shadowColorOpacity),
                 radius: UIConstants.shadowRadius,

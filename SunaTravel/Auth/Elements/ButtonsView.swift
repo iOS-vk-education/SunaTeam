@@ -28,7 +28,7 @@ struct ClearButtonStyle: ButtonStyle {
             .foregroundStyle(.black)
             .background(
                 RoundedRectangle(cornerRadius: 15)
-                    .fill(Color("TextFieldColor"))
+                    .fill(Color.orange.opacity(0.3))
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(Color.gray, lineWidth: 1)

@@ -12,52 +12,44 @@ fileprivate struct UIConstants {
 }
 
 struct MainView: View {
+    @State private var selectedDate: Date = Date()
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                CalendarHeaderView()
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("My Schedule")
-                            .font(.title3.bold())
-                        Spacer()
+        VStack {
+            DatePicker(
+                "Select Date",
+                selection: $selectedDate,
+                displayedComponents: [.date]
+            )
+            .datePickerStyle(DefaultDatePickerStyle())
+            .padding()
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("My Schedule")
+                        .font(.title3.bold())
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                ScrollView {
+                    LazyVStack(spacing: UIConstants.VStackSpacing) {
+                        ForEach(scheduleItems.filter { isSameDay($0.date, selectedDate) }) { item in
+                            ScheduleCell(item: item)
+                        }
                     }
                     .padding(.horizontal)
-                    
-                    ScrollView {
-                        LazyVStack(spacing: UIConstants.VStackSpacing) {
-                            ForEach(scheduleItems) { item in
-                                ScheduleCell(item: item)
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
                 }
-                .padding(.top)
-                NavigationBar()
             }
-            .navigationBarTitle("Schedule", displayMode: .inline)
-            .navigationBarItems(
-                leading: Button(action: {
-                    // MARK: - действие для кнопки назад
-                }) {
-                    Image(systemName: "arrow.backward")
-                        .foregroundColor(.black)
-                },
-                trailing: Button(action: {
-                    // MARK: - действие для перехода в профиль
-                }) {
-                    Image(systemName: "person.crop.circle")
-                        .foregroundColor(.black)
-                }
-                
-            )
+            .padding(.top)
         }
-        .background(Color(.systemGray6))
-        .edgesIgnoringSafeArea(.all)
+    }
+    
+    private func isSameDay(_ date1: Date, _ date2: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(date1, inSameDayAs: date2)
     }
 }
-
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()

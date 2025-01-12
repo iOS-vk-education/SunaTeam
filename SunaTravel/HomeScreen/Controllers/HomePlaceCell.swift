@@ -1,44 +1,24 @@
 //
-//  FavoritePlaceCell.swift
+//  HomePlaceCell.swift
 //  SunaTravel
 //
-//  Created by Иван Тарасюк on 14.12.2024.
+//  Created by Иван Тарасюк on 08.01.2025.
 //
-import UIKit
-import SwiftUI
 
-fileprivate struct UIConstants {
-    static let imageCornerRadius: CGFloat = 25
-    static let titleFontSize: CGFloat = 16
-    static let subtitleFontSize: CGFloat = 14
-    static let titleTopPadding: CGFloat = 8
-    static let subtitleTopPadding: CGFloat = 4
-    static let collectionViewItemSpacing: CGFloat = 8
-    static let viewSidePadding: CGFloat = 16
-    static let titleTopMargin: CGFloat = 8
-    static let titleFontLargeSize: CGFloat = 20
-    static let subtitleIconConstant: CGFloat = 20
-    static let leadingPadding: CGFloat = 5
-    static var imageHeight: CGFloat { return UIScreen.main.bounds.width * 0.35 }
-    static var collectionViewItemHeight: CGFloat { return UIScreen.main.bounds.width * 0.6 }
-    static var collectionViewItemWidth: CGFloat { return UIScreen.main.bounds.width / 2 }
-}
 
-class FavoritePlaceCell: UICollectionViewCell {
-    var didSelectPlace: (() -> Void)?
-    
+class HomePlaceCell: UICollectionViewCell {
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = UIConstants.imageCornerRadius
+        imageView.layer.cornerRadius = PlaceCellConstants.imageCornerRadius
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: UIConstants.titleFontSize)
+        label.font = UIFont.boldSystemFont(ofSize: PlaceCellConstants.titleFontSize)
         label.numberOfLines = 1
         label.lineBreakMode = .byTruncatingTail
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +27,7 @@ class FavoritePlaceCell: UICollectionViewCell {
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: UIConstants.subtitleFontSize)
+        label.font = UIFont.systemFont(ofSize: PlaceCellConstants.subtitleFontSize)
         label.textColor = .gray
         label.numberOfLines = 1
         label.lineBreakMode = .byTruncatingTail
@@ -67,7 +47,7 @@ class FavoritePlaceCell: UICollectionViewCell {
     lazy var subtitleStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [locationIcon, subtitleLabel])
         stackView.axis = .horizontal
-        stackView.spacing = 4
+        stackView.spacing = PlaceCellConstants.stackViewSpacing
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -76,8 +56,6 @@ class FavoritePlaceCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCell))
-        self.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder: NSCoder) {
@@ -96,72 +74,64 @@ class FavoritePlaceCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: UIConstants.imageHeight)
+            imageView.heightAnchor.constraint(equalToConstant: PlaceCellConstants.imageHeight)
         ])
     }
     
     private func setupTitleLabel() {
         contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: UIConstants.titleTopPadding),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: UIConstants.leadingPadding),
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: PlaceCellConstants.titleTopPadding),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: PlaceCellConstants.leadingPadding),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
     
     private func setupSubtitleStackView() {
         contentView.addSubview(subtitleStackView)
-        locationIcon.widthAnchor.constraint(equalToConstant: UIConstants.subtitleIconConstant).isActive = true
+        locationIcon.widthAnchor.constraint(equalToConstant: PlaceCellConstants.subtitleIconConstant).isActive = true
         NSLayoutConstraint.activate([
-            subtitleStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: UIConstants.subtitleTopPadding),
-            subtitleStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: UIConstants.leadingPadding),
+            subtitleStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: PlaceCellConstants.subtitleTopPadding),
+            subtitleStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: PlaceCellConstants.leadingPadding),
             subtitleStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
     
-    func configure(with place: Place) {
+    func configure(with place: PlaceModel) {
         titleLabel.text = place.title
         subtitleLabel.text = place.subtitle
         imageView.image = UIImage(named: place.imageName)
     }
-    
-    @objc private func didTapCell() {
-        didSelectPlace?()
-    }
 }
 
-protocol PlaceProvider {
-    func getModel() -> Place
+protocol PlaceModelProvider {
+    func getModel() -> PlaceModel
 }
 
-struct FavoritePlaceCellRepresentable: UIViewRepresentable {
-    var placeProvider: PlaceProvider
-    var onCellSelected: (() -> Void)?
-    
-    func makeUIView(context: Context) -> FavoritePlaceCell {
-        let cell = FavoritePlaceCell()
+struct HomePlaceCellRepresentable: UIViewRepresentable {
+    var placeProvider: PlaceModelProvider
+
+    func makeUIView(context: Context) -> HomePlaceCell {
+        let cell = HomePlaceCell()
         cell.configure(with: placeProvider.getModel())
-        cell.didSelectPlace = {
-            self.onCellSelected?()
-        }
         return cell
     }
-    
-    func updateUIView(_ uiView: FavoritePlaceCell, context: Context) {
+
+    func updateUIView(_ uiView: HomePlaceCell, context: Context) {
         uiView.configure(with: placeProvider.getModel())
     }
 }
 
-struct ExamplePlaceProvider: PlaceProvider {
-    func getModel() -> Place {
-        return Place(title: "Casa Las Tirtugas", subtitle: "Av Damero, Mexico", imageName: "FirstPlace")
+struct ExamplePlaceModelProvider: PlaceModelProvider {
+    func getModel() -> PlaceModel {
+        return PlaceModel(title: "Casa Las Tirtugas", subtitle: "Av Damero, Mexico", imageName: "FirstPlace")
     }
 }
 
-struct FavoritePlaceCell_Previews: PreviewProvider {
+struct HomePlaceCell_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritePlaceCellRepresentable(placeProvider: ExamplePlaceProvider())
-            .frame(width: UIConstants.collectionViewItemWidth, height: UIConstants.collectionViewItemHeight)
+        HomePlaceCellRepresentable(placeProvider: ExamplePlaceModelProvider())
+            .frame(width: PlaceCellConstants.collectionViewItemWidth, height: PlaceCellConstants.collectionViewItemHeight)
             .previewLayout(.sizeThatFits)
             .padding()
             .background(Color.white)
