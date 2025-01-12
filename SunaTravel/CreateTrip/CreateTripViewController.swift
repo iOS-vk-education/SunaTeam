@@ -155,6 +155,19 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         return stackView
     }()
     
+    private let descriptionScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+
+    private let descriptionContentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,12 +189,19 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         
 
         containerView.addSubview(collapseButton)
+        
+        // This piece goes here
+        containerView.addSubview(descriptionScrollView)
+        descriptionScrollView.addSubview(descriptionContentView)
+        descriptionContentView.addSubview(descriptionLabel)
+        descriptionContentView.addSubview(readMoreButton)
+
         containerView.addSubview(NiladriReservoirLabel)
         containerView.addSubview(TekergatLabel)
         containerView.addSubview(photoGalleryCollectionView)
         containerView.addSubview(aboutDestinationLabel)
-        containerView.addSubview(descriptionLabel)
-        containerView.addSubview(readMoreButton)
+//        containerView.addSubview(descriptionLabel)
+//        containerView.addSubview(readMoreButton)
         containerView.addSubview(subtitleStackView)
 
     }
@@ -238,15 +258,42 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
             aboutDestinationLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
         ])
         
+//        NSLayoutConstraint.activate([
+//            descriptionLabel.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 2),
+//            descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+//            descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+//
+//            readMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
+//            readMoreButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+//            readMoreButton.heightAnchor.constraint(equalToConstant: 20)
+//        ])
+        
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 2),
-            descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-            descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            // Ограничения для descriptionScrollView
+            descriptionScrollView.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 8),
+            descriptionScrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            descriptionScrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            descriptionScrollView.heightAnchor.constraint(equalToConstant: 100), // Изначальная высота
 
+            // Ограничения для descriptionContentView внутри scrollView
+            descriptionContentView.topAnchor.constraint(equalTo: descriptionScrollView.topAnchor),
+            descriptionContentView.leadingAnchor.constraint(equalTo: descriptionScrollView.leadingAnchor),
+            descriptionContentView.trailingAnchor.constraint(equalTo: descriptionScrollView.trailingAnchor),
+            descriptionContentView.bottomAnchor.constraint(equalTo: descriptionScrollView.bottomAnchor),
+            descriptionContentView.widthAnchor.constraint(equalTo: descriptionScrollView.widthAnchor),
+
+            // Ограничения для descriptionLabel
+            descriptionLabel.topAnchor.constraint(equalTo: descriptionContentView.topAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor),
+
+            // Ограничения для readMoreButton
             readMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
-            readMoreButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            readMoreButton.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
+            readMoreButton.bottomAnchor.constraint(equalTo: descriptionContentView.bottomAnchor),
             readMoreButton.heightAnchor.constraint(equalToConstant: 20)
         ])
+
 
     }
 
@@ -267,11 +314,26 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
+    
+    
+//    @objc private func didTapReadMore() {
+//        isExpanded.toggle()
+//        descriptionLabel.numberOfLines = isExpanded ? 0 : 3
+//        readMoreButton.setTitle(isExpanded ? "Read less" : "Read more", for: .normal)
+//        UIView.animate(withDuration: 0.3) {
+//            self.view.layoutIfNeeded()
+//        }
+//    }
+    
     @objc private func didTapReadMore() {
         isExpanded.toggle()
         descriptionLabel.numberOfLines = isExpanded ? 0 : 3
         readMoreButton.setTitle(isExpanded ? "Read less" : "Read more", for: .normal)
+        
+        // Изменяем высоту descriptionScrollView
+        let targetHeight: CGFloat = isExpanded ? 300 : 100 // Устанавливаем желаемую высоту
         UIView.animate(withDuration: 0.3) {
+            self.descriptionScrollView.heightAnchor.constraint(equalToConstant: targetHeight).isActive = true
             self.view.layoutIfNeeded()
         }
     }
