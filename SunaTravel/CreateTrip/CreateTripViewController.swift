@@ -45,9 +45,11 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 40
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]  //only top corners
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
     
     private let collapseButton: UIView = {
         let view = UIView()
