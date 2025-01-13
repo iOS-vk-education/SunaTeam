@@ -19,7 +19,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 20
         button.backgroundColor = UIColor(hex: "1B1E28").withAlphaComponent(0.16)
-        button.setTitle("ᐸ", for: .normal)
+        button.setTitle("ᐸ", for: .normal) // <
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
