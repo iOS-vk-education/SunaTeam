@@ -1,18 +1,18 @@
 import SwiftUI
 
-struct CreateTripView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> CreateTripViewController {
-        return CreateTripViewController() // Создаём ваш UIKit экран
+struct ViewTripView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> ViewTripViewController {
+        return ViewTripViewController() // Создаём ваш UIKit экран
     }
     
-    func updateUIViewController(_ uiViewController: CreateTripViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: ViewTripViewController, context: Context) {
         // Обновления, если нужно
     }
 }
 
 struct ContentView: View {
     var body: some View {
-        CreateTripView() // Показываем UIKit экран вместо ContentView
+        ViewTripView() // Показываем UIKit экран вместо ContentView
     }
 }
 

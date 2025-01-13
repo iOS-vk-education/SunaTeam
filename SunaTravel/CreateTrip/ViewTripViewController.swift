@@ -1,6 +1,6 @@
 import UIKit
 
-class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewTripViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - UI Elements
     private let backgroundImageView: UIImageView = {
@@ -424,7 +424,7 @@ class PhotoCell: UICollectionViewCell {
 
 }
 
-extension CreateTripViewController {
+extension ViewTripViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photo = photos[indexPath.item]
         
