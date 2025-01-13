@@ -48,9 +48,11 @@ class ViewTripViewController: UIViewController, UICollectionViewDelegate, UIColl
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 40
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner] // Только верхние углы
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
     
     private let collapseButton: UIView = {
         let view = UIView()
