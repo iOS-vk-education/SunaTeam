@@ -270,7 +270,7 @@ class ViewTripViewController: UIViewController, UICollectionViewDelegate, UIColl
 
             descriptionLabel.topAnchor.constraint(equalTo: descriptionContentView.topAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor, constant: -5),
+            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor, constant: -6),
 
             readMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 7),
 //            readMoreButton.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),

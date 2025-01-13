@@ -58,7 +58,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		11FB77E12D1A3251009D9E33 /* CreateTrip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CreateTrip; sourceTree = "<group>"; };
+		11FB77E12D1A3251009D9E33 /* ViewTrip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewTrip; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 		58F5CABF2D0785E000A3C1FA /* SunaTravel */ = {
 			isa = PBXGroup;
 			children = (
-				11FB77E12D1A3251009D9E33 /* CreateTrip */,
+				11FB77E12D1A3251009D9E33 /* ViewTrip */,
 				8FF43D852D1A129E0052A0AA /* MainScreen */,
 				8F7311242D0FA442007A78AC /* swiftlint.yml */,
 				8F7310E92D0D90F9007A78AC /* Onboardings */,
@@ -215,7 +215,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				11FB77E12D1A3251009D9E33 /* CreateTrip */,
+				11FB77E12D1A3251009D9E33 /* ViewTrip */,
 			);
 			name = SunaTravel;
 			productName = SunaTravel;
