@@ -136,6 +136,8 @@ class HomeViewController: UIViewController {
                 self?.updateProfileButton()
             }
             .store(in: &cancellables)
+        
+        collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -187,6 +189,17 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedPlace = viewModel.places[indexPath.row]
+        didTapCell(with: selectedPlace)
+    }
+    
+    func didTapCell(with place: Place) {
+        let tripDetailViewController = UIHostingController(rootView: ViewTripViewControllerWrapper())
+        navigationController?.pushViewController(tripDetailViewController, animated: true)
+    }
+}
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

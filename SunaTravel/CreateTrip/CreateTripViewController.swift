@@ -2,11 +2,12 @@ import UIKit
 import PhotosUI  // for multiply photo selection
 import SwiftUI
 
-class CreateTripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+import UIKit
+
+class CreateTripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // MARK: - UI Elements
 
-    // Background Image
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -15,30 +16,15 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         return imageView
     }()
 
-    // Back Button
-//    private let backButton: UIButton = {
-//        let button = UIButton(type: .system)
-//        button.layer.cornerRadius = 20
-//        button.backgroundColor = UIColor(hex: "1B1E28").withAlphaComponent(0.16)
-//        button.setTitle("<", for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-//        button.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        return button
-//    }()
-
     // Title Label
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemBackground
         label.font = UIFont(name: "SFUIDisplay-Regular", size: 80)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.removeConstraints(label.constraints)
         label.textAlignment = .center
         return label
     }()
-
 
     // Main Container View
     private let containerView: UIView = {
@@ -59,11 +45,12 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
 
     private let tripNameTextField = CreateTripViewController.createRoundedTextField(placeholder: "Write a trip name")
     private let locationTextField = CreateTripViewController.createRoundedTextField(placeholder: "Write location")
+    private let dateTextField = CreateTripViewController.createRoundedTextField(placeholder: "Enter Date")
 
     private let aboutDestinationLabel: UILabel = {
         let label = UILabel()
         label.text = "About Destination"
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -71,12 +58,12 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
 
     private let descriptionTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "Write description"
-        textView.textColor = .lightGray
+        textView.textColor = .label
         textView.backgroundColor = .quaternaryLabel
         textView.layer.cornerRadius = 15
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = UIFont.systemFont(ofSize: 17)
+        textView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         return textView
     }()
 
@@ -103,22 +90,22 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
     }()
 
     private var containerHeightConstraint: NSLayoutConstraint!
-    private var selectedFile: UIImage?
+    private var selectedDate: Date?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupLayout()
-        setupDescriptionTextView()  // for the modified UITextView
-        addCollapseButtonGesture() // Add gesture for collapse button
+        
+        // Setting delegate for the text field
+        dateTextField.delegate = self
     }
 
     // MARK: - Setup Methods
 
     private func setupView() {
         view.addSubview(backgroundImageView)
-        //view.addSubview(backButton)
         view.addSubview(titleLabel)
         view.addSubview(containerView)
         view.addSubview(addFileButton)
@@ -126,6 +113,7 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
         containerView.addSubview(collapseButton)
         containerView.addSubview(tripNameTextField)
         containerView.addSubview(locationTextField)
+        containerView.addSubview(dateTextField)
         containerView.addSubview(aboutDestinationLabel)
         containerView.addSubview(descriptionTextView)
         containerView.addSubview(saveButton)
@@ -139,16 +127,9 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            // Back Button
-//            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-//            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//            backButton.widthAnchor.constraint(equalToConstant: 40),
-//            backButton.heightAnchor.constraint(equalToConstant: 40),
-
             // Title Label
-            //titleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor), // Центр по вертикали относительно кнопки "Назад"
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),       // Центр по горизонтали относительно экрана
-            titleLabel.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: 0.8), // width up to (до) 80% ширины экрана
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: 0.8),
 
             // Add File Button
             addFileButton.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -10),
@@ -184,56 +165,49 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
             locationTextField.widthAnchor.constraint(equalToConstant: 360),
             locationTextField.heightAnchor.constraint(equalToConstant: 38),
 
+            // Date Text Field
+            dateTextField.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 12),
+            dateTextField.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            dateTextField.widthAnchor.constraint(equalToConstant: 360),
+            dateTextField.heightAnchor.constraint(equalToConstant: 38),
+
             // About Destination Label
-            aboutDestinationLabel.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 12),
+            aboutDestinationLabel.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 12),
             aboutDestinationLabel.leadingAnchor.constraint(equalTo: locationTextField.leadingAnchor),
 
             // Description TextView
             descriptionTextView.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 8),
             descriptionTextView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             descriptionTextView.widthAnchor.constraint(equalToConstant: 360),
-            descriptionTextView.heightAnchor.constraint(equalToConstant: 140),
+            descriptionTextView.heightAnchor.constraint(equalToConstant: 100),
 
             // Save Button
-            saveButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 20),
+            saveButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 25),
             saveButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             saveButton.widthAnchor.constraint(equalToConstant: 360),
-            saveButton.heightAnchor.constraint(equalToConstant: 65)
+            saveButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 
-    private func setupDescriptionTextView() {
-        descriptionTextView.delegate = self
-    }
-
-    private func addCollapseButtonGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapCollapseButton))
-        collapseButton.addGestureRecognizer(tapGesture)
-    }
-
-    @objc private func didTapBack() {
-        dismiss(animated: true, completion: nil)
-    }
-
     @objc private func didTapAddFile() {
-        var config = PHPickerConfiguration()
-        config.selectionLimit = 0 // 0 means unlimited choice
-        config.filter = .images // limit the choice to images only
-
-        let picker = PHPickerViewController(configuration: config)
-        picker.delegate = self
-        present(picker, animated: true, completion: nil)
+        // Your code to add file
     }
 
-    @objc private func didTapCollapseButton() {
-        let isCollapsed = containerHeightConstraint.constant == 430
-        containerHeightConstraint.constant = isCollapsed ? 200 : 430
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
+    // UITextFieldDelegate method to handle manual date input
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == dateTextField, let text = textField.text, !text.isEmpty {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            if let date = dateFormatter.date(from: text) {
+                selectedDate = date
+            } else {
+                // If the date format is incorrect, show an alert or reset
+                print("Invalid date format")
+                dateTextField.text = ""
+            }
         }
     }
 
-    // Helper: Create text fields and views
     private static func createRoundedTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
         textField.placeholder = placeholder
@@ -244,44 +218,6 @@ class CreateTripViewController: UIViewController, UIImagePickerControllerDelegat
     }
 }
 
-// MARK: - UITextViewDelegate
-extension CreateTripViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView == descriptionTextView && textView.textColor == .lightGray {
-            textView.text = ""
-            textView.textColor = .black
-        }
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView == descriptionTextView && textView.text.isEmpty {
-            textView.text = "Write description"
-            textView.textColor = .quaternaryLabel
-        }
-    }
-}
-
-// MARK: - PHPickerViewControllerDelegate
-// The code works on devices with iOS 14 and higher
-extension CreateTripViewController: PHPickerViewControllerDelegate {
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        picker.dismiss(animated: true, completion: nil)
-
-        guard !results.isEmpty else { return }
-
-        let firstItem = results.first
-        firstItem?.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
-            guard let self = self, let image = object as? UIImage, error == nil else {
-                 assertionFailure()
-                 return
-            }
-
-            DispatchQueue.main.async {
-                self.backgroundImageView.image = image // set the first file as background
-            }
-        }
-    }
-}
 
 struct CreateTripViewControllerWrapper: UIViewControllerRepresentable {
     
