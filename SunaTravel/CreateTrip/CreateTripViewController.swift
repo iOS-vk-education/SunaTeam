@@ -27,11 +27,21 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         let label = UILabel()
         label.text = "Details"
         label.textColor = .black
-        label.font = UIFont(name: "SFUIDisplay-Bold", size: 80)
+        
+        // what with font???
+        if let font = UIFont(name: "SFUIDisplay-Bold", size: 90) {
+            label.font = UIFontMetrics.default.scaledFont(for: font)
+        } else {
+            label.font = UIFont.preferredFont(forTextStyle: .headline)
+        }
+        
+        label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         return label
     }()
+
+
 
     // Main Container View
     private let containerView: UIView = {
@@ -135,10 +145,10 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
 
     private let locationIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "mappin.and.ellipse") // иконка для местоположения
-        imageView.tintColor = .gray // цвет иконки
-        imageView.contentMode = .scaleAspectFit // режим отображения изображения
-        imageView.translatesAutoresizingMaskIntoConstraints = false // отключаем автогенерацию ограничений
+        imageView.image = UIImage(systemName: "mappin.and.ellipse")
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
@@ -260,7 +270,7 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
 
             descriptionLabel.topAnchor.constraint(equalTo: descriptionContentView.topAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor, constant: -1),
+            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor, constant: -5),
 
             readMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 7),
 //            readMoreButton.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
@@ -328,7 +338,7 @@ class FullScreenImageViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .black
         button.layer.cornerRadius = 20
-        button.titleLabel?.font = UIFont(name: "SFUIDisplay-Bold", size: 40)
+        button.titleLabel?.font = UIFont(name: "SFUIDisplay", size: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
