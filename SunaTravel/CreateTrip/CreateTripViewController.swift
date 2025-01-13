@@ -68,18 +68,6 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         return label
     }()
 
-
-//    private let descriptionTextView: UITextView = {
-//        let textView = UITextView()
-//        textView.text = "Write description"
-//        textView.textColor = .lightGray
-//        textView.backgroundColor = UIColor(hex: "F7F7F9")
-//        textView.layer.cornerRadius = 15
-//        textView.translatesAutoresizingMaskIntoConstraints = false
-//        textView.font = UIFont.systemFont(ofSize: 17)
-//        return textView
-//    }()
-
     private var containerHeightConstraint: NSLayoutConstraint!
     private var selectedFile: UIImage?
 
@@ -116,11 +104,19 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = """
-        You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC. You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC. You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC. You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation, Have you ever been on holiday to the Greek ETC
+        You will get a complete travel package on the beaches, designed to provide you with an unforgettable experience. Our packages include everything you need for a perfect getaway, from airline tickets to recommended hotel rooms, ensuring that your journey is as smooth and enjoyable as possible.
+
+        Imagine arriving at your destination, greeted by the warm sun and the sound of waves gently lapping at the shore. Our travel packages offer a variety of options tailored to your preferences, whether you’re looking for a romantic escape, a family vacation, or an adventurous trip with friends. You’ll have access to a selection of the best hotels, each chosen for their comfort, amenities, and proximity to the beach.
+
+        In addition to accommodation, we also provide transportation options to make your travel hassle-free. Whether you prefer a rental car to explore the local area or shuttle services to and from the airport, we’ve got you covered. Our team is dedicated to ensuring that every aspect of your trip is taken care of, allowing you to focus on relaxation and enjoyment.
+
+        Have you ever been on holiday to the Greek islands? If not, now is the perfect time to experience the stunning beauty of places like Santorini, Mykonos, and Crete. Picture yourself lounging on pristine beaches, indulging in delicious local cuisine, and exploring charming villages filled with rich history and culture. Our travel packages include guided tours and activities, so you can immerse yourself in the local lifestyle and create lasting memories.
+
+        With our comprehensive travel packages, you can rest assured that every detail is meticulously planned to provide you with the ultimate beach vacation. From the moment you book your trip to the time you return home, we are here to support you every step of the way. Don’t miss out on the opportunity to unwind and rejuvenate on the beautiful beaches of Greece—book your travel package today and get ready for the adventure of a lifetime!
         """
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 17)
-        label.numberOfLines = 10
+        label.numberOfLines = 8
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -129,7 +125,7 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         let button = UIButton(type: .system)
         button.setTitle("Read more", for: .normal)
         button.setTitleColor(UIColor(hex: "FF7029"), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapReadMore), for: .touchUpInside)
         return button
@@ -159,6 +155,7 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.isScrollEnabled = false // Прокрутка отключена если что это убрать
         return scrollView
     }()
 
@@ -200,8 +197,6 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         containerView.addSubview(TekergatLabel)
         containerView.addSubview(photoGalleryCollectionView)
         containerView.addSubview(aboutDestinationLabel)
-//        containerView.addSubview(descriptionLabel)
-//        containerView.addSubview(readMoreButton)
         containerView.addSubview(subtitleStackView)
 
     }
@@ -241,55 +236,35 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
             // Subtitle StackView (Location Icon + location Label)
             subtitleStackView.topAnchor.constraint(equalTo: NiladriReservoirLabel.bottomAnchor, constant: 7),
             subtitleStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-//            subtitleStackView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-
-//            TekergatLabel.topAnchor.constraint(equalTo: NiladriReservoirLabel.bottomAnchor, constant: 12),
-//            TekergatLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-//            TekergatLabel.widthAnchor.constraint(equalToConstant: 360),
-//            TekergatLabel.heightAnchor.constraint(equalToConstant: 38),
-            
 
             photoGalleryCollectionView.topAnchor.constraint(equalTo: TekergatLabel.bottomAnchor, constant: 12),
             photoGalleryCollectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
             photoGalleryCollectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
             photoGalleryCollectionView.heightAnchor.constraint(equalToConstant: 70),
 
-            aboutDestinationLabel.topAnchor.constraint(equalTo: photoGalleryCollectionView.bottomAnchor, constant: 15),
+            aboutDestinationLabel.topAnchor.constraint(equalTo: photoGalleryCollectionView.bottomAnchor, constant: 18),
             aboutDestinationLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
         ])
         
-//        NSLayoutConstraint.activate([
-//            descriptionLabel.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 2),
-//            descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-//            descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
-//
-//            readMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
-//            readMoreButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-//            readMoreButton.heightAnchor.constraint(equalToConstant: 20)
-//        ])
-        
         NSLayoutConstraint.activate([
-            // Ограничения для descriptionScrollView
-            descriptionScrollView.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 8),
+            descriptionScrollView.topAnchor.constraint(equalTo: aboutDestinationLabel.bottomAnchor, constant: 3),
             descriptionScrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
             descriptionScrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
-            descriptionScrollView.heightAnchor.constraint(equalToConstant: 100), // Изначальная высота
+            descriptionScrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
 
-            // Ограничения для descriptionContentView внутри scrollView
             descriptionContentView.topAnchor.constraint(equalTo: descriptionScrollView.topAnchor),
             descriptionContentView.leadingAnchor.constraint(equalTo: descriptionScrollView.leadingAnchor),
             descriptionContentView.trailingAnchor.constraint(equalTo: descriptionScrollView.trailingAnchor),
             descriptionContentView.bottomAnchor.constraint(equalTo: descriptionScrollView.bottomAnchor),
             descriptionContentView.widthAnchor.constraint(equalTo: descriptionScrollView.widthAnchor),
 
-            // Ограничения для descriptionLabel
             descriptionLabel.topAnchor.constraint(equalTo: descriptionContentView.topAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor, constant: -1),
 
-            // Ограничения для readMoreButton
-            readMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
-            readMoreButton.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
+            readMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 7),
+//            readMoreButton.leadingAnchor.constraint(equalTo: descriptionContentView.leadingAnchor),
+            readMoreButton.trailingAnchor.constraint(equalTo: descriptionContentView.trailingAnchor, constant: -11),
             readMoreButton.bottomAnchor.constraint(equalTo: descriptionContentView.bottomAnchor),
             readMoreButton.heightAnchor.constraint(equalToConstant: 20)
         ])
@@ -314,29 +289,16 @@ class CreateTripViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    
-    
-//    @objc private func didTapReadMore() {
-//        isExpanded.toggle()
-//        descriptionLabel.numberOfLines = isExpanded ? 0 : 3
-//        readMoreButton.setTitle(isExpanded ? "Read less" : "Read more", for: .normal)
-//        UIView.animate(withDuration: 0.3) {
-//            self.view.layoutIfNeeded()
-//        }
-//    }
-    
     @objc private func didTapReadMore() {
         isExpanded.toggle()
-        descriptionLabel.numberOfLines = isExpanded ? 0 : 3
-        readMoreButton.setTitle(isExpanded ? "Read less" : "Read more", for: .normal)
-        
-        // Изменяем высоту descriptionScrollView
-        let targetHeight: CGFloat = isExpanded ? 300 : 100 // Устанавливаем желаемую высоту
+        descriptionLabel.numberOfLines = isExpanded ? 0 : 8
+        readMoreButton.setTitle(isExpanded ? "Collapse" : "Read more", for: .normal)
         UIView.animate(withDuration: 0.3) {
-            self.descriptionScrollView.heightAnchor.constraint(equalToConstant: targetHeight).isActive = true
+            self.descriptionScrollView.isScrollEnabled = self.isExpanded
             self.view.layoutIfNeeded()
         }
     }
+
 
 
     // MARK: - UICollectionView Data Source
@@ -447,7 +409,7 @@ class PhotoCell: UICollectionViewCell {
     func configure(with image: UIImage, isLast: Bool, remainingCount: Int) {
         imageView.image = image
         overlayLabel.isHidden = true // without counter
-        imageView.backgroundColor = .clear // clarity
+        imageView.backgroundColor = .clear
     }
 
 }
